@@ -1,0 +1,20 @@
+MANUAL PEMASANGAN
+
+    # Silahkan pidahkan folder product ke folder dimanapun dikomputer anda
+    # Import db_produksi.sql ke database
+    # Buka folder yang sudah kalian pindah, dan buka dieditor favorit anda
+    # Kemudian masuk ke app->config-> buka file config.php
+    # Edit configurasi database nya, cari define('DB_PASS', '');
+    # Isikan password sesuai dengan punya anda jika tidak ada password-nya biarkan kosong
+    # Buka terminal yang ada dieditor atau di terminal komputer anda dan pastikan sudah di directory programnya
+    # Kemudian ketikkan php -S localhost:8000 kemudian enter
+
+Buka Browser favorit anda, dan ketik di urlnya http://localhost:8000 -> enter
+
+NIK :
+202211222
+202211223
+202211224
+202211225
+
+      
