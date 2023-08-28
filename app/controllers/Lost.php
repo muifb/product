@@ -20,6 +20,15 @@ class Lost extends Controller
 
     public function store()
     {
-        var_dump($_POST);
+        // var_dump($_POST);
+        if ($this->model('Lost_model')->insertLost($_POST) > 0) {
+            Flasher::setFlash('Lost Time', 'berhasil disimpan', 'success');
+            header('Location: /lost');
+            exit;
+        } else {
+            Flasher::setFlash('Lost Time', 'gagal disimpan', 'success');
+            header('Location: /lost');
+            exit;
+        }
     }
 }

@@ -4,6 +4,7 @@
     }
 </style>
 <div class="container form-lost">
+    <div class=""><?php Flasher::flash() ?></div>
     <?php $vs = $data['vismen']; ?>
     <div class="p-2 p-lg-3 bg-gray rounded-top ">
         <div class="row justify-content-between">
@@ -14,13 +15,15 @@
     </div>
     <div class="p-2 p-lg-3 bg-light-gray rounded-bottom">
         <form action="/lost/store" class="px-5 py-3" method="post">
+            <input type="hidden" name="nik" value="<?= $_SESSION['login']['nik']; ?>">
+            <input type="hidden" name="kel_shift" value="<?= $_SESSION['login']['shift']; ?>">
             <div class="row mb-3">
                 <label for="jenisLostTime" class="col-sm-3 col-form-label text-end">Jenis Lost Time</label>
                 <div class="col-sm-3">
-                    <select class="form-select jenis" id="jenisLostTime" name="jenis_lt" required>
-                        <option value="PRODUCTION">PRODUCTION</option>
-                        <option value="MAINTENANCE">MAINTENANCE</option>
-                        <option value="PPIC">PPIC</option>
+                    <select class="form-select jenis" id="jenisLostTime" name="kategori_lt" required>
+                        <option value="LOST TIME PRODUCTION">PRODUCTION</option>
+                        <option value="LOST TIME MAINTENANCE">MAINTENANCE</option>
+                        <option value="LOST TIME PPIC">PPIC</option>
                     </select>
                 </div>
             </div>
@@ -42,12 +45,18 @@
                 </div>
             </div>
             <div class="row mb-3">
+                <label for="reasonLt" class="col-sm-3 col-form-label text-end">Sebab Lost Time</label>
+                <div class="col-sm-4">
+                    <input type="text" name="sebab_lt" class="form-control" required>
+                </div>
+            </div>
+            <div class="row mb-3">
                 <label for="reasonLt" class="col-sm-3 col-form-label text-end">Reason Lost Time</label>
                 <div class="col-sm-4">
-                    <select class="form-select" id="reasonLt" name="sebab_lt" required>
+                    <select class="form-select" id="reasonLt" name="jenis_lt" required>
                         <option value="human error">HUMAN ERROR</option>
                         <option value="istirahat">ISTIRAHAT</option>
-                        <option value="change material & jr/job">CHANGE MATERIAL $ JR/JOB</option>
+                        <option value="change material & jr/job">CHANGE MATERIAL & JR/JOB</option>
                         <option value="change counter + knife">CHANGE COUNTER + KNIFE</option>
                         <option value="join / web break">JOIN / WEB BREAK</option>
                         <option value="no operator">NO OPERATOR</option>

@@ -2,7 +2,7 @@
 
 class Product_model
 {
-    private $table = 'tb_report';
+    private $table = 'tb_product';
     private $db;
 
     public function __construct()
@@ -77,6 +77,19 @@ class Product_model
         $this->db->bind('angka', $angka);
         $this->db->bind('kat_defect', $defect);
 
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+
+    public function insertProduct($data)
+    {
+        // var_dump($data);
+        // die;
+        $id_product = $data['id_product'];
+        $nm_product = $data['nm_product'];
+        $this->db->query('INSERT INTO ' . $this->table . ' VALUES (:id_product, :nm_product)');
+        $this->db->bind('id_product', $id_product);
+        $this->db->bind('nm_product', $nm_product);
         $this->db->execute();
         return $this->db->rowCount();
     }

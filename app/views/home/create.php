@@ -2,6 +2,9 @@
 Printer::print();
 Printer::printIn()
 ?>
+<div class="ps-3 no-print">
+    <a href="/home" class="btn btn-danger"><i class="fa-solid fa-reply"></i> Back</a>
+</div>
 <div class="bg-white p-3 m-3 no-print rounded-3">
     <div class="row mb-3">
         <h3 class="col align-self-start">Create Batch</h3>

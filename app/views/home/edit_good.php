@@ -1,4 +1,7 @@
 <!-- <div class="container mt-4"> -->
+<div class="m-4">
+    <a href="/home" class="btn btn-danger"><i class="fa-solid fa-reply"></i> Back</a>
+</div>
 <div class="card rounded-3 m-4 p-1">
     <div class="row mt-4 mx-auto">
         <h3 class="judul">Edit Good Receipt</h3>

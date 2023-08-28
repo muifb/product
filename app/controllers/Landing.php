@@ -23,7 +23,7 @@ class Landing extends Controller
         $data = [
             'nav' => 'oee',
             'judul' => 'OEE',
-            'product' => $this->model('Product_model')->getProduct(),
+            'product' => $this->model('Vismen_model')->getVismen(),
         ];
         $this->view('templates/landing_header', $data);
         $this->view('landing/oee', $data);
@@ -71,9 +71,31 @@ class Landing extends Controller
         }
     }
 
+    public function storeProduct()
+    {
+        // var_dump($_POST);
+        if ($this->model('Product_model')->insertProduct($_POST) > 0) {
+            Flasher::setFlash('Product', 'berhasil ditambah!.', 'success');
+            header('Location: /landing/product');
+            exit;
+        } else {
+            Flasher::setFlash('Product', 'gagal ditambah!.', 'success');
+            header('Location: /landing/product');
+            exit;
+        }
+    }
+
     public function search()
     {
-        echo json_encode($_POST);
+        $data = [
+            'nav' => 'oee',
+            'judul' => 'OEE',
+            'search' => $this->model('Vismen_model')->getSearch(),
+        ];
+        $this->view('templates/landing_header', $data);
+        $this->view('landing/hasil', $data);
+        $this->view('templates/landing_footer');
+        // echo json_encode($_POST);
     }
 
     public function getProduct()

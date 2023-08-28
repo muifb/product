@@ -63,4 +63,18 @@ class Vismen_model
         $this->db->execute();
         return $this->db->rowCount();
     }
+
+    public function getSearch()
+    {
+        $start_produksi = $_POST['start_produksi'];
+        $finish_produksi = $_POST['finish_produksi'];
+        $mesin = $_POST['mesin'];
+        $id_product = $_POST['id_product'];
+
+        $this->db->query('SELECT * FROM tb_batch join tb_report USING (nm_batch) JOIN tb_vismen USING (id_product) WHERE id_product = :id_product AND mulai_pro BETWEEN :start_produksi AND :finish_produksi');
+        $this->db->bind('id_product', $id_product);
+        $this->db->bind('start_produksi', $start_produksi);
+        $this->db->bind('finish_produksi', $finish_produksi);
+        return $this->db->resultSet();
+    }
 }

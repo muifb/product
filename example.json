@@ -1,0 +1,93 @@
+[
+    {"tb_batch":
+    [
+    {"id_batch":"37","nm_batch":"K00000001","id_shift":"3","nik":"202211222","id_product":"2001000238","tgl_cetak":"2023-08-21 12:24:41","is_post":"2"},
+    {"id_batch":"38","nm_batch":"K00000002","id_shift":"3","nik":"202211222","id_product":"2001000238","tgl_cetak":"2023-08-21 12:24:41","is_post":"2"},
+    {"id_batch":"39","nm_batch":"K00000003","id_shift":"3","nik":"202211222","id_product":"2001000238","tgl_cetak":"2023-08-21 12:24:41","is_post":"2"},
+    {"id_batch":"40","nm_batch":"K00000004","id_shift":"3","nik":"202211222","id_product":"2001000238","tgl_cetak":"2023-08-21 12:24:41","is_post":"2"},
+    {"id_batch":"41","nm_batch":"K00000005","id_shift":"3","nik":"202211222","id_product":"2001000238","tgl_cetak":"2023-08-21 12:24:41","is_post":"2"},
+    {"id_batch":"42","nm_batch":"K00000006","id_shift":"3","nik":"202211222","id_product":"2001000238","tgl_cetak":"2023-08-21 12:24:41","is_post":"2"},
+    {"id_batch":"43","nm_batch":"K00000007","id_shift":"7","nik":"202211224","id_product":"2001000225","tgl_cetak":"2023-08-22 15:51:01","is_post":"2"},
+    {"id_batch":"44","nm_batch":"K00000008","id_shift":"7","nik":"202211224","id_product":"2001000225","tgl_cetak":"2023-08-22 15:51:01","is_post":"2"},
+    {"id_batch":"45","nm_batch":"K00000009","id_shift":"7","nik":"202211224","id_product":"2001000225","tgl_cetak":"2023-08-22 15:51:01","is_post":"2"},
+    {"id_batch":"46","nm_batch":"K00000010","id_shift":"7","nik":"202211224","id_product":"2001000225","tgl_cetak":"2023-08-22 15:51:01","is_post":"2"},
+    {"id_batch":"47","nm_batch":"K00000011","id_shift":"7","nik":"202211224","id_product":"2001000225","tgl_cetak":"2023-08-22 15:51:01","is_post":"2"},
+    {"id_batch":"48","nm_batch":"K00000012","id_shift":"7","nik":"202211224","id_product":"2001000225","tgl_cetak":"2023-08-22 15:51:01","is_post":"2"}
+    ]
+    }
+    ,{"tb_losttime":
+    [
+    {"id_lost":"1","nik":"20221121","kel_shift":"1C","kategori_lt":"LOST TIME MAINTENANCE","tgl_lost":"2023-08-09","jam_mulai":"09:20:00","jam_selesai":"10:10:00","sebab_lt":"Perbaikan mesin","jenis_lt":"Breakdown mechanical","selisih_menit":"50","selisih_jam":"0"},
+    {"id_lost":"2","nik":"20221122","kel_shift":"2B","kategori_lt":"LOST TIME PRODUKSI","tgl_lost":"2023-08-08","jam_mulai":"08:00:00","jam_selesai":"09:00:00","sebab_lt":"CHANGE OVER JOB","jenis_lt":"CHANGE OVER JOB PRODUCT","selisih_menit":"0","selisih_jam":"1"},
+    {"id_lost":"3","nik":"20221124","kel_shift":"3B","kategori_lt":"LOST TIME PRODUKSI","tgl_lost":"2023-08-10","jam_mulai":"11:00:00","jam_selesai":"11:30:00","sebab_lt":"Kertas putus","jenis_lt":"JOINT MATERIAL","selisih_menit":"30","selisih_jam":"0"},
+    {"id_lost":"4","nik":"20221125","kel_shift":"1A","kategori_lt":"LOST TIME MAINTENANCE","tgl_lost":"2023-08-09","jam_mulai":"15:00:00","jam_selesai":"18:00:00","sebab_lt":"LISTRIK PADAM","jenis_lt":"PLN","selisih_menit":"0","selisih_jam":"3"},
+    {"id_lost":"5","nik":"20221127","kel_shift":"2B","kategori_lt":"LOST TIME PRODUKSI","tgl_lost":"2023-08-10","jam_mulai":"08:40:00","jam_selesai":"09:50:00","sebab_lt":"NO MATERIAL NUNGGU TURUN JR","jenis_lt":"NO MATERIAL","selisih_menit":"10","selisih_jam":"1"},
+    {"id_lost":"6","nik":"20221128","kel_shift":"3C","kategori_lt":"LOST TIME PRODUKSI","tgl_lost":"2023-08-10","jam_mulai":"11:20:00","jam_selesai":"11:50:00","sebab_lt":"NO MATERIAL NUNGGU TURUN JR","jenis_lt":"NO MATERIAL","selisih_menit":"30","selisih_jam":"0"},
+    {"id_lost":"7","nik":"20221129","kel_shift":"3A","kategori_lt":"LOST TIME MAINTENANCE","tgl_lost":"2023-08-11","jam_mulai":"09:20:00","jam_selesai":"11:50:00","sebab_lt":"Baut Shaft unwinder pecah perbaikan by mtc","jenis_lt":"Mechanical Breakdown Maintenance","selisih_menit":"30","selisih_jam":"2"},
+    {"id_lost":"8","nik":"20221130","kel_shift":"1B","kategori_lt":"LOST TIME PRODUKSI","tgl_lost":"2023-08-01","jam_mulai":"09:40:00","jam_selesai":"10:20:00","sebab_lt":"Nunggu hasil Moisture content ","jenis_lt":"NO MATERIAL","selisih_menit":"40","selisih_jam":"0"},
+    {"id_lost":"9","nik":"20221131","kel_shift":"2C","kategori_lt":"LOST TIME PRODUKSI","tgl_lost":"2023-08-02","jam_mulai":"13:40:00","jam_selesai":"14:00:00","sebab_lt":"GANTI JR","jenis_lt":"CHANGE JR\/MATERIAL","selisih_menit":"20","selisih_jam":"0"},
+    {"id_lost":"10","nik":"20221229","kel_shift":"3A","kategori_lt":"LOST TIME MAINTENANCE","tgl_lost":"2023-08-12","jam_mulai":"08:20:00","jam_selesai":"10:50:00","sebab_lt":"Piston rewinder tidak berfungsi perbaikan by mtc","jenis_lt":"Electrical Breakdown Maintenance","selisih_menit":"30","selisih_jam":"2"}
+    ]
+    }
+    ,{"tb_product":
+    [
+    {"id_product":"2001000211","nm_product":"BRIGHT SLVR 12 MIC 30 GSM-1050 SLIT 10 KDS"},
+    {"id_product":"2001000212","nm_product":"BRIGHT SLVR 12 MIC 30 GSM-1075 SLIT 10 KDS"},
+    {"id_product":"2001000213","nm_product":"BRIGHT SLVR 6.5 MIC 30 GSM-1130 SLIT 7 KDS"},
+    {"id_product":"2001000217","nm_product":"DG MATTE GOLD 6.5 MIC 30 GSM SLIT 10 KDS"},
+    {"id_product":"2001000225","nm_product":"DG MATTE GOLD 6.5 MIC 30 GSM SLIT 10 KDS"},
+    {"id_product":"2001000226","nm_product":"DG MATTE GOLD 6.5 MIC 30 GSM SLIT 10 KDS"},
+    {"id_product":"2001000227","nm_product":"DG MATTE GOLD 6.5 MIC 30 GSM SLIT 7 KDS"},
+    {"id_product":"2001000230","nm_product":"BRIGHT RED 9 Mic 30 GSM SLIT 10 KDS"},
+    {"id_product":"2001000238","nm_product":"BRIGHT RED 12 Mic 30 GSM SLIT 7 KDS"},
+    {"id_product":"2001000239","nm_product":"BRIGHT RED 12 Mic 30 GSM SLIT 10 KDS"},
+    {"id_product":"2001000240","nm_product":"DG MATTE GOLD 9.5 MIC 40 GSM SLIT 7 KDS"}
+    ]
+    }
+    ,{"tb_report":
+    [
+    {"id_report":"31","nm_batch":"K00000001","material":"321-000025","mulai_pro":"2023-08-21 12:28:37","selesai_pro":"2023-08-21 16:28:37","status_pro":"OK","angka":"2","kat_defect":"Defect"},
+    {"id_report":"32","nm_batch":"K00000002","material":"321-000025","mulai_pro":"2023-08-21 12:28:37","selesai_pro":"2023-08-21 16:28:37","status_pro":"NC","angka":"2","kat_defect":"Trim"},
+    {"id_report":"33","nm_batch":"K00000003","material":"321-000025","mulai_pro":"2023-08-21 12:28:37","selesai_pro":"2023-08-21 16:28:37","status_pro":"OK","angka":"2","kat_defect":"Defect"},
+    {"id_report":"34","nm_batch":"K00000004","material":"321-000025","mulai_pro":"2023-08-21 12:28:37","selesai_pro":"2023-08-21 16:28:37","status_pro":"OK","angka":"2","kat_defect":"Startup"},
+    {"id_report":"35","nm_batch":"K00000005","material":"321-000025","mulai_pro":"2023-08-21 12:28:37","selesai_pro":"2023-08-21 16:28:37","status_pro":"OK","angka":"2","kat_defect":"Defect"},
+    {"id_report":"36","nm_batch":"K00000006","material":"321-000025","mulai_pro":"2023-08-21 12:28:37","selesai_pro":"2023-08-21 16:28:37","status_pro":"Reject","angka":"2","kat_defect":"Material"},
+    {"id_report":"37","nm_batch":"K00000007","material":"321-000025","mulai_pro":"2023-08-22 15:51:22","selesai_pro":"2023-08-22 17:51:22","status_pro":"NC","angka":"2","kat_defect":"Defect"},
+    {"id_report":"38","nm_batch":"K00000008","material":"321-000025","mulai_pro":"2023-08-22 15:51:22","selesai_pro":"2023-08-22 17:51:22","status_pro":"NC","angka":"2","kat_defect":"Defect"},
+    {"id_report":"39","nm_batch":"K00000009","material":"321-000025","mulai_pro":"2023-08-22 15:51:22","selesai_pro":"2023-08-22 17:51:22","status_pro":"NC","angka":"2","kat_defect":"Defect"},
+    {"id_report":"40","nm_batch":"K00000010","material":"321-000025","mulai_pro":"2023-08-22 15:51:22","selesai_pro":"2023-08-22 17:51:22","status_pro":"NC","angka":"2","kat_defect":"Defect"},
+    {"id_report":"41","nm_batch":"K00000011","material":"321-000025","mulai_pro":"2023-08-22 15:51:22","selesai_pro":"2023-08-22 17:51:22","status_pro":"NC","angka":"2","kat_defect":"Defect"},
+    {"id_report":"42","nm_batch":"K00000012","material":"321-000025","mulai_pro":"2023-08-22 15:51:22","selesai_pro":"2023-08-22 17:51:22","status_pro":"NC","angka":"2","kat_defect":"Defect"}
+    ]
+    }
+    ,{"tb_shift":
+    [
+    {"id_shift":"1","kel_shift":"1A"},
+    {"id_shift":"2","kel_shift":"1B"},
+    {"id_shift":"3","kel_shift":"1C"},
+    {"id_shift":"4","kel_shift":"2A"},
+    {"id_shift":"5","kel_shift":"2B"},
+    {"id_shift":"6","kel_shift":"2C"},
+    {"id_shift":"7","kel_shift":"3A"},
+    {"id_shift":"8","kel_shift":"3B"},
+    {"id_shift":"9","kel_shift":"3C"}
+    ]
+    }
+    ,{"tb_user":
+    [
+    {"nik":"202211222","nama":"Octavia Hurley","alamat":"710-1247 Diam. Av."},
+    {"nik":"202211223","nama":"Hashim Nash","alamat":"Ap #803-3522 Lorem St."},
+    {"nik":"202211224","nama":"Alexander Stein","alamat":"745-2151 Aliquam Av."},
+    {"nik":"202211225","nama":"Moses Faulkner","alamat":"P.O. Box 958, 6840 Lacus. Street"}
+    ]
+    }
+    ,{"tb_vismen":
+    [
+    {"id_product":"2001000217","nm_product":"DG MATTE GOLD 6.5 MIC 30 GSM SLIT 10 KDS","panjang_qty":"186","qty_palet":"17","mesin":"SLITTING 7","start_produksi":"2023-08-22 15:49:00","finish_produksi":"2023-08-25 15:49:00","est_pengiriman":"2023-08-30"},
+    {"id_product":"2001000225","nm_product":"DG MATTE GOLD 6.5 MIC 30 GSM SLIT 10 KDS","panjang_qty":"372","qty_palet":"34","mesin":"SLITTING 10","start_produksi":"2023-08-21 01:43:00","finish_produksi":"2023-08-25 15:49:00","est_pengiriman":"2023-08-31"},
+    {"id_product":"2001000230","nm_product":"BRIGHT RED 9 Mic 30 GSM SLIT 10 KDS","panjang_qty":"186","qty_palet":"16","mesin":"SLITTING 7","start_produksi":"2023-08-21 11:27:00","finish_produksi":"2023-08-24 11:27:00","est_pengiriman":"2023-08-31"},
+    {"id_product":"2001000238","nm_product":"BRIGHT RED 12 Mic 30 GSM SLIT 7 KDS","panjang_qty":"203","qty_palet":"33","mesin":"SLITTING 7","start_produksi":"2023-08-21 10:59:00","finish_produksi":"2023-08-24 11:36:00","est_pengiriman":"2023-08-21"},
+    {"id_product":"2001000239","nm_product":"BRIGHT RED 12 Mic 30 GSM SLIT 10 KDS","panjang_qty":"272","qty_palet":"33","mesin":"SLITTING 10","start_produksi":"2023-08-23 11:00:00","finish_produksi":"2023-08-26 11:21:00","est_pengiriman":"2023-09-01"}
+    ]
+    }
+]
