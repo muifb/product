@@ -17,6 +17,7 @@
         <form action="/lost/store" class="px-5 py-3" method="post">
             <input type="hidden" name="nik" value="<?= $_SESSION['login']['nik']; ?>">
             <input type="hidden" name="kel_shift" value="<?= $_SESSION['login']['shift']; ?>">
+            <input type="hidden" name="id_product" value="<?= $vs['id_product']; ?>">
             <div class="row mb-3">
                 <label for="jenisLostTime" class="col-sm-3 col-form-label text-end">Jenis Lost Time</label>
                 <div class="col-sm-3">

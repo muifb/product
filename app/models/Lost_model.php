@@ -13,6 +13,7 @@ class Lost_model
     {
         // var_dump($data);
         // die;
+        $id_product = $data['id_product'];
         $nik = $data['nik'];
         $kel_shift = $data['kel_shift'];
         $kategori_lt = $data['kategori_lt'];
@@ -23,7 +24,8 @@ class Lost_model
         $jenis_lt = $data['jenis_lt'];
         $selisih_menit = $data['selisih_menit'];
         $selisih_jam = $data['selisih_jam'];
-        $this->db->query('INSERT INTO ' . $this->table . ' VALUES (null, :nik, :kel_shift, :kategori_lt, :tgl_lost, :jam_mulai, :jam_selesai, :sebab_lt, :jenis_lt, :selisih_menit, :selisih_jam)');
+        $this->db->query('INSERT INTO ' . $this->table . ' VALUES (null, :id_product, :nik, :kel_shift, :kategori_lt, :tgl_lost, :jam_mulai, :jam_selesai, :sebab_lt, :jenis_lt, :selisih_menit, :selisih_jam)');
+        $this->db->bind('id_product', $id_product);
         $this->db->bind('nik', $nik);
         $this->db->bind('kel_shift', $kel_shift);
         $this->db->bind('kategori_lt', $kategori_lt);

@@ -73,7 +73,7 @@
                 </div> -->
             </div>
         </div>
-        <a class="me-5 btn btn-outline-light btn-sm fs-6 fw-bolder" href="/auth/index">
+        <a class="me-3 btn btn-outline-light btn-sm fw-bolder" href="/auth/index">
             Login
             <i class="fa-solid fa-arrow-right-to-bracket"></i>
         </a>
