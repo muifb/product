@@ -65,9 +65,9 @@
     $availability2 = $total_shift2 != 0 ? $time2 / 420 * 100 : 0;
     $availability3 = $total_shift3 != 0 ? $time3 / 420 * 100 : 0;
 
-    $performance1 = $total_shift1 != 0 ? ($total_semua / $time1) * 100 : 0;
-    $performance2 = $total_shift2 != 0 ? ($total_semua / $time2) * 100 : 0;
-    $performance3 = $total_shift3 != 0 ? ($total_semua / $time3) * 100 : 0;
+    $performance1 = $total_shift1 != 0 ? ($total_shift1 / $time1) * 100 : 0;
+    $performance2 = $total_shift2 != 0 ? ($total_shift2 / $time2) * 100 : 0;
+    $performance3 = $total_shift3 != 0 ? ($total_shift3 / $time3) * 100 : 0;
 
     $quality1 = $total_shift1 != 0 ? ($shift1_ok / $total_shift1) * 100 : 0;
     $quality2 = $total_shift2 != 0 ? ($shift2_ok / $total_shift2) * 100 : 0;
@@ -133,9 +133,9 @@
                                     </tr>
                                     <tr>
                                         <th scope="row">Planned Shut Down</th>
-                                        <td><?= $data['search']['lost1'] / 60; ?>Jam</td>
-                                        <td><?= $data['search']['lost2'] / 60; ?>Jam</td>
-                                        <td><?= $data['search']['lost3'] / 60; ?>Jam</td>
+                                        <td><?= round($data['search']['lost1'] / 60, 1); ?>Jam</td>
+                                        <td><?= round($data['search']['lost2'] / 60, 1); ?>Jam</td>
+                                        <td><?= round($data['search']['lost3'] / 60, 1); ?>Jam</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Unplanned Shut Down</th>
@@ -261,11 +261,11 @@
                             }
                             $jumlahTotal = array_sum($all);
                             $shift = count($all);
-                            $allShift = $jumlahTotal / $shift;
+                            $allShift = $jumlahTotal != 0 ? $jumlahTotal / $shift : 0;
                             $pieChart = json_encode($chart, true);
                             ?>
                             <div class="progress mb-1" style="height: 20px;">
-                                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: <?= $allShift; ?>%" aria-valuenow="<?= $allShift; ?>" aria-valuemin="0" aria-valuemax="100"><?= $allShift; ?>%</div>
+                                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: <?= round($allShift, 1); ?>%" aria-valuenow="<?= round($allShift, 1); ?>" aria-valuemin="0" aria-valuemax="100"><?= round($allShift, 1); ?>%</div>
                             </div>
                             <!-- Pie Chart -->
                             <div class="mt-4" id="availibility"></div>
