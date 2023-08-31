@@ -46,7 +46,7 @@
             </button>
         </a>
         <h5 class="sidebar-title daily">Daily Use</h5>
-        <a class="sidebar-item proses <?= $data['judul'] == 'Laporan Produksi' ? 'active' : ''; ?>" href="/home">
+        <a class="sidebar-item proses <?= $data['judul'] == 'Laporan Produksi' || $data['judul'] == 'Create Batch' ? 'active' : ''; ?>" href="/home">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21 14H14V21H21V14Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M10 14H3V21H10V14Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
