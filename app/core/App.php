@@ -13,7 +13,7 @@ class App
         //controller
         if (!empty($url[0]) && file_exists(__DIR__ . '/../controllers/' . ucwords($url[0]) . '.php')) {
             $this->controller = ucwords($url[0]);
-            var_dump($this->controller);
+            // var_dump($this->controller);
             unset($url[0]);
         }
 
