@@ -10,9 +10,12 @@ class Home extends Controller
 
     public function index()
     {
-        $data['judul']  = 'Laporan Produksi';
-        // $data['batch']  = $this->model('Batch_model')->getBatch();
-        $data['vismen']  = $this->model('Vismen_model')->getVismenById();
+        $data  = [
+            'judul' => 'Laporan Produksi',
+            'vismen' => $this->model('Vismen_model')->getVismenById(),
+            'product' => $this->model('Product_model')->getById()
+        ];
+
         $this->view('templates/header', $data);
         $this->view('home/index', $data);
         $this->view('templates/footer');

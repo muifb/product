@@ -42,7 +42,7 @@
             </tbody>
             <tr>
                 <th class="text-end" colspan="9">#Total Semua</th>
-                <th scope="col"><?= $jumlah; ?> Output</th>
+                <th scope="col"><?= round($jumlah); ?> Output</th>
             </tr>
         </table>
     </div>

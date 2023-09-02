@@ -36,7 +36,7 @@
 <body>
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
-        <div class="container ms-7 ps-5">
+        <div class="container-fluid ms-7">
             <a class="navbar-brand" href="<?php echo BASEURL; ?>/home">Laporan Produksi</a>
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>

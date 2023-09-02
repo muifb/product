@@ -8,7 +8,7 @@
                 </div>
                 <div class="col-4 text-end">
                     <!-- <button type="button" class="btn btn-light tambah" data-bs-toggle="collapse" data-bs-target="#tambahVismen" aria-expanded="false" aria-controls="tambahVismen">Tambah</button> -->
-                    <a href="/landing/vismen" type="button" class="btn btn-light tambah">Batal</a>
+                    <a href="/landing/vismen" type="button" class="btn btn-danger">Batal</a>
                 </div>
             </div>
         </div>

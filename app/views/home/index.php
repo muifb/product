@@ -135,7 +135,7 @@
                             <div class="d-flex flex-column justify-content-between align-items-start">
                                 <h2 class="document-title">Target Produksi</h2>
 
-                                <span class="document-desc"><?= $pro['qty_palet'] ?> BOB</span>
+                                <span class="document-desc"><?= $pro['panjang_qty'] ?> BOB</span>
                             </div>
                         </div>
                     </div>
@@ -146,7 +146,7 @@
                             <div class="d-flex flex-column justify-content-between align-items-start">
                                 <h2 class="document-title">Remain Target</h2>
 
-                                <span class="document-desc">133 BOB</span>
+                                <span class="document-desc"><?= $data['product']['remain']; ?> BOB</span>
                             </div>
                         </div>
                     </div>
@@ -158,19 +158,19 @@
                             <div class="d-flex flex-column justify-content-between align-items-start">
                                 <h2 class="document-title">Delivered (OK+NC)</h2>
 
-                                <span class="document-desc">35 BOB</span>
+                                <span class="document-desc"><?= $data['product']['delivered']; ?> BOB</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="document-item">
+                    <!-- <div class="document-item">
                         <div class="d-flex justify-content-start align-items-center">
 
 
                             <div class="d-flex flex-column justify-content-between align-items-start">
                                 <h2 class="document-title">Target QTY @pallet</h2>
 
-                                <span class="document-desc">70 BOB</span>
+                                <span class="document-desc">- BOB</span>
                             </div>
                         </div>
                         <div class="document-item">
@@ -180,11 +180,11 @@
                                 <div class="d-flex flex-column justify-content-between align-items-start">
                                     <h2 class="document-title">Delivered (OK+NC)</h2>
 
-                                    <span class="document-desc">35 BOB</span>
+                                    <span class="document-desc">- BOB</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>

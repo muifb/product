@@ -1,18 +1,18 @@
 <div class="main py-4">
-    <div class="container">
-        <div class="col"><?php Flasher::flash() ?></div>
-        <div class="p-2 p-lg-3 bg-gray rounded-top ">
-            <div class="row justify-content-between">
-                <div class="col-8">
-                    <h2 class="text-light">FORM INPUT VISMEN LIST ORDER</h2>
-                </div>
-                <div class="col-4 text-end">
-                    <a href="/landing/tambah_vismen" type="button" class="btn btn-light tambah">Tambah</a>
-                </div>
+    <!-- <div class="container"> -->
+    <div class="col"><?php Flasher::flash() ?></div>
+    <div class="p-2 p-lg-3 bg-gray rounded-top ">
+        <div class="row justify-content-between">
+            <div class="col-8">
+                <h2 class="text-light">VISMEN LIST ORDER</h2>
+            </div>
+            <div class="col-4 text-end">
+                <a href="/landing/tambah_vismen" type="button" class="btn btn-light">Tambah</a>
             </div>
         </div>
     </div>
-    <div class="card my-3">
+    <!-- </div> -->
+    <div class="card">
         <div class="card-body">
             <h2 class="card-title">Vismen List Order</h2>
             <table class="table table-striped table-hover">
