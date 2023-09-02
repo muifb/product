@@ -37,44 +37,34 @@
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
         <div class="container ms-7 ps-5">
-            <a class="navbar-brand" href="<?php echo BASEURL; ?>/home">Halaman Awal</a>
+            <a class="navbar-brand" href="<?php echo BASEURL; ?>/home">Laporan Produksi</a>
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link <?php
-                                        if ($data['nav'] == 'index') {
-                                            echo 'active';
-                                        }
-                                        ?>" href="/landing/index">Home</a>
-                    <a class="nav-link <?php
-                                        if ($data['nav'] == 'product') {
-                                            echo 'active';
-                                        }
-                                        ?>" href="/landing/product">Product</a>
-                    <a class="nav-link <?php
-                                        if ($data['nav'] == 'vismen') {
-                                            echo 'active';
-                                        }
-                                        ?>" href="/landing/vismen">Vismen</a>
-                    <a class="nav-link <?php
-                                        if ($data['nav'] == 'oee') {
-                                            echo 'active';
-                                        }
-                                        ?>" href="/landing/oee">OEE</a>
-                    <!-- <a class="nav-link" href="#">Data Nc</a> -->
-                    <!-- <a class="nav-link" href="#">Data Reject</a> -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link <?php
+                                            if ($data['nav'] == 'vismen') {
+                                                echo 'active';
+                                            }
+                                            ?>" href="/landing/vismen">Vismen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?php
+                                            if ($data['nav'] == 'oee') {
+                                                echo 'active';
+                                            }
+                                            ?>" href="/landing/oee">OEE</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a class="me-3 btn btn-outline-light btn-sm" href="/auth/index">
+                        Login
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    </a>
                 </div>
-                <!--  -->
-                <!-- <div class="d-flex justify-content-end">
-                    <strong class="navbar-brand fs-6 mx-4" id=""><?= tanggal_indo(date('Y-m-d'), true); ?></strong>
-                    <strong class="navbar-brand fs-6" id="clock"></strong>
-                </div> -->
             </div>
         </div>
-        <a class="me-3 btn btn-outline-light btn-sm fw-bolder" href="/auth/index">
-            Login
-            <i class="fa-solid fa-arrow-right-to-bracket"></i>
-        </a>
+
     </nav>

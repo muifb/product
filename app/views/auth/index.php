@@ -60,7 +60,7 @@
 
             <div class="row">
                 <button class="col ms-3 me-3 btn btn-lg btn-primary" type="submit">Sign in</button>
-                <a href="/" class="col me-3 btn btn-lg btn-secondary" type="submit">Back</a>
+                <a href="/landing/vismen" class="col me-3 btn btn-lg btn-secondary" type="submit">Vismen</a>
                 <p class="mt-5 mb-3 text-muted">&copy; PKL - Laporan Product <?= date('Y'); ?></p>
             </div>
         </form>

@@ -24,6 +24,7 @@ class Landing extends Controller
             'nav' => 'oee',
             'judul' => 'OEE',
             'product' => $this->model('Vismen_model')->getVismen(),
+            'grafik' => $this->model('Product_model')->grafik(),
         ];
         $this->view('templates/landing_header', $data);
         $this->view('landing/oee', $data);
@@ -43,6 +44,16 @@ class Landing extends Controller
         $this->view('templates/landing_footer');
     }
 
+    public function tambah_vismen()
+    {
+        $data = [
+            'nav' => 'vismen',
+            'judul' => 'Vismen',
+        ];
+        $this->view('templates/landing_header', $data);
+        $this->view('landing/tambah-vismen');
+        $this->view('templates/landing_footer');
+    }
 
     public function product()
     {
@@ -60,6 +71,7 @@ class Landing extends Controller
     {
         // $this->model('Vismen_model')->insertVismen($_POST);
         // var_dump($_POST);
+        // die;
         if ($this->model('Vismen_model')->insertVismen($_POST) > 0) {
             Flasher::setFlash('Vismen', 'berhasil ditambah!.', 'success');
             header('Location: /landing/vismen');
