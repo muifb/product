@@ -74,7 +74,7 @@
                             <div class="d-flex flex-column justify-content-between align-items-start">
                                 <h2 class="document-title">Material Number</h2>
 
-                                <span class="document-desc"><?= $pro['material_numb']; ?></span>
+                                <span class="document-desc"><?= $pro['material_numb'] != null ? $pro['material_numb'] : ''; ?></span>
                             </div>
                         </div>
 
@@ -100,7 +100,7 @@
                             <div class="d-flex flex-column justify-content-between align-items-start">
                                 <h2 class="document-title">Customer Name</h2>
 
-                                <span class="document-desc"><?= $pro['customer']; ?></span>
+                                <span class="document-desc"><?= $pro['customer'] != null ? $pro['customer'] : ''; ?></span>
                             </div>
                         </div>
                     </div>
