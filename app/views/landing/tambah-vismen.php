@@ -17,7 +17,7 @@
                 <div class="row mb-3">
                     <label for="idProduct" class="col-sm-2 col-form-label">Nomor Pro</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" name="id_product" id="idProduct" required>
+                        <input type="text" class="form-control" name="id_product" id="idProduct" value="<?= $data['nopro']; ?>" required readonly>
                     </div>
                 </div>
                 <div class="row mb-3">

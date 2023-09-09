@@ -9,12 +9,14 @@ class Lost extends Controller
 
     public function index()
     {
-
-        $data['judul']  = 'Lost Time Product';
-        $data['vismen']  = $this->model('Vismen_model')->getVismenById();
-        $data['product'] = $this->model('Product_model')->getProductNc();
+        $data  = [
+            'judul' => 'Lost Time Product',
+            'lost' => $this->model('Lost_model')->lostTime()
+        ];
+        // var_dump($data['lost']);
+        // die;
         $this->view('templates/header', $data);
-        $this->view('lost/index', $data);
+        $this->view('lost/show', $data);
         $this->view('templates/footer');
     }
 
@@ -27,8 +29,18 @@ class Lost extends Controller
             exit;
         } else {
             Flasher::setFlash('Lost Time', 'gagal disimpan', 'success');
-            header('Location: /lost');
+            header('Location: /lost/create');
             exit;
         }
+    }
+
+    public function create()
+    {
+        $data['judul']  = 'Lost Time Product';
+        $data['vismen']  = $this->model('Vismen_model')->getVismenById();
+        $data['product'] = $this->model('Product_model')->getProductNc();
+        $this->view('templates/header', $data);
+        $this->view('lost/index', $data);
+        $this->view('templates/footer');
     }
 }

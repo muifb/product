@@ -13,7 +13,7 @@
     <div class="row justify-content-center">
         <!-- Tanggal jam -->
         <div class="row justify-content-center">
-            <div class="col-2">
+            <!-- <div class="col-2">
                 <strong>Material Number</strong>
                 <form>
                     <select class="form-select" name="matrNumber" id="matrNumber" aria-label="Default select example">
@@ -21,7 +21,7 @@
                         <option value="321-000025">321-000025</option>
                     </select>
                 </form>
-            </div>
+            </div> -->
             <div class="col-1">
                 <strong>Status</strong>
                 <form>
@@ -45,8 +45,8 @@
                     <input type="datetime-local" class="form-control" id="flatpickr2" placeholder="Select Date...">
                 </form>
             </div>
-            <div class="col-1">
-                <strong>Joint</strong>
+            <div class="col-2">
+                <strong>Total Sambungan</strong>
                 <form>
                     <select class="form-select" name="pilAngka" id="pilAngka" aria-label="Default select example">
                         <option value="">Pilih</option>
@@ -99,8 +99,8 @@
                                     <input type="text" name="product[]" readonly class="form-control-plaintext" id="staticEmail" value="<?= $bt['id_product']; ?>">
                                 </td>
                                 <td>
-                                    <div class="input-group  lebar-8">
-                                        <input type="text" name="matrial[]" id="" value="" class="form-control matrial text-center">
+                                    <div class="input-group  lebar-11">
+                                        <input readonly type="text" name="matrial[]" id="" value="<?= $bt['material_numb']; ?>" class="form-control matrial text-center">
                                     </div>
                                 </td>
                                 <td>
@@ -109,12 +109,12 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="input-group lebar-11">
+                                    <div class="input-group lebar-12">
                                         <input type="text" name="start[]" id="start[]" class="form-control start">
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="input-group lebar-11">
+                                    <div class="input-group lebar-12">
                                         <input type="text" name="finish[]" id="finish[]" class="form-control finish">
                                     </div>
                                 </td>
@@ -134,7 +134,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" name="defect[]" id="" aria-label="Default select example">
+                                    <select class="form-select jenis-defect" name="defect[]" id="" aria-label="Default select example">
                                         <option value="Defect">Defect</option>
                                         <option value="Keriput">Keriput</option>
                                         <option value="Material">Material</option>
@@ -163,4 +163,76 @@
     ?>
     </div>
 </div>
+
+<script>
+    const statusPil = document.querySelector('#pilStatus');
+    const defect = document.getElementsByClassName("jenis-defect");
+    statusPil.addEventListener('change', () => {
+        const selectedValues = [].filter
+            .call(statusPil.options, option => option.selected)
+            .map(option => option.text);
+        const bawaan = [
+            "Defect"
+        ];
+        const ok = [
+            "No Defect"
+        ];
+        const nc = [
+            "Defect",
+            "Keriput",
+            "Material",
+            "Out Spec",
+            "Spot",
+            "Print Coating",
+            "Join",
+            "Trim",
+            "Marking",
+            "Startup"
+        ];
+        const reject = [
+            "Defect",
+            "Keriput",
+            "Material",
+            "Out Spec",
+            "Spot",
+            "Print Coating",
+            "Join",
+            "Trim",
+            "Marking",
+            "Startup"
+        ];
+        if (selectedValues == "OK") {
+            const options = ok.map(ok => {
+                // const value = ok.toLowerCase();
+                return `<option value="${ok}">${ok}</option>`;
+            });
+            for (var i = 0; i < defect.length; i++) {
+                defect[i].innerHTML = options;
+            }
+        } else if (selectedValues == "NC") {
+            const options = nc.map(nc => {
+                // const value = nc.toLowerCase();
+                return `<option value="${nc}">${nc}</option>`;
+            });
+            for (var i = 0; i < defect.length; i++) {
+                defect[i].innerHTML = options;
+            }
+        } else if (selectedValues == "Reject") {
+            const options = reject.map(reject => {
+                // const value = reject.toLowerCase();
+                return `<option value="${reject}">${reject}</option>`;
+            });
+            for (var i = 0; i < defect.length; i++) {
+                defect[i].innerHTML = options;
+            }
+        } else {
+            const options = bawaan.map(b => {
+                return `<option value="">${b}</option>`;
+            });
+            for (var i = 0; i < defect.length; i++) {
+                defect[i].innerHTML = options;
+            }
+        }
+    })
+</script>
 <!-- </div> -->

@@ -244,4 +244,24 @@ class Vismen_model
         ];
         return $data;
     }
+
+    public function getNopro()
+    {
+        $query  = "SELECT id_product as nomor FROM tb_vismen ORDER BY id_product DESC LIMIT 1";
+        $this->db->query($query);
+        $cek = $this->db->single();
+        if ($this->db->rowCount() > 0) {
+            $no = $cek['nomor'];
+            $no++;
+            $kode = sprintf("%010d", $no);
+
+            return $kode;
+        } else {
+            $no = 0;
+            $no++;
+            $kode = sprintf("%010d", $no);
+
+            return $kode;
+        }
+    }
 }

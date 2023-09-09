@@ -25,7 +25,7 @@
 
     .container-cari {
         width: 100%;
-        max-width: 70em !important;
+        max-width: 100em !important;
         height: 75vh;
         padding-right: var(--bs-gutter-x, 9.5rem);
         padding-left: var(--bs-gutter-x, 9.5rem);
@@ -39,10 +39,10 @@
             <h1 class="text-light">OEE</h1>
         </div>
         <div class="p-2 p-lg-3 bg-light-gray rounded-bottom">
-            <form action="/landing/search" class="mx-4 p-3" id="formOee" method="post">
+            <form action="/oee/search" class="mx-4 p-3" id="formOee" method="post">
                 <div class="row mb-3">
                     <label for="plant" class="col-sm-3 col-form-label fw-bolder">PLANT</label>
-                    <div class="col-sm-2">
+                    <div class="col-sm-3">
                         <select class="form-select" id="plant" name="plant" required>
                             <option value="2500">2500</option>
                             <option value="2400">2400</option>

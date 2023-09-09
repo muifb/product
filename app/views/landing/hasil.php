@@ -1,5 +1,10 @@
 <!-- Page content-->
 <style>
+    .main {
+        margin-left: 7em;
+        margin-right: 6em;
+    }
+
     table {
         border: 2px solid black;
         border-collapse: collapse;
@@ -115,7 +120,7 @@
         <div class="p-2 p-lg-3 bg-gray rounded-top">
             <div class="row justify-content-start">
                 <div class="col-4">
-                    <a href="/landing/oee" class="btn btn-danger"><i class="fa-solid fa-reply"></i> Back</a>
+                    <a href="/oee" class="btn btn-danger"><i class="fa-solid fa-reply"></i> Back</a>
                 </div>
                 <div class="col-4 text-center">
                     <h1 class="text-light">OEE</h1>

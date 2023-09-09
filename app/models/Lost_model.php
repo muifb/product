@@ -39,4 +39,14 @@ class Lost_model
         $this->db->execute();
         return $this->db->rowCount();
     }
+
+    public function lostTime()
+    {
+        $kel = substr($_SESSION['login']['shift'], 0, 1);
+        // $this->db->query('SELECT * FROM `tb_losttime` WHERE id_product = :id_product AND kel_shift LIKE :kel_shift ORDER BY id_lost ASC');
+        $this->db->query('SELECT * FROM `tb_losttime` WHERE id_product = :id_product ORDER BY id_lost ASC');
+        $this->db->bind('id_product', $_SESSION['login']['id_pro']);
+        // $this->db->bind('kel_shift', $kel . '%');
+        return $this->db->resultSet();
+    }
 }

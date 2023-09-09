@@ -19,7 +19,7 @@
             <input type="hidden" name="kel_shift" value="<?= $_SESSION['login']['shift']; ?>">
             <input type="hidden" name="id_product" value="<?= $vs['id_product']; ?>">
             <div class="row mb-3">
-                <label for="jenisLostTime" class="col-sm-3 col-form-label text-end">Jenis Lost Time</label>
+                <label for="jenisLostTime" class="col-sm-4 col-form-label text-end">Jenis Lost Time</label>
                 <div class="col-sm-3">
                     <select class="form-select jenis" id="jenisLostTime" name="kategori_lt" required>
                         <option value="LOST TIME PRODUCTION">PRODUCTION</option>
@@ -30,7 +30,7 @@
             </div>
 
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label text-end">Tanggal Lost Time</label>
+                <label class="col-sm-4 col-form-label text-end">Tanggal Lost Time</label>
                 <div class="col-sm-3">
                     <input type="datetime-local" class="flatpickr-input" name="tgl_lost" id="tanggalLost" placeholder="Select Date Start..." required>
                     <div class="row mt-2">
@@ -46,13 +46,13 @@
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="reasonLt" class="col-sm-3 col-form-label text-end">Sebab Lost Time</label>
+                <label for="reasonLt" class="col-sm-4 col-form-label text-end">Sebab Lost Time</label>
                 <div class="col-sm-4">
                     <input type="text" name="sebab_lt" class="form-control" required>
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="reasonLt" class="col-sm-3 col-form-label text-end">Reason Lost Time</label>
+                <label for="reasonLt" class="col-sm-4 col-form-label text-end">Reason Lost Time</label>
                 <div class="col-sm-4">
                     <select class="form-select" id="reasonLt" name="jenis_lt" required>
                         <option value="human error">HUMAN ERROR</option>
@@ -66,16 +66,24 @@
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="selisihMinute" class="col-sm-3 col-form-label text-end">Lost Time Duration(minute)</label>
+                <label for="selisihMinute" class="col-sm-4 col-form-label text-end">Lost Time Duration(minute)</label>
                 <div class="col-sm-2">
                     <input type="text" class="form-control" name="selisih_menit" id="selisihMinute" required readonly>
                 </div>
             </div>
-            <div class="row mb-3">
-                <label for="selisihHour" class="col-sm-3 col-form-label text-end">Lost Time Duration(hour)</label>
+            <div class="row mb-1">
+                <label for="selisihHour" class="col-sm-4 col-form-label text-end">Lost Time Duration(hour)</label>
                 <div class="col-sm-2">
                     <input type="text" class="form-control" name="selisih_jam" id="selisihHour" required readonly>
-                    <button type="submit" class="btn btn-primary mt-4">Simpan</button>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-4">&nbsp;</div>
+                <div class="col-sm-8">
+                    <div class="text-start">
+                        <button type="submit" class="btn btn-primary mt-4">Simpan</button>
+                        <a href="/lost" class="btn btn-danger mt-4">Batal</a>
+                    </div>
                 </div>
             </div>
         </form>

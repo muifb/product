@@ -50,13 +50,7 @@
                                             }
                                             ?>" href="/landing/vismen">Vismen</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?php
-                                            if ($data['nav'] == 'oee') {
-                                                echo 'active';
-                                            }
-                                            ?>" href="/landing/oee">OEE</a>
-                    </li>
+                    <!--  -->
                 </ul>
                 <div class="d-flex">
                     <a class="me-3 btn btn-outline-light btn-sm" href="/auth/index">

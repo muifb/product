@@ -79,10 +79,10 @@ $(function () {
     const angka = $("#pilAngka").val();
     $(".angka").val(angka);
   });
-  $("#matrNumber").on("change", function () {
-    const material = $("#matrNumber").val();
-    $(".matrial").val(material);
-  });
+  // $("#matrNumber").on("change", function () {
+  //   const material = $("#matrNumber").val();
+  //   $(".matrial").val(material);
+  // });
 
   $("#flatpickr1").flatpickr({
     enableTime: true,

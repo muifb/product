@@ -23,14 +23,7 @@ class Landing extends Controller
 
     public function oee()
     {
-        $data = [
-            'nav' => 'oee',
-            'judul' => 'OEE',
-            'product' => $this->model('Vismen_model')->getVismen()
-        ];
-        $this->view('templates/landing_header', $data);
-        $this->view('landing/oee', $data);
-        $this->view('templates/landing_footer');
+        // 
     }
 
     public function vismen()
@@ -50,9 +43,10 @@ class Landing extends Controller
         $data = [
             'nav' => 'vismen',
             'judul' => 'Vismen',
+            'nopro' => $this->model('Vismen_model')->getNopro()
         ];
         $this->view('templates/landing_header', $data);
-        $this->view('landing/tambah-vismen');
+        $this->view('landing/tambah-vismen', $data);
         $this->view('templates/landing_footer');
     }
 
@@ -107,14 +101,6 @@ class Landing extends Controller
 
     public function search()
     {
-        $data = [
-            'nav' => 'oee',
-            'judul' => 'OEE',
-            'search' => $this->model('Vismen_model')->getSearch(),
-        ];
-        $this->view('templates/landing_header', $data);
-        $this->view('landing/hasil', $data);
-        $this->view('templates/landing_footer');
         // echo json_encode($_POST);
     }
 
