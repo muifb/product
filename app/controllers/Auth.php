@@ -26,10 +26,9 @@ class Auth extends Controller
         }
     }
 
+    // proses login admin ppic
     public function loginAdmin()
     {
-        // var_dump($_POST);
-        // die;
         if (!empty($_POST)) {
             $this->model('Auth_model')->prosesLoginAdmin($_POST);
         } else {

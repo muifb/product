@@ -31,6 +31,7 @@
 <body class="text-center bg-primary">
 
     <div class="form-signin bg-light">
+        <!-- form login admin ppic -->
         <form action="/auth/loginAdmin" method="POST">
             <img class="mb-4" src="<?= BASEURL; ?>/assets/img/global/logo.svg" alt="" width="72" height="57">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
