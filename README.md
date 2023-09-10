@@ -6,8 +6,8 @@ Repository untuk program skripsi Laporan Produksi
 
 Fitur yang tersedia :
 
-=> Vismen List Order <br>
 <<<<<<< HEAD
+=> Vismen List Order <br>
 => Tambah Vismen List Order <br>
 => Cetak Batch Dalam <br>
 => Posting Good Received <br>
@@ -21,18 +21,5 @@ Fitur yang tersedia :
 => Login Produksi <br>
 => Login PPIC <br>
 =======
-=> Tambah Vismen List Order
-=> Cetak Batch Dalam
-=> Posting Good Received
-=> Edit Good Received
-=> Cetak Batch Luar
-=> List Product OK
-=> List Product NC
-=> List Product Reject
-=> Data Lost Time
-=> Tambah Data Lost Time
-=> Login Produksi
-=> Login PPIC
->>>>>>> cad2f3738012b645d16223c7b9a06c8bd02dcc4c
 
 Untuk penggunaan atau pemasangan silahkan buka halaman Dokumentasi.txt
