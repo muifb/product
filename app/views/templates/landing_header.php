@@ -37,7 +37,7 @@
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
         <div class="container-fluid ms-7">
-            <a class="navbar-brand" href="<?php echo BASEURL; ?>/home">Laporan Produksi</a>
+            <a class="navbar-brand" href="<?php echo BASEURL; ?>">Laporan Produksi</a>
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -48,7 +48,7 @@
                                             if ($data['nav'] == 'vismen') {
                                                 echo 'active';
                                             }
-                                            ?>" href="/landing/vismen">Vismen</a>
+                                            ?>" href="<?php echo BASEURL; ?>/../landing/vismen">Vismen</a>
                     </li>
                     <!--  -->
                 </ul>
@@ -63,7 +63,7 @@
                     <?php
                     } else {
                     ?>
-                        <a class="me-3 btn btn-outline-light btn-sm" href="/auth/index">
+                        <a class="me-3 btn btn-outline-light btn-sm" href="<?php echo BASEURL; ?>/../auth/index">
                             Login
                             <i class="fa-solid fa-arrow-right-to-bracket"></i>
                         </a>

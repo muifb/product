@@ -1,5 +1,7 @@
 [
-    {"tb_batch":
+    {
+        "_comment":"example data tb_batch",
+        "tb_batch":
     [
     {"id_batch":"37","nm_batch":"K00000001","id_shift":"3","nik":"202211222","id_product":"2001000238","tgl_cetak":"2023-08-21 12:24:41","is_post":"2"},
     {"id_batch":"38","nm_batch":"K00000002","id_shift":"3","nik":"202211222","id_product":"2001000238","tgl_cetak":"2023-08-21 12:24:41","is_post":"2"},
@@ -15,7 +17,9 @@
     {"id_batch":"48","nm_batch":"K00000012","id_shift":"7","nik":"202211224","id_product":"2001000225","tgl_cetak":"2023-08-22 15:51:01","is_post":"2"}
     ]
     }
-    ,{"tb_losttime":
+    ,{
+        "_comment":"example data tb_losttime",
+        "tb_losttime":
     [
     {"id_lost":"1","nik":"20221121","kel_shift":"1C","kategori_lt":"LOST TIME MAINTENANCE","tgl_lost":"2023-08-09","jam_mulai":"09:20:00","jam_selesai":"10:10:00","sebab_lt":"Perbaikan mesin","jenis_lt":"Breakdown mechanical","selisih_menit":"50","selisih_jam":"0"},
     {"id_lost":"2","nik":"20221122","kel_shift":"2B","kategori_lt":"LOST TIME PRODUKSI","tgl_lost":"2023-08-08","jam_mulai":"08:00:00","jam_selesai":"09:00:00","sebab_lt":"CHANGE OVER JOB","jenis_lt":"CHANGE OVER JOB PRODUCT","selisih_menit":"0","selisih_jam":"1"},
@@ -29,7 +33,9 @@
     {"id_lost":"10","nik":"20221229","kel_shift":"3A","kategori_lt":"LOST TIME MAINTENANCE","tgl_lost":"2023-08-12","jam_mulai":"08:20:00","jam_selesai":"10:50:00","sebab_lt":"Piston rewinder tidak berfungsi perbaikan by mtc","jenis_lt":"Electrical Breakdown Maintenance","selisih_menit":"30","selisih_jam":"2"}
     ]
     }
-    ,{"tb_product":
+    ,{
+        "_comment":"example data tb_product",
+        "tb_product":
     [
     {"id_product":"2001000211","nm_product":"BRIGHT SLVR 12 MIC 30 GSM-1050 SLIT 10 KDS"},
     {"id_product":"2001000212","nm_product":"BRIGHT SLVR 12 MIC 30 GSM-1075 SLIT 10 KDS"},
@@ -44,7 +50,9 @@
     {"id_product":"2001000240","nm_product":"DG MATTE GOLD 9.5 MIC 40 GSM SLIT 7 KDS"}
     ]
     }
-    ,{"tb_report":
+    ,{
+        "_comment":"example data tb_report",
+        "tb_report":
     [
     {"id_report":"31","nm_batch":"K00000001","material":"321-000025","mulai_pro":"2023-08-21 12:28:37","selesai_pro":"2023-08-21 16:28:37","status_pro":"OK","angka":"2","kat_defect":"Defect"},
     {"id_report":"32","nm_batch":"K00000002","material":"321-000025","mulai_pro":"2023-08-21 12:28:37","selesai_pro":"2023-08-21 16:28:37","status_pro":"NC","angka":"2","kat_defect":"Trim"},
@@ -60,7 +68,9 @@
     {"id_report":"42","nm_batch":"K00000012","material":"321-000025","mulai_pro":"2023-08-22 15:51:22","selesai_pro":"2023-08-22 17:51:22","status_pro":"NC","angka":"2","kat_defect":"Defect"}
     ]
     }
-    ,{"tb_shift":
+    ,{
+        "_comment":"example data tb_shift",
+        "tb_shift":
     [
     {"id_shift":"1","kel_shift":"1A"},
     {"id_shift":"2","kel_shift":"1B"},
@@ -73,7 +83,9 @@
     {"id_shift":"9","kel_shift":"3C"}
     ]
     }
-    ,{"tb_user":
+    ,{
+        "_comment":"example data tb_user",
+        "tb_user":
     [
     {"nik":"202211222","nama":"Octavia Hurley","alamat":"710-1247 Diam. Av."},
     {"nik":"202211223","nama":"Hashim Nash","alamat":"Ap #803-3522 Lorem St."},
@@ -81,7 +93,9 @@
     {"nik":"202211225","nama":"Moses Faulkner","alamat":"P.O. Box 958, 6840 Lacus. Street"}
     ]
     }
-    ,{"tb_vismen":
+    ,{
+        "_comment":"example data tb_vismen",
+        "tb_vismen":
     [
     {"id_product":"2001000217","nm_product":"DG MATTE GOLD 6.5 MIC 30 GSM SLIT 10 KDS","panjang_qty":"186","qty_palet":"17","mesin":"SLITTING 7","start_produksi":"2023-08-22 15:49:00","finish_produksi":"2023-08-25 15:49:00","est_pengiriman":"2023-08-30"},
     {"id_product":"2001000225","nm_product":"DG MATTE GOLD 6.5 MIC 30 GSM SLIT 10 KDS","panjang_qty":"372","qty_palet":"34","mesin":"SLITTING 10","start_produksi":"2023-08-21 01:43:00","finish_produksi":"2023-08-25 15:49:00","est_pengiriman":"2023-08-31"},

@@ -31,7 +31,7 @@
 <body class="text-center bg-primary">
 
     <div class="form-signin bg-light">
-        <form action="/auth/login" method="POST">
+        <form action="<?php echo BASEURL; ?>/../auth/login" method="POST">
             <img class="mb-4" src="<?= BASEURL; ?>/assets/img/global/logo.svg" alt="" width="72" height="57">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
             <div class="row">
@@ -60,23 +60,14 @@
 
             <div class="row">
                 <button class="col ms-3 me-3 btn btn-lg btn-primary" type="submit">Sign in</button>
-                <a href="/landing/vismen" class="col me-3 btn btn-lg btn-secondary" type="submit">Vismen</a>
-                <p class="mt-5 mb-3 text-muted">&copy; PKL - Laporan Product <?= date('Y'); ?></p>
+                <a href="<?php echo BASEURL; ?>/../landing/vismen" class="col me-3 btn btn-lg btn-secondary" type="submit">Vismen</a>
+                <p class="mt-5 mb-3 text-muted">&copy; Skripsi - Laporan Product <?= date('Y'); ?></p>
             </div>
         </form>
     </div>
 
-    <script>
-        var BASEURL = '<?= BASEURL; ?>';
-    </script>
-    <script src="<?= BASEURL; ?>/assets/js/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
-    <script src="<?= BASEURL; ?>/assets/js/flatpickr.min.js"></script>
-    <script src="<?= BASEURL; ?>/assets/js/sweetalert2.all.min.js"></script>
-    <script src="<?= BASEURL; ?>/assets/Datatables/datatables.min.js"></script>
-    <script src="<?= BASEURL; ?>/assets/Datatables/DataTables/js/dataTables.bootstrap5.min.js"></script>
-    <script src="<?= BASEURL; ?>/assets/js/script.js"></script>
 </body>
 
 </html>

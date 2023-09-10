@@ -11,7 +11,15 @@ MANUAL PEMASANGAN
 
 Buka Browser favorit anda, dan ketik di urlnya http://localhost:8000 -> enter
 
-NIK :
+update ->   Penambahan login admin ppic untuk melakuan tambah vismen list order.
+            Ketika diklik tambah akan muncul login Admin PPIC,
+            silahkan masukkan NIK PPIC yang terdaftar untuk melakukan insert/Penambahan Vismen list order.
+            Ketika dalam keadaan login PPIC tidak akan bisa masuk kehalaman produksi,
+            untuk bisa melakukan produksi harus logout dulu dari halaman PPIC,
+            dan kemudian login menggunakan NIK bagian produksi agar bisa melakukan/masuk
+            ke halaman produksi.
+
+NIK PRODUKSI:
 202211222
 202211223
 202211224
