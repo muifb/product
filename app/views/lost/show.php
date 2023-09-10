@@ -23,21 +23,32 @@
             </thead>
 
             <tbody>
-                <?php $nomor = 1;
-                foreach ($data['lost'] as $lost) : ?>
+                <?php
+                if (empty($data['lost'])) {
+                ?>
                     <tr>
-                        <th scope="row"><?= $nomor++; ?></th>
-                        <!-- <td><?= $lost['id_product']; ?></td> -->
-                        <td class="text-center"><?= $lost['nik']; ?></td>
-                        <td class="text-center"><?= $lost['kel_shift']; ?></td>
-                        <td><?= substr($lost['kategori_lt'], 10); ?></td>
-                        <td><?= $lost['jam_mulai']; ?></td>
-                        <td><?= $lost['jam_selesai']; ?></td>
-                        <td class="text-center"><?= $lost['sebab_lt']; ?></td>
-                        <td><?= $lost['jenis_lt']; ?></td>
-                        <td><?= $lost['tgl_lost']; ?></td>
+                        <td colspan="9" class="text-center document-desc">
+                            <h5><i>Tidak ada Lost Time untuk ditampilkan dari Pro <?= $_SESSION['login']['id_pro']; ?>.</i></h5>
+                        </td>
                     </tr>
-                <?php endforeach; ?>
+                    <?php
+                } else {
+                    $nomor = 1;
+                    foreach ($data['lost'] as $lost) : ?>
+                        <tr>
+                            <th scope="row"><?= $nomor++; ?></th>
+                            <!-- <td><?= $lost['id_product']; ?></td> -->
+                            <td class="text-center"><?= $lost['nik']; ?></td>
+                            <td class="text-center"><?= $lost['kel_shift']; ?></td>
+                            <td><?= substr($lost['kategori_lt'], 10); ?></td>
+                            <td><?= $lost['jam_mulai']; ?></td>
+                            <td><?= $lost['jam_selesai']; ?></td>
+                            <td class="text-center"><?= $lost['sebab_lt']; ?></td>
+                            <td><?= $lost['jenis_lt']; ?></td>
+                            <td><?= $lost['tgl_lost']; ?></td>
+                        </tr>
+                <?php endforeach;
+                } ?>
             </tbody>
         </table>
     </div>

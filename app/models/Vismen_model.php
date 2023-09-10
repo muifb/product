@@ -247,19 +247,21 @@ class Vismen_model
 
     public function getNopro()
     {
-        $query  = "SELECT id_product as nomor FROM tb_vismen ORDER BY id_product DESC LIMIT 1";
+        $query  = "SELECT RIGHT (id_product, 6) as nomor FROM tb_vismen ORDER BY RIGHT (id_product, 6) DESC LIMIT 1";
         $this->db->query($query);
         $cek = $this->db->single();
         if ($this->db->rowCount() > 0) {
+            $awal = 2001;
             $no = $cek['nomor'];
             $no++;
-            $kode = sprintf("%010d", $no);
+            $kode = $awal . sprintf("%06d", $no);
 
             return $kode;
         } else {
+            $awal = 2001;
             $no = 0;
             $no++;
-            $kode = sprintf("%010d", $no);
+            $kode = $awal . sprintf("%06d", $no);
 
             return $kode;
         }

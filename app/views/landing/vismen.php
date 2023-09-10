@@ -30,21 +30,30 @@
                 </thead>
 
                 <tbody>
-                    <?php $nomor = 1;
-                    // $date = $data['product'];
-                    // $time = new DateTime($date['mulai_pro']);
-                    foreach ($data['vismen'] as $vs) : ?>
+                    <?php
+                    if (empty($data['vismen'])) {
+                    ?>
                         <tr>
-                            <td><?= $nomor++; ?></td>
-                            <td><?= $vs['nm_product']; ?></td>
-                            <td><?= $vs['id_product']; ?></td>
-                            <td><?= $vs['panjang_qty']; ?></td>
-                            <td><?= $vs['qty_palet']; ?></td>
-                            <td><?= tgl_indo($vs['start_produksi'], true); ?></td>
-                            <td><?= tgl_indo($vs['finish_produksi'], true); ?></td>
-                            <td><?= tgl_indo($vs['est_pengiriman']); ?></td>
+                            <td colspan="8" class="text-center document-desc">
+                                <h5><i>Tidak ada data untuk ditampilkan.</i></h5>
+                            </td>
                         </tr>
-                    <?php endforeach; ?>
+                        <?php
+                    } else {
+                        $nomor = 1;
+                        foreach ($data['vismen'] as $vs) : ?>
+                            <tr>
+                                <td><?= $nomor++; ?></td>
+                                <td><?= $vs['nm_product']; ?></td>
+                                <td><?= $vs['id_product']; ?></td>
+                                <td><?= $vs['panjang_qty']; ?></td>
+                                <td><?= $vs['qty_palet']; ?></td>
+                                <td><?= tgl_indo($vs['start_produksi'], true); ?></td>
+                                <td><?= tgl_indo($vs['finish_produksi'], true); ?></td>
+                                <td><?= tgl_indo($vs['est_pengiriman']); ?></td>
+                            </tr>
+                    <?php endforeach;
+                    } ?>
                 </tbody>
             </table>
         </div>

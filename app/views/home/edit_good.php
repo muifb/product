@@ -95,7 +95,7 @@
                     <div class="row">
                         <div class="col">
                             <label for="message-text" class="col-form-label">Matr Number :</label>
-                            <input type="text" class="form-control" name="modalMaterial" id="modalMaterial">
+                            <input type="text" class="form-control" name="modalMaterial" id="modalMaterial" readonly>
                         </div>
                         <div class="col">
                             <label for="message-text" class="col-form-label">Status :</label>
@@ -108,7 +108,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <label for="message-text" class="col-form-label">Joint :</label>
+                            <label for="message-text" class="col-form-label">Total Sambungan :</label>
                             <input type="text" class="form-control" name="modalAngka" id="modalAngka">
                         </div>
                         <div class="col">
@@ -124,6 +124,7 @@
                         <div class="col">
                             <label for="message-text" class="col-form-label">Defect :</label>
                             <select class="form-select" name="modalDefect" id="modalDefect" aria-label="Default select example">
+                                <option value="No Defect">No Defect</option>
                                 <option value="Defect">Defect</option>
                                 <option value="Keriput">Keriput</option>
                                 <option value="Material">Material</option>

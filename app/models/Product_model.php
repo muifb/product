@@ -12,8 +12,8 @@ class Product_model
 
     public function getProduct()
     {
-        $this->db->query('SELECT * FROM tb_product ORDER BY id_product DESC');
-        return $this->db->resultSet();
+        // $this->db->query('SELECT * FROM tb_product ORDER BY id_product DESC');
+        // return $this->db->resultSet();
     }
 
     public function getAllProduct()
@@ -51,9 +51,9 @@ class Product_model
     public function getProductById($id)
     {
         // return $id;
-        $this->db->query('SELECT * FROM tb_product WHERE id_product = :id_product');
-        $this->db->bind('id_product', $id);
-        return $this->db->single();
+        // $this->db->query('SELECT * FROM tb_product WHERE id_product = :id_product');
+        // $this->db->bind('id_product', $id);
+        // return $this->db->single();
     }
 
     public function resendReportById($data)
@@ -85,13 +85,13 @@ class Product_model
     {
         // var_dump($data);
         // die;
-        $id_product = $data['id_product'];
-        $nm_product = $data['nm_product'];
-        $this->db->query('INSERT INTO ' . $this->table . ' VALUES (:id_product, :nm_product)');
-        $this->db->bind('id_product', $id_product);
-        $this->db->bind('nm_product', $nm_product);
-        $this->db->execute();
-        return $this->db->rowCount();
+        // $id_product = $data['id_product'];
+        // $nm_product = $data['nm_product'];
+        // $this->db->query('INSERT INTO ' . $this->table . ' VALUES (:id_product, :nm_product)');
+        // $this->db->bind('id_product', $id_product);
+        // $this->db->bind('nm_product', $nm_product);
+        // $this->db->execute();
+        // return $this->db->rowCount();
     }
 
     public function getById()
