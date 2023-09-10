@@ -53,10 +53,23 @@
                     <!--  -->
                 </ul>
                 <div class="d-flex">
-                    <a class="me-3 btn btn-outline-light btn-sm" href="/auth/index">
-                        Login
-                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                    </a>
+                    <?php
+                    if (isset($_SESSION['login-admin'])) {
+                    ?>
+                        <a class="me-3 btn btn-outline-light btn-sm" href="/auth/logout">
+                            Logout
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        </a>
+                    <?php
+                    } else {
+                    ?>
+                        <a class="me-3 btn btn-outline-light btn-sm" href="/auth/index">
+                            Login
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        </a>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>

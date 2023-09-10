@@ -41,4 +41,20 @@ class Auth_model
             exit;
         }
     }
+
+    public function prosesLoginAdmin($data)
+    {
+        $this->db->query('SELECT * FROM tb_adminppic WHERE nik_ppic = :nik_ppic');
+        $this->db->bind('nik_ppic', $data['nik_ppic']);
+        $hasil  =   $this->db->single();
+        if ($this->db->rowCount() == 1) {
+            Signin::setLoginAdmin($hasil['nik_ppic'], $hasil['nama'], $hasil['alamat']);
+            header('Location:/landing/tambah_vismen');
+            exit;
+        } else {
+            Flasher::setFlash('NIK ' . $data['nik_ppic'], 'tidak ditemukan. SIlahkan masukkan yang lain.', 'danger');
+            header('Location: /auth/ppic');
+            exit;
+        }
+    }
 }

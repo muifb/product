@@ -15,6 +15,15 @@ class Signin
         ];
     }
 
+    public static function setLoginAdmin($nik, $nama, $alamat)
+    {
+        $_SESSION['login-admin'] = [
+            'nik' => $nik,
+            'nama' => $nama,
+            'alamat' => $alamat
+        ];
+    }
+
     public static function login()
     {
         if (isset($_SESSION['login'])) {
@@ -37,6 +46,22 @@ class Signin
         //     header('Location: /auth/trial');
         //     exit;
         // }
+    }
+
+    public static function loginAdmin()
+    {
+        if (isset($_SESSION['login-admin'])) {
+            header('Location: /landing/vismen');
+            exit;
+        }
+    }
+
+    public static function isLoginAdmin()
+    {
+        if (!isset($_SESSION['login-admin'])) {
+            header('Location: /auth/ppic');
+            exit;
+        }
     }
 
     public static function isActive()

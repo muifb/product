@@ -27,6 +27,27 @@ USE `db_produksi`;
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tb_adminppic`
+--
+
+CREATE TABLE `tb_adminppic` (
+  `nik_ppic` int(16) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `alamat` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_adminppic`
+--
+
+INSERT INTO `tb_adminppic` (`nik_ppic`, `nama`, `alamat`) VALUES
+(202211335, 'Purwa Uwais', 'Jln. Baiduri No. 410, Gorontalo 14639, Aceh'),
+(202211336, 'Raisa Utami', 'Gg. Basmol Raya No. 470, Tanjungbalai 33180, Kepri'),
+(202211337, 'Dacin Prasetyo', 'Kpg. Siliwangi No. 193, Bukittinggi 93691, Jateng');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tb_batch`
 --
 

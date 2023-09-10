@@ -9,21 +9,12 @@ class Landing extends Controller
 
     public function index()
     {
-        $data = [
-            'nav' => 'index',
-            'judul' => 'Home'
-        ];
-        // $this->view('templates/landing_header', $data);
-        // $this->view('landing/index', $data);
-        // $this->view('templates/landing_footer');
-        echo "<pre>";
-        var_dump($data);
-        echo "</pre>";
+        $this->view('404/404');
     }
 
     public function oee()
     {
-        // 
+        $this->view('404/404');
     }
 
     public function vismen()
@@ -40,6 +31,7 @@ class Landing extends Controller
 
     public function tambah_vismen()
     {
+        Signin::isLoginAdmin();
         $data = [
             'nav' => 'vismen',
             'judul' => 'Vismen',
@@ -52,24 +44,11 @@ class Landing extends Controller
 
     public function product()
     {
-        $data = [
-            'nav' => 'product',
-            'judul' => 'Product',
-            'product' => $this->model('Vismen_model')->getVismen()
-        ];
-        // $this->view('templates/landing_header', $data);
-        // $this->view('landing/product', $data);
-        // $this->view('templates/landing_footer');
-        echo "<pre>";
-        var_dump($data);
-        echo "</pre>";
+        $this->view('404/404');
     }
 
     public function store()
     {
-        // $this->model('Vismen_model')->insertVismen($_POST);
-        // var_dump($_POST);
-        // die;
         if ($this->model('Vismen_model')->insertVismen($_POST) > 0) {
             Flasher::setFlash('Vismen', 'berhasil ditambah!.', 'success');
             header('Location: /landing/vismen');
@@ -93,15 +72,12 @@ class Landing extends Controller
         //     header('Location: /landing/product');
         //     exit;
         // }
-        echo "<pre>";
-        var_dump($_POST);
-        echo "</pre>";
-        die;
+        $this->view('404/404');
     }
 
     public function search()
     {
-        // echo json_encode($_POST);
+        $this->view('404/404');
     }
 
     public function getProduct()
