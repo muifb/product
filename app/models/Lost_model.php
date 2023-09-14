@@ -11,8 +11,6 @@ class Lost_model
     }
     public function insertLost($data)
     {
-        // var_dump($data);
-        // die;
         $id_product = $data['id_product'];
         $nik = $data['nik'];
         $kel_shift = $data['kel_shift'];

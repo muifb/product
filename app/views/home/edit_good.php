@@ -68,7 +68,7 @@
             </div>
             <div class="modal-body">
 
-                <form action="/product/resend" method="post">
+                <form action="/produksi/edit-receipt" method="post">
                     <div class="row">
                         <div class="col">
                             <label for="message-text" class="col-form-label">Batch :</label>

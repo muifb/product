@@ -5,7 +5,7 @@
     </div>
     <hr>
     <div class="card-body">
-        <a href="/lost/create" class="btn btn-primary mb-3">Tambah</a>
+        <a href="/produksi/create-lost" class="btn btn-primary mb-3">Tambah</a>
         <table class="table table-striped table-hover">
             <thead>
                 <tr>

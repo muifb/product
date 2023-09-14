@@ -212,7 +212,7 @@ $(function () {
     const id = $(this).data("id");
 
     $.ajax({
-      url: "/product/getReport",
+      url: "/produksi/get-report",
       data: { id: id },
       method: "post",
       dataType: "json",

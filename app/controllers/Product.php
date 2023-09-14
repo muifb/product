@@ -17,7 +17,7 @@ class Product extends Controller
         $this->view('templates/footer');
     }
 
-    public function getReport()
+    public function show()
     {
         echo json_encode($this->model('Product_model')->getReportById($_POST['id']));
     }
@@ -27,11 +27,11 @@ class Product extends Controller
         // var_dump($_POST);
         if ($this->model('Product_model')->resendReportById($_POST) > 0) {
             Flasher::setFlash('Berhasil', 'direpost', 'success');
-            header('Location: /home/editReceipt');
+            header('Location: /produksi/edit-receipt');
             exit;
         } else {
             Flasher::setFlash('Gagal', 'direpost', 'danger');
-            header('Location: /home/editReceipt');
+            header('Location: /produksi/edit-receipt');
             exit;
         }
     }

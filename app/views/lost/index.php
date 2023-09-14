@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="p-2 p-lg-3 bg-light-gray rounded-bottom">
-        <form action="/lost/store" class="px-5 py-3" method="post">
+        <form action="/produksi/lost" class="px-5 py-3" method="post">
             <input type="hidden" name="nik" value="<?= $_SESSION['login']['nik']; ?>">
             <input type="hidden" name="kel_shift" value="<?= $_SESSION['login']['shift']; ?>">
             <input type="hidden" name="id_product" value="<?= $vs['id_product']; ?>">
@@ -82,7 +82,7 @@
                 <div class="col-sm-8">
                     <div class="text-start">
                         <button type="submit" class="btn btn-primary mt-4">Simpan</button>
-                        <a href="/lost" class="btn btn-danger mt-4">Batal</a>
+                        <a href="/produksi/lost" class="btn btn-danger mt-4">Batal</a>
                     </div>
                 </div>
             </div>

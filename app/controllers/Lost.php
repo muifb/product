@@ -13,8 +13,6 @@ class Lost extends Controller
             'judul' => 'Lost Time Product',
             'lost' => $this->model('Lost_model')->lostTime()
         ];
-        // var_dump($data['lost']);
-        // die;
         $this->view('templates/header', $data);
         $this->view('lost/show', $data);
         $this->view('templates/footer');
@@ -22,14 +20,13 @@ class Lost extends Controller
 
     public function store()
     {
-        // var_dump($_POST);
         if ($this->model('Lost_model')->insertLost($_POST) > 0) {
             Flasher::setFlash('Lost Time', 'berhasil disimpan', 'success');
-            header('Location: /lost');
+            header('Location: /produksi/lost');
             exit;
         } else {
             Flasher::setFlash('Lost Time', 'gagal disimpan', 'success');
-            header('Location: /lost/create');
+            header('Location: /produksi/create-lost');
             exit;
         }
     }

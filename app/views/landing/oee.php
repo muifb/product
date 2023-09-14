@@ -39,7 +39,7 @@
             <h1 class="text-light">OEE</h1>
         </div>
         <div class="p-2 p-lg-3 bg-light-gray rounded-bottom">
-            <form action="/oee/search" class="mx-4 p-3" id="formOee" method="post">
+            <form action="/produksi/hasil-oee" class="mx-4 p-3" id="formOee" method="post">
                 <div class="row mb-3">
                     <label for="plant" class="col-sm-3 col-form-label fw-bolder">PLANT</label>
                     <div class="col-sm-3">

@@ -20,10 +20,13 @@ class Routes
         $router->get('/produksi/product', ['Product', 'index']);
         $router->get('/produksi/output', ['Output', 'index']);
         $router->get('/produksi/lost', ['Lost', 'index']);
+        $router->get('/produksi/create-lost', ['Lost', 'create']);
+        $router->post('/produksi/lost', ['Lost', 'store']);
         $router->get('/produksi/ok', ['Ok', 'index']);
         $router->get('/produksi/nc', ['Nc', 'index']);
         $router->get('/produksi/reject', ['Reject', 'index']);
         $router->get('/produksi/oee', ['Oee', 'index']);
+        $router->post('/produksi/hasil-oee', ['Oee', 'search']);
         $router->get('/produksi/profile', ['User', 'index']);
         $router->get('/produksi/create-batch', ['Home', 'create']);
         $router->post('/produksi/create-batch', ['Home', 'store']);
@@ -31,6 +34,8 @@ class Routes
         $router->get('/produksi/good-receipt', ['Home', 'receipt']);
         $router->post('/produksi/good-receipt', ['Home', 'posting']);
         $router->get('/produksi/edit-receipt', ['Home', 'edit']);
+        $router->post('/produksi/get-report', ['Product', 'show']);
+        $router->post('/produksi/edit-receipt', ['Product', 'resend']);
 
 
         $router->run();

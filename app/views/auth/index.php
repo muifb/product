@@ -31,7 +31,7 @@
 <body class="text-center bg-primary">
 
     <div class="form-signin bg-light">
-        <form action="<?php echo BASEURL; ?>/../auth/login" method="POST">
+        <form action="/auth/login" method="POST">
             <img class="mb-4" src="<?= BASEURL; ?>/assets/img/global/logo.svg" alt="" width="72" height="57">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
             <div class="row">
@@ -60,7 +60,7 @@
 
             <div class="row">
                 <button class="col ms-3 me-3 btn btn-lg btn-primary" type="submit">Sign in</button>
-                <a href="<?php echo BASEURL; ?>/../vismen/list" class="col me-3 btn btn-lg btn-secondary" type="submit">Vismen</a>
+                <a href="/vismen/list" class="col me-3 btn btn-lg btn-secondary" type="submit">Vismen</a>
                 <p class="mt-5 mb-3 text-muted">&copy; Skripsi - Laporan Product <?= date('Y'); ?></p>
             </div>
         </form>
