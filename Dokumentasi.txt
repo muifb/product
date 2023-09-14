@@ -1,12 +1,25 @@
 MANUAL PEMASANGAN
 
-    # Silahkan pidahkan folder product ke folder dimanapun dikomputer anda
+    # Silahkan ekstrak dan pidahkan folder product ke folder dimanapun dikomputer anda
     # Import db_produksi.sql ke database
     # Buka folder yang sudah kalian pindah, dan buka dieditor favorit anda
+    # Pastikan yang anda buka adalah folder product dan didalamnya tidak ada folder dan file lain selain yang disebut
+        => folder app
+        => folder public
+        => file htaccess
+        => file db_produksi.sql
+        => file Dokumentasi.txt
+        => file example.json
+        => file index.php, dan
+        => file README.md
+      untuk menghindari error dan kegagalan fungsi. SEKALI LAGI FOLDER PRODUCT LANGSUNG BERISI YANG DISEBUTKAN
+      TIDAK ADA FOLDER LAIN DAN BARU BERISI YANG DISEBUTKAN DIATAS. KALAU MAU BERUBAH NAMANYA RENAME SAJA MENJADI YANG ANDA MAU,
+      DENGAN SYARAT TIDAK ADA SEPASINYA JANGAN MEMBUAT FOLDER BARU KEMUDIAN MENARUH FOLER PRODUCK DIDALAM FOLER TERSEBUT.
+      BOLEH SEPERTI ITU ASALKAN YANG ANDA BUKA DI CODE EDITOR ADALAH FOLDER PRODUCTNYA LANGSUNG YANG ISINYA DISEBUTKAN DIATAS.
     # Kemudian masuk ke app->config-> buka file config.php
     # Edit configurasi database nya, cari define('DB_PASS', '');
     # Isikan password sesuai dengan punya anda jika tidak ada password-nya biarkan kosong
-    # Buka terminal yang ada dieditor atau di terminal komputer anda dan pastikan sudah di directory programnya
+    # Buka terminal yang ada dieditor, KALAU BUKA TERMINAL KOMPUTER PASTIKAN YANG DIBUKA SESUAI YANG DIJELASKAN DIATAS.
     # Kemudian ketikkan php -S localhost:8000 kemudian enter
 
 Buka Browser favorit anda, dan ketik di urlnya http://localhost:8000 -> enter
