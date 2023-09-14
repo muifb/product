@@ -20,4 +20,4 @@ Fitur yang tersedia :
 > > > Login Produksi <br>
 > > > Login PPIC <br>
 
-Untuk penggunaan atau pemasangan silahkan buka halaman Dokumentasi.txt
+Untuk penggunaan atau pemasangan silahkan buka file Dokumentasi.txt
