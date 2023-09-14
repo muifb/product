@@ -22,6 +22,6 @@ Fitur yang tersedia :
 
 Untuk penggunaan atau pemasangan silahkan buka file Dokumentasi.txt
 
-<p align="center"><img src="public/assets/img/program/IMG-Login.png"></p>
-<p align="center"><img src="public/assets/img/program/IMG-Vismen-list.png"></p>
-<p align="center"><img src="public/assets/img/program/IMG-Halaman-produksi.png"></p>
+<p align="center"><img src="public/assets/img/program/IMG-Login.png"></p> <br><br>
+<p align="center"><img src="public/assets/img/program/IMG-Vismen-list.png"></p> <br><br>
+<p align="center"><img src="public/assets/img/program/IMG-Halaman-produksi.png"></p> <br><br>
