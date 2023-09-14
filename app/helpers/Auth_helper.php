@@ -27,7 +27,7 @@ class Signin
     public static function login()
     {
         if (isset($_SESSION['login'])) {
-            header('Location: /home');
+            header('Location: /produksi/home');
             exit;
         }
     }
@@ -35,23 +35,15 @@ class Signin
     public static function isLogin()
     {
         if (!isset($_SESSION['login'])) {
-            header('Location: /auth/index');
+            header('Location: /auth/login');
             exit;
         }
-        // if (date('m/d/Y') > date(self::$active)) {
-        // } 
-        // else {
-        //     session_unset();
-        //     session_destroy();
-        //     header('Location: /auth/trial');
-        //     exit;
-        // }
     }
 
     public static function loginAdmin()
     {
         if (isset($_SESSION['login-admin'])) {
-            header('Location: /landing/vismen');
+            header('Location: /vismen/list');
             exit;
         }
     }
@@ -59,7 +51,7 @@ class Signin
     public static function isLoginAdmin()
     {
         if (!isset($_SESSION['login-admin'])) {
-            header('Location: /auth/ppic');
+            header('Location: /auth/login-admin');
             exit;
         }
     }

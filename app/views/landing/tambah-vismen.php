@@ -8,12 +8,12 @@
                 </div>
                 <div class="col-4 text-end">
                     <!-- <button type="button" class="btn btn-light tambah" data-bs-toggle="collapse" data-bs-target="#tambahVismen" aria-expanded="false" aria-controls="tambahVismen">Tambah</button> -->
-                    <a href="<?php echo BASEURL; ?>/../landing/vismen" type="button" class="btn btn-danger">Batal</a>
+                    <a href="<?php echo BASEURL; ?>/../vismen/list" type="button" class="btn btn-danger">Batal</a>
                 </div>
             </div>
         </div>
         <div class="p-2 p-lg-3 bg-light-gray rounded-bottom">
-            <form action="/landing/store" class="accordion-body px-5 py-3" method="post">
+            <form action="/vismen/tambah" class="accordion-body px-5 py-3" method="post">
                 <div class="row mb-3">
                     <label for="idProduct" class="col-sm-2 col-form-label">Nomor Pro</label>
                     <div class="col-sm-4">

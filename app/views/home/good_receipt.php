@@ -1,6 +1,6 @@
 <!-- <div class="container mt-4"> -->
 <div class="m-4">
-    <a href="/home" class="btn btn-danger"><i class="fa-solid fa-reply"></i> Back</a>
+    <a href="/produksi/home" class="btn btn-danger"><i class="fa-solid fa-reply"></i> Back</a>
 </div>
 <div class="card rounded-3 m-4 p-1">
     <div class="row mt-4 mx-auto">
@@ -77,7 +77,7 @@
                 </tr>
             </thead>
             <tbody>
-                <form action="/home/posting" method="POST">
+                <form action="/produksi/good-receipt" method="POST">
                     <?php
                     if (empty($data['batch'])) {
                     ?>

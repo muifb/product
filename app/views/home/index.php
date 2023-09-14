@@ -8,7 +8,7 @@
                 <div class="d-flex flex-column justify-content-between align-items-start">
                     <h1 class="content-desc">Create Batch</h1>
                 </div>
-                <a href="/home/create" type="submit" class="btn-statistics create" name="">
+                <a href="/produksi/create-batch" type="submit" class="btn-statistics create" name="">
                     <img src="<?= BASEURL ?>/assets/img/global/times.svg" alt="">
                 </a>
             </div>
@@ -22,7 +22,7 @@
                     <h1 class="content-desc">Good Receipt</h1>
                 </div>
 
-                <a href="/home/goodReceipt" type="submit" class="btn-statistics good" name="">
+                <a href="/produksi/good-receipt" type="submit" class="btn-statistics good" name="">
                     <img src="<?= BASEURL ?>/assets/img/global/times.svg" alt="">
                 </a>
             </div>
@@ -35,7 +35,7 @@
                 <div class="d-flex flex-column justify-content-between align-items-start">
                     <h1 class="content-desc">Edit Good Receipt</h1>
                 </div>
-                <a href="/home/editReceipt" type="submit" class="btn-statistics edit" name="">
+                <a href="/produksi/edit-receipt" type="submit" class="btn-statistics edit" name="">
                     <img src="<?= BASEURL ?>/assets/img/global/times.svg" alt="">
                 </a>
             </div>

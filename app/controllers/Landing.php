@@ -29,7 +29,7 @@ class Landing extends Controller
         $this->view('templates/landing_footer');
     }
 
-    public function tambah_vismen()
+    public function create()
     {
         Signin::isLoginAdmin();
         $data = [
@@ -51,11 +51,11 @@ class Landing extends Controller
     {
         if ($this->model('Vismen_model')->insertVismen($_POST) > 0) {
             Flasher::setFlash('Vismen', 'berhasil ditambah!.', 'success');
-            header('Location: /landing/vismen');
+            header('Location: /vismen/list');
             exit;
         } else {
             Flasher::setFlash('Vismen', 'gagal ditambah!.', 'success');
-            header('Location: /landing/vismen');
+            header('Location: /vismen/list');
             exit;
         }
     }

@@ -7,7 +7,7 @@
                 <h2 class="text-light">VISMEN LIST ORDER</h2>
             </div>
             <div class="col-4 text-end">
-                <a href="<?php echo BASEURL; ?>/../landing/tambah_vismen" type="button" class="btn btn-light">Tambah</a>
+                <a href="/vismen/tambah" type="button" class="btn btn-light">Tambah</a>
             </div>
         </div>
     </div>

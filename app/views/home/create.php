@@ -3,7 +3,7 @@ Printer::print();
 Printer::printIn()
 ?>
 <div class="ps-3 no-print">
-    <a href="/home" class="btn btn-danger"><i class="fa-solid fa-reply"></i> Back</a>
+    <a href="/produksi/home" class="btn btn-danger"><i class="fa-solid fa-reply"></i> Back</a>
 </div>
 <div class="bg-white p-3 m-3 no-print rounded-3">
     <div class="row mb-3">
@@ -15,7 +15,7 @@ Printer::printIn()
     <?php
     if (!is_array($data['kode'])) {
     ?>
-        <form action="/home/tambah" method="POST">
+        <form action="/produksi/create-batch" method="POST">
             <div class="row" style="padding-left: 0; padding-right: 0;">
                 <?php $pro = $data['vismen']; ?>
                 <input type="hidden" class="card-title form-control-plaintext namaProduct" value="<?= $pro['nm_product']; ?> <?= $pro['qty_palet']; ?>MMx<?= $pro['panjang_qty']; ?>M" name="namaProduct" id="namaProduct" placeholder="Nama Product">
@@ -58,7 +58,7 @@ Printer::printIn()
     <?php
     } else {
     ?>
-        <form action="/home/update" method="POST">
+        <form action="/produksi/update-batch" method="POST">
             <div class="row" style="padding-left: 0; padding-right: 0;">
                 <?php foreach ($data['kode'] as $pro) : ?>
                     <div class="col-sm-4 p-0">

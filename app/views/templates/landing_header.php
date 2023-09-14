@@ -48,7 +48,7 @@
                                             if ($data['nav'] == 'vismen') {
                                                 echo 'active';
                                             }
-                                            ?>" href="<?php echo BASEURL; ?>/../landing/vismen">Vismen</a>
+                                            ?>" href="/vismen/list">Vismen</a>
                     </li>
                     <!--  -->
                 </ul>
@@ -63,7 +63,7 @@
                     <?php
                     } else {
                     ?>
-                        <a class="me-3 btn btn-outline-light btn-sm" href="<?php echo BASEURL; ?>/../auth/index">
+                        <a class="me-3 btn btn-outline-light btn-sm" href="/auth/login">
                             Login
                             <i class="fa-solid fa-arrow-right-to-bracket"></i>
                         </a>

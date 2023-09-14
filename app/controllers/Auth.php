@@ -22,17 +22,17 @@ class Auth extends Controller
         if (!empty($_POST)) {
             $this->model('Auth_model')->prosesLogin($_POST);
         } else {
-            header('Location:/auth/index');
+            header('Location:/auth/login');
         }
     }
 
     // proses login admin ppic
-    public function loginAdmin()
+    public function admin()
     {
         if (!empty($_POST)) {
             $this->model('Auth_model')->prosesLoginAdmin($_POST);
         } else {
-            header('Location:/auth/ppic');
+            header('Location:/auth/login-admin');
         }
     }
 

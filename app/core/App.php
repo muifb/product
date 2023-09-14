@@ -5,27 +5,70 @@ class App
     protected $method = 'index';
     protected $params = [];
 
-    public function __construct()
-    {
-        $url = $this->parseURL();
-        // var_dump($url);
+    private const DEFAULT_GET = 'GET';
+    private const DEFAULT_POST = 'POST';
+    private $handlers = [];
 
-        //controller
-        if (!empty($url[0]) && file_exists(__DIR__ . '/../controllers/' . ucwords($url[0]) . '.php')) {
-            $this->controller = ucwords($url[0]);
-            // var_dump($this->controller);
-            unset($url[0]);
+    public function setDefaultController($controller)
+    {
+        $this->controller = $controller;
+    }
+
+    public function setDefaultMethod($method)
+    {
+        $this->method = $method;
+    }
+
+    public function get($uri, $callback)
+    {
+        $this->setHandler(self::DEFAULT_GET, $uri, $callback);
+    }
+
+    public function post($uri, $callback)
+    {
+        $this->setHandler(self::DEFAULT_POST, $uri, $callback);
+    }
+
+    private function setHandler(string $method, string $path, $handler)
+    {
+        $this->handlers[$method . $path] = [
+            'path' => $path,
+            'method' => $method,
+            'handler' => $handler,
+        ];
+    }
+
+    public function run()
+    {
+        $excecute = 0;
+        $url = $this->parseURL();
+        $requestMethod = $_SERVER['REQUEST_METHOD'];
+
+        foreach ($this->handlers as $handler) {
+            $path = explode('/', ltrim(rtrim($handler['path'], '/'), '/'));
+            $kurl = (isset($url[0]) ? $url[0] : '') . (isset($url[1]) ? $url[1] : '');
+            $kpath = (isset($path[0]) ? $path[0] : '') . (isset($path[1]) ? $path[1] : '');
+            if ($kurl != "" && $kurl == $kpath && $requestMethod == $handler['method']) {
+                //controller
+                if (isset($handler['handler'][0]) && file_exists(__DIR__ . '/../controllers/' . $handler['handler'][0] . '.php')) {
+                    $this->controller = $handler['handler'][0];
+                    unset($url[0]);
+                }
+                require_once(__DIR__ . '/../controllers/' . $this->controller . '.php');
+                $this->controller = new $this->controller;
+                $excecute = 1;
+
+                //method
+                if (isset($handler['handler'][1]) && method_exists($this->controller, $handler['handler'][1])) {
+                    $this->method = $handler['handler'][1];
+                    unset($url[1]);
+                }
+            }
         }
 
-        require_once(__DIR__ . '/../controllers/' . $this->controller . '.php');
-        $this->controller = new $this->controller;
-
-        //method
-        if (isset($url[1])) {
-            if (method_exists($this->controller, $url[1])) {
-                $this->method = $url[1];
-                unset($url[1]);
-            }
+        if ($excecute == 0) {
+            require_once(__DIR__ . '/../controllers/' . $this->controller . '.php');
+            $this->controller = new $this->controller;
         }
 
         //params
@@ -49,11 +92,5 @@ class App
             $uri = explode('/', $uri);
             return $uri;
         }
-        // if (isset($_SERVER['QUERY_STRING'])) {
-        //     $url = rtrim($_SERVER['QUERY_STRING'], '/');
-        //     // $url = filter_var($url, FILTER_SANITIZE_URL);
-        //     // $url = explode('/', $url);
-        //     return $url;
-        // }
     }
 }

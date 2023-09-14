@@ -41,7 +41,7 @@ class Vismen_model
         $vismen = $this->db->single();
         if ($vismen > 0) {
             Flasher::setFlash('No. Pro ' . $pro, 'telah ada di vismen list.', 'danger');
-            header('Location:/landing/tambah_vismen');
+            header('Location:/vismen/tambah');
             exit;
         }
         $this->db->query('INSERT INTO ' . $this->table . ' VALUES (:id_product, :nm_product, :panjang_qty, :qty_palet, :mesin, :material_numb, :customer, :start_produksi, :finish_produksi, :est_pengiriman)');

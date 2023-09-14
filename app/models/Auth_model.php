@@ -26,18 +26,18 @@ class Auth_model
                 if ($this->db->rowCount() == 1) {
 
                     Signin::setLogin($hasil['nik'], $hasil['nama'], $shift['id_shift'], $shift['kel_shift'], $pro['id_product']);
-                    header('Location:/home');
+                    header('Location:/produksi/home');
                     exit;
                 } else {
 
                     Flasher::setFlash('No. Pro ' . $data['noPro'], 'tidak ditemukan. SIlahkan masukkan yang lain.', 'danger');
-                    header('Location:/auth');
+                    header('Location:/auth/login');
                     exit;
                 }
             }
         } else {
             Flasher::setFlash('NIK ' . $data['nik'], 'tidak ditemukan. SIlahkan masukkan yang lain.', 'danger');
-            header('Location: /auth');
+            header('Location: /auth/login');
             exit;
         }
     }
@@ -49,11 +49,11 @@ class Auth_model
         $hasil  =   $this->db->single();
         if ($this->db->rowCount() == 1) {
             Signin::setLoginAdmin($hasil['nik_ppic'], $hasil['nama'], $hasil['alamat']);
-            header('Location:/landing/tambah_vismen');
+            header('Location:/vismen/tambah');
             exit;
         } else {
             Flasher::setFlash('NIK ' . $data['nik_ppic'], 'tidak ditemukan. SIlahkan masukkan yang lain.', 'danger');
-            header('Location: /auth/ppic');
+            header('Location: /auth/login-admin');
             exit;
         }
     }

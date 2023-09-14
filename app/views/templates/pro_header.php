@@ -62,13 +62,13 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
         <div class="container container-fluid">
-            <a class="navbar-brand" href="/home" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Halaman Awal">Laporan Produksi</a>
+            <a class="navbar-brand" href="/produksi/home" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Halaman Awal">Laporan Produksi</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/home" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Halaman Awal">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/produksi/home" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Halaman Awal">Home</a>
                     <!-- <a class="nav-link" href="#">Product</a>
                     <a class="nav-link" href="#">Output</a>
                     <a class="nav-link" href="#">Vismen</a>

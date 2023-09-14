@@ -1,8 +1,6 @@
 <?php
 
-require_once __DIR__ . '/core/App.php';
-require_once __DIR__ . '/core/Controller.php';
-require_once __DIR__ . '/core/Database.php';
+require_once __DIR__ . '/core/Autoload.php';
 require_once __DIR__ . '/helpers/Flasher_helper.php';
 require_once __DIR__ . '/helpers/Report_helper.php';
 require_once __DIR__ . '/helpers/Auth_helper.php';

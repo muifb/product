@@ -60,7 +60,7 @@
 
             <div class="row">
                 <button class="col ms-3 me-3 btn btn-lg btn-primary" type="submit">Sign in</button>
-                <a href="<?php echo BASEURL; ?>/../landing/vismen" class="col me-3 btn btn-lg btn-secondary" type="submit">Vismen</a>
+                <a href="<?php echo BASEURL; ?>/../vismen/list" class="col me-3 btn btn-lg btn-secondary" type="submit">Vismen</a>
                 <p class="mt-5 mb-3 text-muted">&copy; Skripsi - Laporan Product <?= date('Y'); ?></p>
             </div>
         </form>
