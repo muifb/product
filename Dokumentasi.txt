@@ -6,7 +6,7 @@ MANUAL PEMASANGAN
     # Pastikan yang anda buka adalah folder product dan didalamnya tidak ada folder dan file lain selain yang disebut
         => folder app
         => folder public
-        => file htaccess
+        => file example_htaccess.txt
         => file db_produksi.sql
         => file Dokumentasi.txt
         => file example.json
