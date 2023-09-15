@@ -160,7 +160,6 @@
                 <div class="col-12">
                     <h2 class="content-title">Input number batch</h2>
                 </div>
-                <!-- <div class="well"> -->
                 <div class="col-12 col-md-6 col-lg-4" id="tour-step1">
                     <div class="statistics-card">
                         <div class="d-flex justify-content-between align-items-center">
@@ -384,42 +383,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- </div> -->
-            </div>
-
-            <div class="d-none" id="tour-step1-info">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, earum!
-                </p>
-            </div>
-            <div class="d-none" id="tour-step2-info">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam excepturi, porro ipsa magnam, consequuntur quia.
-                </p>
-            </div>
-            <div class="modal fade" id="modal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button class="close" data-dismiss="modal" type="button">
-                                <span aria-hidden="true">&times;</span>
-                                <span class="sr-only">Close</span>
-                            </button>
-                            <h4 class="modal-title">
-                                Modal title
-                            </h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>
-                                Something awesome has changed in this site. Start tour to get a guided introduction.
-                            </p>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-default" data-dismiss="modal">No Thanks</button>
-                            <button autofocus="autofocus" class="btn btn-primary" data-dismiss="modal" id="start">Start tour</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
@@ -438,88 +401,6 @@
     <script src="<?= BASEURL; ?>/assets/Datatables/datatables.min.js"></script>
     <script src="<?= BASEURL; ?>/assets/Datatables/DataTables/js/dataTables.bootstrap5.min.js"></script>
     <script src="<?= BASEURL; ?>/assets/js/script.js"></script>
-
-    <script id="rendered-js">
-        var GuidedTour = function(steps, options) {
-            $(document)
-                .on('click', '[data-toggle=popover]', function() {
-                    var $context = $($(this).data('target')).popover('show');
-                    var scrollTop = $context.data('bs.popover').$tip.offset().top - $(window).height() / 2;
-                    $('html, body').clearQueue().animate({
-                        scrollTop: Math.max(scrollTop, 0)
-                    }, 'fast');
-                    return false;
-                })
-                .on('click', '[data-dismiss="popover"]', function() {
-                    $(this).closest('.popover').data('bs.popover').hide();
-                    return false;
-                });
-
-            return {
-                start: function() {
-                    var toursteps = [];
-                    var defaults = {
-                        html: true,
-                        placement: 'auto top',
-                        container: 'body',
-                        trigger: 'manual'
-                    };
-                    var opts = $.extend(defaults, options);
-                    $(steps).each(function(i, step) {
-                        if (step.target) {
-                            var $target = $(step.target);
-                            if (!$target.length) {
-                                console.warn('Target not found', $target);
-                                return;
-                            }
-                            if (step.content instanceof $) step.content = step.content.html();
-                            var content = step.content;
-                            step.content = function() {
-                                var out = content;
-                                out += '<div class="mm_actions clearfix">';
-                                if (i + 1 < steps.length) {
-                                    out += '<button type="button" class="btn btn-primary pull-right" autofocus data-dismiss="popover" data-toggle="popover" data-target="' + steps[i + 1].target + '">Next</button>';
-                                }
-                                out += '<button type="button" class="btn btn-default pull-right" data-dismiss="popover">Close</button>';
-                                out += '</div>';
-                                return out;
-                            }
-                            toursteps.push($target.popover($.extend(opts, step)));
-                        }
-                    });
-
-                    if (toursteps[0]) toursteps[0].popover('show');
-                }
-            }
-        };
-
-        $('#modal').modal();
-
-
-        $('#modal #start').click(function() {
-            var tour = GuidedTour([{
-                    target: '#tour-step1',
-                    title: 'my title',
-                    placement: 'bottom',
-                    content: $('#tour-step1-info'),
-                },
-                {
-                    target: '#tour-step2',
-                    title: 'my title 2',
-                    placement: 'left',
-                    content: $('#tour-step2-info')
-                },
-                {
-                    target: '.container',
-                    placement: 'bottom',
-                    title: 'my title',
-                    content: 'Moep'
-                },
-            ]);
-
-            tour.start();
-        });
-    </script>
 </body>
 
 </html>
