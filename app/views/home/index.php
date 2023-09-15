@@ -9,38 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='<?= BASEURL; ?>/assets/img/global/logo.svg' rel='shortcut icon'>
     <link href="<?= BASEURL; ?>/assets/css/index.css" rel="stylesheet">
-
-    <style>
-        .tombol {
-            cursor: pointer;
-        }
-
-        .print-cetak {
-            display: none;
-        }
-
-        @media print {
-            .no-print {
-                display: none;
-            }
-
-            .print-cetak {
-                display: block;
-            }
-        }
-
-        .well {
-            height: 100vh;
-        }
-
-        .popover .mm_actions .btn.pull-right {
-            margin-right: 5px;
-        }
-
-        .popover .mm_actions .btn.pull-right:first-child {
-            margin-right: 0;
-        }
-    </style>
+    <link href="<?= BASEURL; ?>/css/bs5-intro-tour.css" rel="stylesheet">
+    <link href="<?= BASEURL; ?>/css/sticky.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -89,7 +59,7 @@
 
         <h5 class="sidebar-title">Others</h5>
 
-        <a class="sidebar-item <?= $data['judul'] == 'Lost Time Product' ? 'active' : ''; ?>" href="/produksi/lost">
+        <a class="sidebar-item <?= $data['judul'] == 'Lost Time Product' ? 'active' : ''; ?>" href="/produksi/lost" id="step4">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(171, 179, 196, 1);">
                 <path d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm.002 16H5V8h14l.002 12z"></path>
                 <path d="M11 10h2v5h-2zm0 6h2v2h-2z"></path>
@@ -132,7 +102,7 @@
             <span>OEE</span>
         </a>
 
-        <a class="sidebar-item" href="/auth/logout">
+        <a class="sidebar-item" href="/auth/logout" id="logout">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16 17L21 12L16 7" stroke="#ABB3C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M21 12H9" stroke="#ABB3C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -147,7 +117,7 @@
 
 
     <main class="mian" id="main">
-        <nav class="nav no-print">
+        <nav class="nav">
             <div class="d-flex justify-content-between align-items-center w-100 mb-3 mb-md-0">
                 <button class="btn-notif d-block d-md-none"><img src="<?= BASEURL; ?>/assets/img/global/bell.svg" alt=""></button>
             </div>
@@ -160,7 +130,7 @@
                 <div class="col-12">
                     <h2 class="content-title">Input number batch</h2>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4" id="tour-step1">
+                <div class="col-12 col-md-6 col-lg-4" id="step1">
                     <div class="statistics-card">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex flex-column justify-content-between align-items-start">
@@ -173,7 +143,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-4" id="tour-step2">
+                <div class="col-12 col-md-6 col-lg-4" id="step2">
                     <div class="statistics-card">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex flex-column justify-content-between align-items-start">
@@ -187,7 +157,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-4" id="tombol">
+                <div class="col-12 col-md-6 col-lg-4" id="step3">
                     <div class="statistics-card">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex flex-column justify-content-between align-items-start">
@@ -201,46 +171,49 @@
                     </div>
                 </div>
 
-                <div class="col-12 my-3">
+                <!-- <div class="col-12 my-3">
                     <div _ngcontent-nnp-c201="" class="sbp-preview">
-                        <div _ngcontent-nnp-c201="" class="sbp-preview-content">
-                            <sbpro-step _ngcontent-nnp-c201="" _nghost-nnp-c200="">
-                                <div _ngcontent-nnp-c200="" class="step step-danger">
-                                    <div _ngcontent-nnp-c200="" class="step-item">
-                                        <a _ngcontent-nnp-c200="" class="step-item-link pointer">
-                                            Step 1
-                                            <h5 class="mt-2 text-dark">( Create Batch )</h5>
-                                        </a>
-                                    </div>
-                                    <div _ngcontent-nnp-c200="" class="step-item">
-                                        <a _ngcontent-nnp-c200="" class="step-item-link pointer">
-                                            Step 2
-                                            <h5 class="mt-2 text-dark">( Good Receipt )</h5>
-                                        </a>
-                                    </div>
-                                    <div _ngcontent-nnp-c200="" class="step-item">
-                                        <a _ngcontent-nnp-c200="" class="step-item-link pointer">
-                                            Step 3
-                                            <h5 class="mt-2 text-dark">( Edit Good Receipt )</h5>
-                                        </a>
-                                    </div>
-                                    <div _ngcontent-nnp-c200="" class="step-item">
-                                        <a _ngcontent-nnp-c200="" class="step-item-link pointer">
-                                            Step 4
-                                            <h5 class="mt-2 text-dark">( Input Lost Time )</h5>
-                                        </a>
-                                    </div>
-                                </div>
-                            </sbpro-step>
-                        </div>
+                        
                     </div>
-                </div>
+                </div> -->
 
                 <div class="col-12 my-3">
                     <h3 class="card-title">Product Description</h3>
                     <div class="document-card bg-cyan">
                         <?php $pro = $data['vismen']; ?>
                         <div class="row">
+                            <div class="col-12 mb-2">
+                                <div _ngcontent-nnp-c201="" class="sbp-preview-content">
+                                    <sbpro-step _ngcontent-nnp-c201="" _nghost-nnp-c200="">
+                                        <div _ngcontent-nnp-c200="" class="step step-danger">
+                                            <div _ngcontent-nnp-c200="" class="step-item">
+                                                <a _ngcontent-nnp-c200="" class="step-item-link pointer">
+                                                    Step 1.
+                                                    <span class="mt-2 text-dark"> Create Batch</span>
+                                                </a>
+                                            </div>
+                                            <div _ngcontent-nnp-c200="" class="step-item">
+                                                <a _ngcontent-nnp-c200="" class="step-item-link pointer">
+                                                    Step 2.
+                                                    <span class="mt-2 text-dark"> Good Receipt</span>
+                                                </a>
+                                            </div>
+                                            <div _ngcontent-nnp-c200="" class="step-item">
+                                                <a _ngcontent-nnp-c200="" class="step-item-link pointer">
+                                                    Step 3.
+                                                    <span class="mt-2 text-dark"> Edit Good Receipt</span>
+                                                </a>
+                                            </div>
+                                            <div _ngcontent-nnp-c200="" class="step-item">
+                                                <a _ngcontent-nnp-c200="" class="step-item-link pointer">
+                                                    Step 4.
+                                                    <span class="mt-2 text-dark"> Input Lost Time</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </sbpro-step>
+                                </div>
+                            </div>
                             <div class="col-lg-6">
                                 <h2 class="content-title">Process Order</h2>
                                 <div class="content-desc mb-3" style="color: rgb(69, 56, 189);"><?= $pro['mesin']; ?></div>
@@ -401,6 +374,33 @@
     <script src="<?= BASEURL; ?>/assets/Datatables/datatables.min.js"></script>
     <script src="<?= BASEURL; ?>/assets/Datatables/DataTables/js/dataTables.bootstrap5.min.js"></script>
     <script src="<?= BASEURL; ?>/assets/js/script.js"></script>
+    <script src="<?= BASEURL; ?>/js/bs5-intro-tour.js"></script>
+    <script>
+        var steps = [{
+            title: "Hello",
+            content: "<p>Hello message</p>"
+        }, {
+            id: "step1",
+            content: "<p>Step 1. <strong>Create Batch</strong></p>"
+        }, {
+            id: "step2",
+            content: "<p>Step 2. <strong>Good Receipt</strong></p>"
+        }, {
+            id: "step3",
+            content: "<p>Step 3. <strong>Edit Good Receipt</strong></p>"
+        }, {
+            id: "step4",
+            content: "<p>Step 4. <strong>Input Lostime</strong></p>"
+        }];
+        var tour = new Tour(steps, {
+            /*additional options if needed*/
+        });
+
+        if (!localStorage.getItem('tour')) {
+            tour.show();
+
+        }
+    </script>
 </body>
 
 </html>

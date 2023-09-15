@@ -56,7 +56,7 @@
                     <?php
                     if (isset($_SESSION['login-admin'])) {
                     ?>
-                        <a class="me-3 btn btn-outline-light btn-sm" href="/auth/logout">
+                        <a class="me-3 btn btn-outline-light btn-sm" href="/auth/logout" id="logout">
                             Logout
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
                         </a>

@@ -225,7 +225,7 @@ aside #toggle-navbar {
 }
 @media (min-width: 1200px) {
   .nav {
-    padding: 50px 64px 24px 0px;
+    padding: 24px 64px 24px 0px;
   }
 }
 .nav .btn-notif {

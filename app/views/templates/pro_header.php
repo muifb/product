@@ -82,7 +82,7 @@
             <span class="document-desc text-white">User : <strong><?= $_SESSION['login']['nik']; ?></strong></span>
             <span class="document-desc text-white mx-3"><strong><?= $_SESSION['login']['nama']; ?></strong></span>
         </div>
-        <a class="navbar-brand fs-6 me-4" href="/auth/logout" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Keluar">
+        <a class="navbar-brand fs-6 me-4" href="/auth/logout" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Keluar" id="logout">
             <span>Logout</span>
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
         </a>

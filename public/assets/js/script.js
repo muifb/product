@@ -272,4 +272,8 @@ $(function () {
     $("#selisihMinute").val(minutes);
     $("#selisihHour").val(hours);
   });
+
+  $("#logout").on("click", function () {
+    localStorage.clear();
+  });
 });
