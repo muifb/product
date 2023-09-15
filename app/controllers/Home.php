@@ -18,9 +18,9 @@ class Home extends Controller
             'product' => $this->model('Product_model')->getById()
         ];
 
-        $this->view('templates/header', $data);
+        // $this->view('templates/header', $data);
         $this->view('home/index', $data);
-        $this->view('templates/footer');
+        // $this->view('templates/footer');
     }
     public function create()
     {

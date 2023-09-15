@@ -21,7 +21,9 @@ Printer::printIn()
                 <input type="hidden" class="card-title form-control-plaintext namaProduct" value="<?= $pro['nm_product']; ?> <?= $pro['qty_palet']; ?>MMx<?= $pro['panjang_qty']; ?>M" name="namaProduct" id="namaProduct" placeholder="Nama Product">
                 <?php $k = $data['kode'];
                 $no = 1;
-                $jumlah = 12;
+                $ukuran = substr($pro['nm_product'], -4);
+                $qty = $pro['qty_palet'];
+                $jumlah = round($ukuran / $qty);
                 for ($no; $no <= $jumlah; $no++) : ?>
                     <div class="col-sm-4 p-0">
                         <div class="card m-1">

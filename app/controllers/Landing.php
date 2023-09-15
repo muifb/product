@@ -51,6 +51,8 @@ class Landing extends Controller
 
     public function store()
     {
+        // var_dump($_POST['nm_product'] . ' ' . $_POST['ukuran']);
+        // die;
         if ($this->model('Vismen_model')->insertVismen($_POST) > 0) {
             Flasher::setFlash('Vismen', 'berhasil ditambah!.', 'success');
             header('Location: /vismen/list');

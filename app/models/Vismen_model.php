@@ -29,7 +29,7 @@ class Vismen_model
     {
         // var_dump($data);
         $pro  = $data['id_product'];
-        $nm  = $data['nm_product'];
+        $nm  = $data['nm_product'] . ' ' . $data['ukuran'];
         $pjg    = $data['panjang_qty'];
         $plt = $data['qty_palet'];
         $msn = $data['mesin'];

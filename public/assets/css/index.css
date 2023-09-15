@@ -331,7 +331,7 @@ aside #toggle-navbar {
 }
 .content-desc {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
   /* color: #ABB3C4; */
   color: #808080;
@@ -735,4 +735,721 @@ animation-delay: .8s;
   'wght' 400,
   'GRAD' 0,
   'opsz' 48
+}
+
+.pointer {
+  cursor: pointer !important;
+  }
+
+.sbp-preview {
+  border-radius: 0.35rem;
+  border: 0.25rem solid #e0e5ec;
+  border-style: solid;
+}
+
+.sbp-preview .sbp-preview-content {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e0e5ec;
+  position: relative;
+}
+
+.sbp-preview .sbp-preview-code {
+  background-color: #f2f6fc;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e0e5ec;
+}
+
+.sbp-preview .sbp-preview-code .nav-tabs {
+  border-bottom-color: transparent;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.sbp-preview .sbp-preview-code .nav-tabs .nav-item .nav-link {
+  border-bottom: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.sbp-preview .sbp-preview-code .nav-tabs .nav-item .nav-link.active {
+  border-color: transparent;
+  background-color: #2f2f2f;
+  color: #fff;
+}
+
+.sbp-preview .sbp-preview-code .nav-tabs .nav-item .nav-link .img-pug {
+  height: 1em;
+  padding: 1px 0;
+}
+
+.sbp-preview .sbp-preview-text {
+  background-color: #f2f6fc;
+  font-size: 0.875rem;
+  padding: 1.5rem;
+}
+
+.step {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.step .step-item {
+  flex: 1 1 0;
+  position: relative;
+  text-align: center;
+}
+
+.step .step-item:not(:first-child):before {
+  background-color: #69707a;
+  content: "";
+  height: 0.125rem;
+  left: -50%;
+  position: absolute;
+  top: 0.4375rem;
+  width: 100%;
+  z-index: 0;
+}
+
+.step .step-item .step-item-link {
+  color: #69707a;
+  position: relative;
+  display: inline-block;
+  padding-top: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.step .step-item .step-item-link:before {
+  background-color: #69707a;
+  border: 0.125rem solid #fff;
+  border-radius: 100%;
+  content: "";
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%);
+  z-index: 1;
+}
+
+.step .step-item .step-item-link.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.step .step-item.active a:before {
+  background: #fff;
+  border: 0.125rem solid #69707a;
+}
+
+.step .step-item.active~.step-item .step-item-link {
+  color: #d4dae3;
+}
+
+.step .step-item.active~.step-item .step-item-link:before {
+  background: #d4dae3;
+}
+
+.step .step-item.active~.step-item:before {
+  background: #d4dae3;
+}
+
+.step-lg .step-item:not(:first-child):before {
+  height: 0.25rem;
+  top: 0.625rem;
+}
+
+.step-lg .step-item .step-item-link {
+  padding-top: 2rem;
+}
+
+.step-lg .step-item .step-item-link:before {
+  border-width: 0.25rem;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.step-lg .step-item.active a:before {
+  border-width: 0.25rem;
+}
+
+.step-primary .step-item:not(:first-child):before {
+  background-color: #0061f2;
+}
+
+.step-primary .step-item .step-item-link {
+  color: #0061f2;
+}
+
+.step-primary .step-item .step-item-link:before {
+  background-color: #0061f2;
+}
+
+.step-primary .step-item.active a:before {
+  border-color: #0061f2;
+}
+
+.step-secondary .step-item:not(:first-child):before {
+  background-color: #6900c7;
+}
+
+.step-secondary .step-item .step-item-link {
+  color: #6900c7;
+}
+
+.step-secondary .step-item .step-item-link:before {
+  background-color: #6900c7;
+}
+
+.step-secondary .step-item.active a:before {
+  border-color: #6900c7;
+}
+
+.step-success .step-item:not(:first-child):before {
+  background-color: #00ac69;
+}
+
+.step-success .step-item .step-item-link {
+  color: #00ac69;
+}
+
+.step-success .step-item .step-item-link:before {
+  background-color: #00ac69;
+}
+
+.step-success .step-item.active a:before {
+  border-color: #00ac69;
+}
+
+.step-info .step-item:not(:first-child):before {
+  background-color: #00cfd5;
+}
+
+.step-info .step-item .step-item-link {
+  color: #00cfd5;
+}
+
+.step-info .step-item .step-item-link:before {
+  background-color: #00cfd5;
+}
+
+.step-info .step-item.active a:before {
+  border-color: #00cfd5;
+}
+
+.step-warning .step-item:not(:first-child):before {
+  background-color: #f4a100;
+}
+
+.step-warning .step-item .step-item-link {
+  color: #f4a100;
+}
+
+.step-warning .step-item .step-item-link:before {
+  background-color: #f4a100;
+}
+
+.step-warning .step-item.active a:before {
+  border-color: #f4a100;
+}
+
+.step-danger .step-item:not(:first-child):before {
+  background-color: #e81500;
+}
+
+.step-danger .step-item .step-item-link {
+  color: #e81500;
+}
+
+.step-danger .step-item .step-item-link:before {
+  background-color: #e81500;
+}
+
+.step-danger .step-item.active a:before {
+  border-color: #e81500;
+}
+
+.step-light .step-item:not(:first-child):before {
+  background-color: #f2f6fc;
+}
+
+.step-light .step-item .step-item-link {
+  color: #f2f6fc;
+}
+
+.step-light .step-item .step-item-link:before {
+  background-color: #f2f6fc;
+}
+
+.step-light .step-item.active a:before {
+  border-color: #f2f6fc;
+}
+
+.step-dark .step-item:not(:first-child):before {
+  background-color: #212832;
+}
+
+.step-dark .step-item .step-item-link {
+  color: #212832;
+}
+
+.step-dark .step-item .step-item-link:before {
+  background-color: #212832;
+}
+
+.step-dark .step-item.active a:before {
+  border-color: #212832;
+}
+
+.step-black .step-item:not(:first-child):before {
+  background-color: #000;
+}
+
+.step-black .step-item .step-item-link {
+  color: #000;
+}
+
+.step-black .step-item .step-item-link:before {
+  background-color: #000;
+}
+
+.step-black .step-item.active a:before {
+  border-color: #000;
+}
+
+.step-white .step-item:not(:first-child):before {
+  background-color: #fff;
+}
+
+.step-white .step-item .step-item-link {
+  color: #fff;
+}
+
+.step-white .step-item .step-item-link:before {
+  background-color: #fff;
+}
+
+.step-white .step-item.active a:before {
+  border-color: #fff;
+}
+
+.step-red .step-item:not(:first-child):before {
+  background-color: #e81500;
+}
+
+.step-red .step-item .step-item-link {
+  color: #e81500;
+}
+
+.step-red .step-item .step-item-link:before {
+  background-color: #e81500;
+}
+
+.step-red .step-item.active a:before {
+  border-color: #e81500;
+}
+
+.step-orange .step-item:not(:first-child):before {
+  background-color: #f76400;
+}
+
+.step-orange .step-item .step-item-link {
+  color: #f76400;
+}
+
+.step-orange .step-item .step-item-link:before {
+  background-color: #f76400;
+}
+
+.step-orange .step-item.active a:before {
+  border-color: #f76400;
+}
+
+.step-yellow .step-item:not(:first-child):before {
+  background-color: #f4a100;
+}
+
+.step-yellow .step-item .step-item-link {
+  color: #f4a100;
+}
+
+.step-yellow .step-item .step-item-link:before {
+  background-color: #f4a100;
+}
+
+.step-yellow .step-item.active a:before {
+  border-color: #f4a100;
+}
+
+.step-green .step-item:not(:first-child):before {
+  background-color: #00ac69;
+}
+
+.step-green .step-item .step-item-link {
+  color: #00ac69;
+}
+
+.step-green .step-item .step-item-link:before {
+  background-color: #00ac69;
+}
+
+.step-green .step-item.active a:before {
+  border-color: #00ac69;
+}
+
+.step-teal .step-item:not(:first-child):before {
+  background-color: #00ba94;
+}
+
+.step-teal .step-item .step-item-link {
+  color: #00ba94;
+}
+
+.step-teal .step-item .step-item-link:before {
+  background-color: #00ba94;
+}
+
+.step-teal .step-item.active a:before {
+  border-color: #00ba94;
+}
+
+.step-cyan .step-item:not(:first-child):before {
+  background-color: #00cfd5;
+}
+
+.step-cyan .step-item .step-item-link {
+  color: #00cfd5;
+}
+
+.step-cyan .step-item .step-item-link:before {
+  background-color: #00cfd5;
+}
+
+.step-cyan .step-item.active a:before {
+  border-color: #00cfd5;
+}
+
+.step-blue .step-item:not(:first-child):before {
+  background-color: #0061f2;
+}
+
+.step-blue .step-item .step-item-link {
+  color: #0061f2;
+}
+
+.step-blue .step-item .step-item-link:before {
+  background-color: #0061f2;
+}
+
+.step-blue .step-item.active a:before {
+  border-color: #0061f2;
+}
+
+.step-indigo .step-item:not(:first-child):before {
+  background-color: #5800e8;
+}
+
+.step-indigo .step-item .step-item-link {
+  color: #5800e8;
+}
+
+.step-indigo .step-item .step-item-link:before {
+  background-color: #5800e8;
+}
+
+.step-indigo .step-item.active a:before {
+  border-color: #5800e8;
+}
+
+.step-purple .step-item:not(:first-child):before {
+  background-color: #6900c7;
+}
+
+.step-purple .step-item .step-item-link {
+  color: #6900c7;
+}
+
+.step-purple .step-item .step-item-link:before {
+  background-color: #6900c7;
+}
+
+.step-purple .step-item.active a:before {
+  border-color: #6900c7;
+}
+
+.step-pink .step-item:not(:first-child):before {
+  background-color: #e30059;
+}
+
+.step-pink .step-item .step-item-link {
+  color: #e30059;
+}
+
+.step-pink .step-item .step-item-link:before {
+  background-color: #e30059;
+}
+
+.step-pink .step-item.active a:before {
+  border-color: #e30059;
+}
+
+.step-red-soft .step-item:not(:first-child):before {
+  background-color: #f1e0e3;
+}
+
+.step-red-soft .step-item .step-item-link {
+  color: #f1e0e3;
+}
+
+.step-red-soft .step-item .step-item-link:before {
+  background-color: #f1e0e3;
+}
+
+.step-red-soft .step-item.active a:before {
+  border-color: #f1e0e3;
+}
+
+.step-orange-soft .step-item:not(:first-child):before {
+  background-color: #f3e7e3;
+}
+
+.step-orange-soft .step-item .step-item-link {
+  color: #f3e7e3;
+}
+
+.step-orange-soft .step-item .step-item-link:before {
+  background-color: #f3e7e3;
+}
+
+.step-orange-soft .step-item.active a:before {
+  border-color: #f3e7e3;
+}
+
+.step-yellow-soft .step-item:not(:first-child):before {
+  background-color: #f2eee3;
+}
+
+.step-yellow-soft .step-item .step-item-link {
+  color: #f2eee3;
+}
+
+.step-yellow-soft .step-item .step-item-link:before {
+  background-color: #f2eee3;
+}
+
+.step-yellow-soft .step-item.active a:before {
+  border-color: #f2eee3;
+}
+
+.step-green-soft .step-item:not(:first-child):before {
+  background-color: #daefed;
+}
+
+.step-green-soft .step-item .step-item-link {
+  color: #daefed;
+}
+
+.step-green-soft .step-item .step-item-link:before {
+  background-color: #daefed;
+}
+
+.step-green-soft .step-item.active a:before {
+  border-color: #daefed;
+}
+
+.step-teal-soft .step-item:not(:first-child):before {
+  background-color: #daf0f2;
+}
+
+.step-teal-soft .step-item .step-item-link {
+  color: #daf0f2;
+}
+
+.step-teal-soft .step-item .step-item-link:before {
+  background-color: #daf0f2;
+}
+
+.step-teal-soft .step-item.active a:before {
+  border-color: #daf0f2;
+}
+
+.step-cyan-soft .step-item:not(:first-child):before {
+  background-color: #daf2f8;
+}
+
+.step-cyan-soft .step-item .step-item-link {
+  color: #daf2f8;
+}
+
+.step-cyan-soft .step-item .step-item-link:before {
+  background-color: #daf2f8;
+}
+
+.step-cyan-soft .step-item.active a:before {
+  border-color: #daf2f8;
+}
+
+.step-blue-soft .step-item:not(:first-child):before {
+  background-color: #dae7fb;
+}
+
+.step-blue-soft .step-item .step-item-link {
+  color: #dae7fb;
+}
+
+.step-blue-soft .step-item .step-item-link:before {
+  background-color: #dae7fb;
+}
+
+.step-blue-soft .step-item.active a:before {
+  border-color: #dae7fb;
+}
+
+.step-indigo-soft .step-item:not(:first-child):before {
+  background-color: #e3ddfa;
+}
+
+.step-indigo-soft .step-item .step-item-link {
+  color: #e3ddfa;
+}
+
+.step-indigo-soft .step-item .step-item-link:before {
+  background-color: #e3ddfa;
+}
+
+.step-indigo-soft .step-item.active a:before {
+  border-color: #e3ddfa;
+}
+
+.step-purple-soft .step-item:not(:first-child):before {
+  background-color: #e4ddf7;
+}
+
+.step-purple-soft .step-item .step-item-link {
+  color: #e4ddf7;
+}
+
+.step-purple-soft .step-item .step-item-link:before {
+  background-color: #e4ddf7;
+}
+
+.step-purple-soft .step-item.active a:before {
+  border-color: #e4ddf7;
+}
+
+.step-pink-soft .step-item:not(:first-child):before {
+  background-color: #f1ddec;
+}
+
+.step-pink-soft .step-item .step-item-link {
+  color: #f1ddec;
+}
+
+.step-pink-soft .step-item .step-item-link:before {
+  background-color: #f1ddec;
+}
+
+.step-pink-soft .step-item.active a:before {
+  border-color: #f1ddec;
+}
+
+.step-primary-soft .step-item:not(:first-child):before {
+  background-color: #dae7fb;
+}
+
+.step-primary-soft .step-item .step-item-link {
+  color: #dae7fb;
+}
+
+.step-primary-soft .step-item .step-item-link:before {
+  background-color: #dae7fb;
+}
+
+.step-primary-soft .step-item.active a:before {
+  border-color: #dae7fb;
+}
+
+.step-secondary-soft .step-item:not(:first-child):before {
+  background-color: #e4ddf7;
+}
+
+.step-secondary-soft .step-item .step-item-link {
+  color: #e4ddf7;
+}
+
+.step-secondary-soft .step-item .step-item-link:before {
+  background-color: #e4ddf7;
+}
+
+.step-secondary-soft .step-item.active a:before {
+  border-color: #e4ddf7;
+}
+
+.step-success-soft .step-item:not(:first-child):before {
+  background-color: #daefed;
+}
+
+.step-success-soft .step-item .step-item-link {
+  color: #daefed;
+}
+
+.step-success-soft .step-item .step-item-link:before {
+  background-color: #daefed;
+}
+
+.step-success-soft .step-item.active a:before {
+  border-color: #daefed;
+}
+
+.step-info-soft .step-item:not(:first-child):before {
+  background-color: #daf2f8;
+}
+
+.step-info-soft .step-item .step-item-link {
+  color: #daf2f8;
+}
+
+.step-info-soft .step-item .step-item-link:before {
+  background-color: #daf2f8;
+}
+
+.step-info-soft .step-item.active a:before {
+  border-color: #daf2f8;
+}
+
+.step-warning-soft .step-item:not(:first-child):before {
+  background-color: #f2eee3;
+}
+
+.step-warning-soft .step-item .step-item-link {
+  color: #f2eee3;
+}
+
+.step-warning-soft .step-item .step-item-link:before {
+  background-color: #f2eee3;
+}
+
+.step-warning-soft .step-item.active a:before {
+  border-color: #f2eee3;
+}
+
+.step-danger-soft .step-item:not(:first-child):before {
+  background-color: #f1e0e3;
+}
+
+.step-danger-soft .step-item .step-item-link {
+  color: #f1e0e3;
+}
+
+.step-danger-soft .step-item .step-item-link:before {
+  background-color: #f1e0e3;
+}
+
+.step-danger-soft .step-item.active a:before {
+  border-color: #f1e0e3;
 }
