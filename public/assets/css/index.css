@@ -43,6 +43,7 @@
   --bs-secondary-rgb: 156, 39, 176;
   --bs-success-rgb: 46, 125, 50;
   --bs-info-rgb: 38, 166, 154;
+  --bs-cyan-rgb: 200, 220, 240;
   --bs-warning-rgb: 255, 179, 0;
   --bs-danger-rgb: 211, 47, 47;
   --bs-light-rgb: 245, 245, 245;
@@ -332,7 +333,8 @@ aside #toggle-navbar {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #ABB3C4;
+  /* color: #ABB3C4; */
+  color: #808080;
 }
 
 .statistics-card {
@@ -430,7 +432,7 @@ aside #toggle-navbar {
   padding: 24px;
   background: #fff;
   border-radius: 26px;
-  margin-bottom: 56px;
+  margin-bottom: 16px;
 }
 .document-card .document-item {
   display: flex;
@@ -488,8 +490,8 @@ aside #toggle-navbar {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: #F8F8FA;
 }
@@ -619,6 +621,11 @@ aside #toggle-navbar {
 .bg-info {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-info-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-cyan {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-cyan-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-warning {

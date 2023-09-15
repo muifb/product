@@ -32,6 +32,7 @@
                         <input type="text" class="form-control" name="panjang_qty" id="panjangQty" required>
                     </div>
                     <label for="qtyPalet" class="col-sm-2 col-form-label">QTY(Palet)</label>
+                    <!-- 76 , 58 , 62 , 54 , 152 ,160 , 80 ,87 -->
                     <div class="col-sm-1">
                         <input type="text" class="form-control" name="qty_palet" id="qtyPalet" required>
                     </div>
