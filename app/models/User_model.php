@@ -1,5 +1,7 @@
 <?php
 
+use MyApp\Core\Database;
+
 class User_model
 {
     private $nama = 'Abdul Muif Bahtiar';

@@ -1,5 +1,7 @@
 <?php
 
+use MyApp\Core\Controller;
+
 class Oee extends Controller
 {
     public function __construct()

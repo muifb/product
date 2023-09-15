@@ -1,5 +1,7 @@
 <?php
 
+use MyApp\Core\Database;
+
 class Auth_model
 {
     private $table = 'tb_user';

@@ -1,5 +1,7 @@
 <?php
 
+use MyApp\Core\Database;
+
 class Batch_model
 {
     private $table = 'tb_batch';

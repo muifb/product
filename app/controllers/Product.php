@@ -1,5 +1,7 @@
 <?php
 
+use MyApp\Core\Controller;
+
 class Product extends Controller
 {
 

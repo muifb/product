@@ -1,5 +1,7 @@
 <?php
 
+use MyApp\Core\Database;
+
 class Shift_model
 {
     private $table = 'tb_shift';

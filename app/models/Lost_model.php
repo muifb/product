@@ -1,5 +1,7 @@
 <?php
 
+use MyApp\Core\Database;
+
 class Lost_model
 {
     private $table = 'tb_losttime';

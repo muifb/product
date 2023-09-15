@@ -1,5 +1,7 @@
 <?php
 
+use MyApp\Core\Database;
+
 class Product_model
 {
     private $table = 'tb_product';

@@ -1,5 +1,7 @@
 <?php
 
+use MyApp\Core\Controller;
+
 class Lost extends Controller
 {
     public function __construct()
