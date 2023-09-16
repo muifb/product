@@ -171,7 +171,6 @@ aside #toggle-navbar {
 }
 .sidebar-item {
   text-decoration: none;
-  display: block;
   background: transparent;
   height: 46px;
   border-radius: 16px;

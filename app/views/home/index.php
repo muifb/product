@@ -130,8 +130,8 @@
                 <div class="col-12">
                     <h2 class="content-title">Input number batch</h2>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4" id="step1">
-                    <div class="statistics-card">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="statistics-card" id="step1">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex flex-column justify-content-between align-items-start">
                                 <h1 class="content-desc">Create Batch</h1>
@@ -143,8 +143,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-4" id="step2">
-                    <div class="statistics-card">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="statistics-card" id="step2">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex flex-column justify-content-between align-items-start">
                                 <h1 class="content-desc">Good Receipt</h1>
@@ -157,8 +157,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-4" id="step3">
-                    <div class="statistics-card">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="statistics-card" id="step3">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex flex-column justify-content-between align-items-start">
                                 <h1 class="content-desc">Edit Good Receipt</h1>
@@ -398,7 +398,6 @@
 
         if (!localStorage.getItem('tour')) {
             tour.show();
-
         }
     </script>
 </body>
