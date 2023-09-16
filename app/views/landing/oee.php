@@ -69,7 +69,7 @@
                 </div>
                 <div class="row mb-3">
                     <label for="id_product" class="col-sm-3 col-form-label fw-bolder">PRO</label>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <select class="form-select" id="id_product" name="id_product" required>
                             <option value="" selected>Pilih Pro...</option>
                             <?php foreach ($data['product'] as $pro) : ?>

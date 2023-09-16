@@ -172,51 +172,51 @@
                 </div>
 
                 <!-- <div class="col-12 my-3">
-                    <div _ngcontent-nnp-c201="" class="sbp-preview">
-                        
-                    </div>
+                    
                 </div> -->
 
                 <div class="col-12 my-3">
-                    <h3 class="card-title">Product Description</h3>
+                    <h2 class="content-title">Product Description</h2>
                     <div class="document-card bg-cyan">
                         <?php $pro = $data['vismen']; ?>
                         <div class="row">
-                            <div class="col-12 mb-2">
-                                <div _ngcontent-nnp-c201="" class="sbp-preview-content">
-                                    <sbpro-step _ngcontent-nnp-c201="" _nghost-nnp-c200="">
-                                        <div _ngcontent-nnp-c200="" class="step step-danger">
-                                            <div _ngcontent-nnp-c200="" class="step-item">
-                                                <a _ngcontent-nnp-c200="" class="step-item-link pointer">
-                                                    Step 1.
-                                                    <span class="mt-2 text-dark"> Create Batch</span>
-                                                </a>
+                            <div class="col-12 mb-3">
+                                <div _ngcontent-nnp-c201="" class="sbp-preview">
+                                    <div _ngcontent-nnp-c201="" class="sbp-preview-content">
+                                        <sbpro-step _ngcontent-nnp-c201="" _nghost-nnp-c200="">
+                                            <div _ngcontent-nnp-c200="" class="step step-danger">
+                                                <div _ngcontent-nnp-c200="" class="step-item">
+                                                    <a _ngcontent-nnp-c200="" class="step-item-link pointer">
+                                                        Step 1.&nbsp;
+                                                        <span class="mt-2 text-dark"> Create Batch</span>
+                                                    </a>
+                                                </div>
+                                                <div _ngcontent-nnp-c200="" class="step-item">
+                                                    <a _ngcontent-nnp-c200="" class="step-item-link pointer">
+                                                        Step 2.&nbsp;
+                                                        <span class="mt-2 text-dark"> Good Receipt</span>
+                                                    </a>
+                                                </div>
+                                                <div _ngcontent-nnp-c200="" class="step-item">
+                                                    <a _ngcontent-nnp-c200="" class="step-item-link pointer">
+                                                        Step 3.&nbsp;
+                                                        <span class="mt-2 text-dark"> Edit Good Receipt</span>
+                                                    </a>
+                                                </div>
+                                                <div _ngcontent-nnp-c200="" class="step-item">
+                                                    <a _ngcontent-nnp-c200="" class="step-item-link pointer">
+                                                        Step 4.&nbsp;
+                                                        <span class="mt-2 text-dark"> Input Lost Time</span>
+                                                    </a>
+                                                </div>
                                             </div>
-                                            <div _ngcontent-nnp-c200="" class="step-item">
-                                                <a _ngcontent-nnp-c200="" class="step-item-link pointer">
-                                                    Step 2.
-                                                    <span class="mt-2 text-dark"> Good Receipt</span>
-                                                </a>
-                                            </div>
-                                            <div _ngcontent-nnp-c200="" class="step-item">
-                                                <a _ngcontent-nnp-c200="" class="step-item-link pointer">
-                                                    Step 3.
-                                                    <span class="mt-2 text-dark"> Edit Good Receipt</span>
-                                                </a>
-                                            </div>
-                                            <div _ngcontent-nnp-c200="" class="step-item">
-                                                <a _ngcontent-nnp-c200="" class="step-item-link pointer">
-                                                    Step 4.
-                                                    <span class="mt-2 text-dark"> Input Lost Time</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </sbpro-step>
+                                        </sbpro-step>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <h2 class="content-title">Process Order</h2>
-                                <div class="content-desc mb-3" style="color: rgb(69, 56, 189);"><?= $pro['mesin']; ?></div>
+                                <div class="content-desc mb-1" style="color: rgb(69, 56, 189);"><?= $pro['mesin']; ?></div>
 
                                 <div class="document-card">
                                     <div class="document-item">
@@ -278,7 +278,7 @@
                             <div class="col-lg-6">
                                 <h2 class="content-title">Size Product</h2>
                                 <!-- <div class="content-desc mb-4" style="color: rgb(69, 56, 189);">Lebar 152 mm | Panjang 2000 M</div> -->
-                                <div class="content-desc mb-3" style="color: rgb(69, 56, 189);">Lebar <?= $pro['qty_palet']; ?> mm | Panjang <?= $pro['panjang_qty']; ?> M</div>
+                                <div class="content-desc mb-1" style="color: rgb(69, 56, 189);">Lebar <?= $pro['qty_palet']; ?> mm | Panjang <?= $pro['panjang_qty']; ?> M</div>
 
                                 <div class="document-card">
                                     <div class="document-item">
@@ -329,27 +329,23 @@
                                     </div>
 
                                     <!-- <div class="document-item">
-                                <div class="d-flex justify-content-start align-items-center">
-        
-        
-                                    <div class="d-flex flex-column justify-content-between align-items-start">
-                                        <h2 class="document-title">Target QTY @pallet</h2>
-        
-                                        <span class="document-desc">- BOB</span>
-                                    </div>
-                                </div>
-                                <div class="document-item">
-                                    <div class="d-flex justify-content-start align-items-center">
-        
-        
-                                        <div class="d-flex flex-column justify-content-between align-items-start">
-                                            <h2 class="document-title">Delivered (OK+NC)</h2>
-        
-                                            <span class="document-desc">- BOB</span>
+                                        <div class="d-flex justify-content-start align-items-center">
+                                            <div class="d-flex flex-column justify-content-between align-items-start">
+                                                <h2 class="document-title">Target QTY @pallet</h2>
+
+                                                <span class="document-desc">- BOB</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div> -->
+                                        <div class="document-item">
+                                            <div class="d-flex justify-content-start align-items-center">
+                                                <div class="d-flex flex-column justify-content-between align-items-start">
+                                                    <h2 class="document-title">Delivered (OK+NC)</h2>
+
+                                                    <span class="document-desc">- BOB</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
 
                                 </div>
                             </div>

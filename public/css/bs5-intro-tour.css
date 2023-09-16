@@ -15,7 +15,7 @@ body.tour-active-element {
   min-width: 300px;
   width: 500px;
   max-width: 100%;
-  font-size: 24px;
+  font-size: 20px;
   z-index: 1051;
   text-align: justify;
 }
@@ -36,7 +36,7 @@ body.tour-active-element {
   content: "X";
   position: absolute;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 16px;
   top: 6px;
   right: 10px;
   padding: 3px;
@@ -89,7 +89,7 @@ body.tour-active-element {
 
 .popover-tour .popover-footer .btn {
   border: 1px solid gray;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .popover-tour .popover-footer .tour-finish,

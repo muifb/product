@@ -29,14 +29,14 @@
 
     template +=
       '<div class="tour-exit"></div>' +
-      '<h1 class="popover-header fs-3"></h1>' +
+      '<h3 class="popover-header fs-5"></h3>' +
       '<div class="popover-body">' +
       "</div>" +
       '<div class="popover-footer">' +
-      '   <a class="btn tour-prev">' +
+      '   <a class="btn btn-outline-secondary tour-prev">' +
       translations.previous +
       "   </a>" +
-      '   <a class="btn tour-next">' +
+      '   <a class="btn btn-outline-secondary tour-next">' +
       translations.next +
       "   </a>" +
       '   <a class="btn btn-primary tour-finish hidden">' +

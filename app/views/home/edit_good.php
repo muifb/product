@@ -2,14 +2,14 @@
 <div class="m-4">
     <a href="/produksi/home" class="btn btn-danger"><i class="fa-solid fa-reply"></i> Back</a>
 </div>
+<div class="row justify-content-center mx-5">
+    <?php Flasher::flash() ?>
+</div>
 <div class="card rounded-3 m-4 p-1">
     <div class="row mt-4 mx-auto">
         <h3 class="judul">Edit Good Receipt</h3>
     </div>
     <hr>
-    <div class="row justify-content-center mx-5">
-        <?php Flasher::flash() ?>
-    </div>
     <div class="row justify-content-center">
         <!-- Tanggal jam -->
 

@@ -26,19 +26,19 @@ class Product_model
 
     public function getProductOk()
     {
-        $this->db->query('SELECT * FROM tb_report JOIN tb_batch USING (nm_batch) JOIN tb_vismen USING (id_product) JOIN tb_shift USING (id_shift) WHERE tb_report.status_pro = "OK" ');
+        $this->db->query('SELECT * FROM tb_report JOIN tb_batch USING (nm_batch) JOIN tb_vismen USING (id_product) JOIN tb_shift USING (id_shift) WHERE tb_report.status_pro = "OK" ORDER BY id_batch DESC');
         return $this->db->resultSet();
     }
 
     public function getProductNc()
     {
-        $this->db->query('SELECT * FROM tb_report JOIN tb_batch USING (nm_batch) JOIN tb_vismen USING (id_product) JOIN tb_shift USING (id_shift) WHERE tb_report.status_pro = "NC" ');
+        $this->db->query('SELECT * FROM tb_report JOIN tb_batch USING (nm_batch) JOIN tb_vismen USING (id_product) JOIN tb_shift USING (id_shift) WHERE tb_report.status_pro = "NC" ORDER BY id_batch DESC');
         return $this->db->resultSet();
     }
 
     public function getProductReject()
     {
-        $this->db->query('SELECT * FROM tb_report JOIN tb_batch USING (nm_batch) JOIN tb_vismen USING (id_product) JOIN tb_shift USING (id_shift) WHERE tb_report.status_pro = "Reject" ');
+        $this->db->query('SELECT * FROM tb_report JOIN tb_batch USING (nm_batch) JOIN tb_vismen USING (id_product) JOIN tb_shift USING (id_shift) WHERE tb_report.status_pro = "Reject" ORDER BY id_batch DESC');
         return $this->db->resultSet();
     }
 
