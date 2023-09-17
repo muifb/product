@@ -76,7 +76,7 @@
                     <a class="nav-link" href="#">Data Reject</a> -->
                 </div>
                 <!--  -->
-                <strong class="navbar-brand fs-6 mx-4" id=""><?= tanggal_indo(date('Y-m-d'), true); ?></strong>
+                <strong class="navbar-brand fs-6 mx-4" id=""><?= Tanggal::tanggal_indo(date('Y-m-d'), true); ?></strong>
                 <strong class="navbar-brand fs-6" id="clock"></strong>
             </div>
             <span class="document-desc text-white">User : <strong><?= $_SESSION['login']['nik']; ?></strong></span>

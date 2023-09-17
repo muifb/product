@@ -3,5 +3,9 @@
         "psr-4": {
             "MyApp\\": "app/"
         }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "picqer/php-barcode-generator": "^2.4"
     }
 }

@@ -48,9 +48,9 @@
                                 <td><?= $vs['id_product']; ?></td>
                                 <td><?= $vs['panjang_qty']; ?></td>
                                 <td><?= $vs['qty_palet']; ?></td>
-                                <td><?= tgl_indo($vs['start_produksi'], true); ?></td>
-                                <td><?= tgl_indo($vs['finish_produksi'], true); ?></td>
-                                <td><?= tgl_indo($vs['est_pengiriman']); ?></td>
+                                <td><?= Tanggal::tgl_indo($vs['start_produksi'], true); ?></td>
+                                <td><?= Tanggal::tgl_indo($vs['finish_produksi'], true); ?></td>
+                                <td><?= Tanggal::tgl_indo($vs['est_pengiriman']); ?></td>
                             </tr>
                     <?php endforeach;
                     } ?>

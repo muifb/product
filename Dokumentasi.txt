@@ -7,8 +7,10 @@ MANUAL PEMASANGAN
         => folder app
         => folder public
         => folder vendor
+        => file .env
+        => file .env.example
         => file composer.json
-        => file example_htaccess.txt
+        => file backup_htaccess
         => file db_produksi.sql
         => file Dokumentasi.txt
         => file example.json

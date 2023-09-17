@@ -287,7 +287,7 @@
                                             <div class="d-flex flex-column justify-content-between align-items-start">
                                                 <h2 class="document-title">Start PRO - Finish PRO </h2>
 
-                                                <span class="document-desc"><?= tgl_indo($pro['start_produksi']); ?> - <?= tgl_indo($pro['finish_produksi']); ?></span>
+                                                <span class="document-desc"><?= Tanggal::tgl_indo($pro['start_produksi']); ?> - <?= Tanggal::tgl_indo($pro['finish_produksi']); ?></span>
                                             </div>
                                         </div>
 
