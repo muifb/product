@@ -11,6 +11,12 @@ class App
     private const DEFAULT_GET = 'GET';
     private const DEFAULT_POST = 'POST';
     private $handlers = [];
+    private $namespace = 'MyApp\Controllers';
+
+    public function setNamespace($namespace)
+    {
+        $this->namespace = $namespace;
+    }
 
     public function setDefaultController($controller)
     {
@@ -53,12 +59,14 @@ class App
             $kpath = (isset($path[0]) ? $path[0] : '') . (isset($path[1]) ? $path[1] : '');
             if ($kurl != "" && $kurl == $kpath && $requestMethod == $handler['method']) {
                 //controller
-                if (isset($handler['handler'][0]) && file_exists(__DIR__ . '/../controllers/' . $handler['handler'][0] . '.php')) {
+                // if (isset($handler['handler'][0]) && class_exists($this->namespace . '\\' . $handler['handler'][0])) {
+                if (isset($handler['handler'][0]) && class_exists($handler['handler'][0])) {
                     $this->controller = $handler['handler'][0];
                     unset($url[0]);
                 }
-                require_once(__DIR__ . '/../controllers/' . $this->controller . '.php');
-                $this->controller = new $this->controller;
+                // create object
+                $fn = $this->controller;
+                $this->controller = new $fn;
                 $excecute = 1;
 
                 //method
@@ -69,9 +77,10 @@ class App
             }
         }
 
+        // create Object
         if ($excecute == 0) {
-            require_once(__DIR__ . '/../controllers/' . $this->controller . '.php');
-            $this->controller = new $this->controller;
+            $fn = $this->namespace . '\\' . $this->controller;
+            $this->controller = new $fn;
         }
 
         //params
@@ -79,7 +88,7 @@ class App
             $this->params = array_values($url);
         }
 
-        // jalankan controller & method, serta kirimkan params jika ada
+        // run controller & method, and send params if set
         call_user_func_array([$this->controller, $this->method], $this->params);
     }
 

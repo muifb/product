@@ -48,7 +48,7 @@
                                             if ($data['nav'] == 'vismen') {
                                                 echo 'active';
                                             }
-                                            ?>" href="/vismen/list">Vismen</a>
+                                            ?>" href="<?= APPURL; ?>/vismen/list">Vismen</a>
                     </li>
                     <!--  -->
                 </ul>

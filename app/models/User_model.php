@@ -1,5 +1,7 @@
 <?php
 
+namespace MyApp\Models;
+
 use MyApp\Core\Database;
 
 class User_model

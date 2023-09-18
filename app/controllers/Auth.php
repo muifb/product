@@ -1,6 +1,11 @@
 <?php
 
+namespace MyApp\Controllers;
+
+use Signin;
 use MyApp\Core\Controller;
+use MyApp\Models\Auth_model;
+use MyApp\Models\Shift_model;
 
 class Auth extends Controller
 {
@@ -9,7 +14,7 @@ class Auth extends Controller
     {
         Signin::login();
         Signin::loginAdmin();
-        $data['shift'] = $this->model('Shift_model')->getShift();
+        $data['shift'] = $this->model(Shift_model::class)->getShift();
         $this->view('auth/index', $data);
     }
 
@@ -22,7 +27,7 @@ class Auth extends Controller
     public function login()
     {
         if (!empty($_POST)) {
-            $this->model('Auth_model')->prosesLogin($_POST);
+            $this->model(Auth_model::class)->prosesLogin($_POST);
         } else {
             header('Location:/auth/login');
         }
@@ -32,7 +37,7 @@ class Auth extends Controller
     public function admin()
     {
         if (!empty($_POST)) {
-            $this->model('Auth_model')->prosesLoginAdmin($_POST);
+            $this->model(Auth_model::class)->prosesLoginAdmin($_POST);
         } else {
             header('Location:/auth/login-admin');
         }

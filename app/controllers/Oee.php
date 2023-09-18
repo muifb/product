@@ -1,6 +1,10 @@
 <?php
 
+namespace MyApp\Controllers;
+
+use Signin;
 use MyApp\Core\Controller;
+use MyApp\Models\Vismen_model;
 
 class Oee extends Controller
 {
@@ -15,7 +19,7 @@ class Oee extends Controller
         $data = [
             'nav' => 'oee',
             'judul' => 'Data OEE',
-            'product' => $this->model('Vismen_model')->getVismen()
+            'product' => $this->model(Vismen_model::class)->getVismen()
         ];
         $this->view('templates/header', $data);
         $this->view('landing/oee', $data);
@@ -27,7 +31,7 @@ class Oee extends Controller
         $data = [
             'nav' => 'oee',
             'judul' => 'OEE',
-            'search' => $this->model('Vismen_model')->getSearch(),
+            'search' => $this->model(Vismen_model::class)->getSearch(),
         ];
         $this->view('templates/pro_header', $data);
         $this->view('landing/hasil', $data);

@@ -1,5 +1,7 @@
 <?php
 
+namespace MyApp\Controllers;
+
 class sample
 {
     private $data;

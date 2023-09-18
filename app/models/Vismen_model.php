@@ -1,6 +1,10 @@
 <?php
 
+namespace MyApp\Models;
+
 use MyApp\Core\Database;
+use Flasher;
+
 
 class Vismen_model
 {

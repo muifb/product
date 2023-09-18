@@ -1,6 +1,12 @@
 <?php
 
+namespace MyApp\Controllers;
+
+use Signin;
+use Flasher;
 use MyApp\Core\Controller;
+use MyApp\Models\Vismen_model;
+use MyApp\Models\Product_model;
 
 class Landing extends Controller
 {
@@ -24,7 +30,7 @@ class Landing extends Controller
         $data = [
             'nav' => 'vismen',
             'judul' => 'Vismen',
-            'vismen' => $this->model('Vismen_model')->getVismen()
+            'vismen' => $this->model(Vismen_model::class)->getVismen()
         ];
         $this->view('templates/landing_header', $data);
         $this->view('landing/vismen', $data);
@@ -37,7 +43,7 @@ class Landing extends Controller
         $data = [
             'nav' => 'vismen',
             'judul' => 'Vismen',
-            'nopro' => $this->model('Vismen_model')->getNopro()
+            'nopro' => $this->model(Vismen_model::class)->getNopro()
         ];
         $this->view('templates/landing_header', $data);
         $this->view('landing/tambah-vismen', $data);
@@ -53,7 +59,7 @@ class Landing extends Controller
     {
         // var_dump($_POST['nm_product'] . ' ' . $_POST['ukuran']);
         // die;
-        if ($this->model('Vismen_model')->insertVismen($_POST) > 0) {
+        if ($this->model(Vismen_model::class)->insertVismen($_POST) > 0) {
             Flasher::setFlash('Vismen', 'berhasil ditambah!.', 'success');
             header('Location: /vismen/list');
             exit;
@@ -86,6 +92,6 @@ class Landing extends Controller
 
     public function getProduct()
     {
-        echo json_encode($this->model('Product_model')->getProductById($_POST['id']));
+        echo json_encode($this->model(Product_model::class)->getProductById($_POST['id']));
     }
 }

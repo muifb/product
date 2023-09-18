@@ -1,6 +1,10 @@
 <?php
 
+namespace MyApp\Models;
+
 use MyApp\Core\Database;
+use Printer;
+
 
 class Batch_model
 {

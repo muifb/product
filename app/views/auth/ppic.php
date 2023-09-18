@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PKL - Signin</title>
-    <link href='<?= BASEURL; ?>/assets/img/global/logo.svg' rel='shortcut icon'>
+    <link href="<?= BASEURL; ?>/assets/img/global/logo.svg" rel='shortcut icon'>
     <link href="<?= BASEURL; ?>/assets/css/index.css" rel="stylesheet">
     <link href="<?= BASEURL; ?>/assets/css/signin.css" rel="stylesheet">
 
@@ -32,7 +32,7 @@
 
     <div class="form-signin bg-light">
         <!-- form login admin ppic -->
-        <form action="<?php echo BASEURL; ?>/../auth/login-admin" method="POST">
+        <form action="/auth/login-admin" method="POST">
             <img class="mb-4" src="<?= BASEURL; ?>/assets/img/global/logo.svg" alt="" width="72" height="57">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
             <div class="row">
@@ -43,7 +43,7 @@
 
             <div class="form-floating">
                 <input type="text" class="form-control ppic" name="nik_ppic" id="nik_ppic" required>
-                <label for="floatingInput">NIK Admin PPIC</label>
+                <label for="nik_ppic">NIK Admin PPIC</label>
             </div>
 
             <div class="row">

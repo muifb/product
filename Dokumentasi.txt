@@ -22,13 +22,17 @@ MANUAL PEMASANGAN
       JUGA TIDAK DIPERKENANKAN MEMBUAT FOLDER BARU DIDALAM PRODUCT KEMUDIAN ISINYA YANG DISEBUTKAN DIATAS.
       BOLEH SEPERTI ITU ASALKAN YANG ANDA BUKA DI CODE EDITOR DAN TERMINAL ADALAH FOLDER YANG ISINYA LANGSUNG DISEBUTKAN DIATAS
       TANPA FOLDER LAIN BARU BERISI YANG DISEBUTKAN.
-    # Kemudian masuk ke app->config-> buka file config.php
-    # Edit configurasi database nya, cari define('DB_PASS', '');
-    # Isikan password sesuai dengan punya anda jika tidak ada password-nya biarkan kosong
+    # kemudian konfigurasi Database pada file .env
+    # Edit configurasi database nya, 
+        DB_HOST=
+        DB_DATABASE=
+        DB_USERNAME=
+        DB_PASSWORD=
+      sesuaikan dengan punya kalian. Isikan DB_PASSWORD sesuai dengan punya anda jika tidak ada password-nya biarkan kosong
     # Buka terminal yang ada dieditor, KALAU BUKA TERMINAL KOMPUTER PASTIKAN YANG DIBUKA SESUAI YANG DIJELASKAN DIATAS.
-    # Kemudian ketikkan php -S localhost:8000 kemudian enter
+    # Kemudian ketikkan php -S 127.0.0.1:8000 kemudian enter
 
-Buka Browser favorit anda, dan ketik di urlnya http://localhost:8000 -> enter
+Buka Browser favorit anda, dan ketik di urlnya http://127.0.0.1:8000 -> enter
 
 update ->   Penambahan login admin ppic untuk melakuan tambah vismen list order.
             Ketika diklik tambah akan muncul login Admin PPIC,
