@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='<?= BASEURL; ?>/assets/img/global/logo.svg' rel='shortcut icon'>
     <link href="<?= BASEURL; ?>/assets/css/index.css" rel="stylesheet">
-    <link href="<?= BASEURL; ?>/css/bs5-intro-tour.css" rel="stylesheet">
-    <link href="<?= BASEURL; ?>/css/sticky.css" rel="stylesheet" type="text/css">
+    <link href="<?= BASEURL; ?>/assets/css/bs5-intro-tour.css" rel="stylesheet">
+    <link href="<?= BASEURL; ?>/assets/css/sticky.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -370,7 +370,7 @@
     <script src="<?= BASEURL; ?>/assets/Datatables/datatables.min.js"></script>
     <script src="<?= BASEURL; ?>/assets/Datatables/DataTables/js/dataTables.bootstrap5.min.js"></script>
     <script src="<?= BASEURL; ?>/assets/js/script.js"></script>
-    <script src="<?= BASEURL; ?>/js/bs5-intro-tour.js"></script>
+    <script src="<?= BASEURL; ?>/assets/js/bs5-intro-tour.js"></script>
     <script>
         var steps = [{
             title: "Hello",

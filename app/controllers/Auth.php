@@ -45,7 +45,7 @@ class Auth extends Controller
 
     public function trial()
     {
-        $this->view('auth/trial');
+        $this->view('auth/try');
     }
 
     public function logout()

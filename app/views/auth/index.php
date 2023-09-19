@@ -42,7 +42,7 @@
 
             <div class="form-floating">
                 <input type="text" class="form-control nik" name="nik" id="nik" required>
-                <label for="floatingInput">NIK Operator</label>
+                <label for="nik">NIK Operator</label>
             </div>
             <div class="form-floating">
                 <select class="form-select" name="shift" id="shift" required>
@@ -51,11 +51,11 @@
                         <option value="<?= $shift['id_shift']; ?>"><?= $shift['kel_shift']; ?></option>
                     <?php endforeach; ?>
                 </select>
-                <label for="floatingSelect">Shift/Group</label>
+                <label for="shift">Shift/Group</label>
             </div>
             <div class="form-floating">
                 <input type="text" class="form-control no-pro" name="noPro" id="noPro" required>
-                <label for="floatingInput">No. Pro</label>
+                <label for="noPro">No. Pro</label>
             </div>
 
             <div class="row">

@@ -61,29 +61,33 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
-        <div class="container container-fluid">
+        <div class="container-fluid mx-3">
             <a class="navbar-brand" href="/produksi/home" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Halaman Awal">Laporan Produksi</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/produksi/home" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Halaman Awal">Home</a>
-                    <!-- <a class="nav-link" href="#">Product</a>
-                    <a class="nav-link" href="#">Output</a>
-                    <a class="nav-link" href="#">Vismen</a>
-                    <a class="nav-link" href="#">Data Nc</a>
-                    <a class="nav-link" href="#">Data Reject</a> -->
-                </div>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/produksi/home" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Halaman Awal">Home</a>
+                        <!-- <a class="nav-link" href="#">Product</a>
+                        <a class="nav-link" href="#">Output</a>
+                        <a class="nav-link" href="#">Vismen</a>
+                        <a class="nav-link" href="#">Data Nc</a>
+                        <a class="nav-link" href="#">Data Reject</a> -->
+                    </li>
+                    <strong class="navbar-text text-white fs-6 mx-4" id=""><?= Tanggal::tanggal_indo(date('Y-m-d'), true); ?></strong>
+                    <strong class="navbar-text text-white fs-6" id="clock"></strong>
+                </ul>
                 <!--  -->
-                <strong class="navbar-brand fs-6 mx-4" id=""><?= Tanggal::tanggal_indo(date('Y-m-d'), true); ?></strong>
-                <strong class="navbar-brand fs-6" id="clock"></strong>
+                <div class="d-flex">
+                    <span class="navbar-text text-white">User : <strong><?= $_SESSION['login']['nik']; ?></strong></span>
+                    <span class="navbar-text text-white mx-3"><strong><?= $_SESSION['login']['nama']; ?></strong></span>
+                    <a class="ms-3 btn btn-outline-light btn-sm" href="/auth/logout" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Keluar" id="logout">
+                        <span>Logout</span>
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </a>
+                </div>
             </div>
-            <span class="document-desc text-white">User : <strong><?= $_SESSION['login']['nik']; ?></strong></span>
-            <span class="document-desc text-white mx-3"><strong><?= $_SESSION['login']['nama']; ?></strong></span>
         </div>
-        <a class="navbar-brand fs-6 me-4" href="/auth/logout" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Keluar" id="logout">
-            <span>Logout</span>
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-        </a>
     </nav>
