@@ -7,7 +7,7 @@
 </div>
 <div class="card rounded-3 mx-4 p-1">
     <div class="row mt-4 mx-auto">
-        <h3 class="judul">Edit Good Receipt</h3>
+        <h3 class="judul">Edit Good Receipt Pro <?= $_SESSION['login']['id_pro']; ?></h3>
     </div>
     <hr>
     <div class="row justify-content-center">
@@ -21,25 +21,23 @@
                 <tr>
                     <th>#</th>
                     <th>Batch</th>
-                    <!-- <th>Pro Numb</th> -->
                     <th>Matr Number</th>
                     <th>Status</th>
                     <th>Start</th>
                     <th>Finish</th>
-                    <th class="lebar-3">Joint</th>
+                    <th>Joint</th>
                     <th>Panjang</th>
                     <th>Ukuran</th>
-                    <th class="lebar-6">Defect</th>
+                    <th>Defect</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                <?php $nomor = 1;
-                foreach ($data['product'] as $pr) : ?>
+                <?php
+                foreach ($data['product'] as $key => $pr) : ?>
                     <tr>
-                        <th><?= $nomor++; ?></th>
+                        <td><?= $key + 1; ?></td>
                         <td><?= $pr['nm_batch']; ?></td>
-                        <!-- <td><?= $pr['id_product']; ?></td> -->
                         <td><?= $pr['material']; ?></td>
                         <td><?= $pr['status_pro']; ?></td>
                         <td><?= $pr['mulai_pro']; ?></td>
@@ -48,7 +46,9 @@
                         <td><?= $pr['panjang_qty']; ?></td>
                         <td><?= $pr['qty_palet']; ?></td>
                         <td><?= $pr['kat_defect']; ?></td>
-                        <td><a class="btn btn-success btn-sm tampilModalResend" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $pr['id_report']; ?>">Resend</a></td>
+                        <td>
+                            <a class="btn btn-success btn-sm tampilModalResend" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $pr['id_report']; ?>">Resend</a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

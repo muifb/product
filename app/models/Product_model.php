@@ -20,27 +20,47 @@ class Product_model
         // return $this->db->resultSet();
     }
 
+    public function count()
+    {
+        $this->db->query('SELECT RIGHT (nm_product, 4) as ukuran ,qty_palet as panjang FROM tb_vismen WHERE id_product = :id_product LIMIT 1');
+        $this->db->bind('id_product', $_SESSION['login']['id_pro']);
+        $data = $this->db->single();
+        if ($this->db->rowCount() > 0) {
+            $count = round($data['ukuran'] / $data['panjang']);
+            return $count;
+        } else {
+            return 0;
+        }
+    }
+
     public function getAllProduct()
     {
-        $this->db->query('SELECT * FROM tb_report JOIN tb_batch USING (nm_batch) JOIN tb_vismen USING (id_product) JOIN tb_shift USING (id_shift) WHERE tb_batch.is_post != 0 ORDER BY id_batch DESC');
+        $this->db->query('SELECT * FROM tb_report JOIN tb_batch USING (nm_batch) JOIN tb_vismen USING (id_product) JOIN tb_shift USING (id_shift) WHERE tb_batch.id_product = :id_product AND tb_batch.is_post != 0 ORDER BY id_batch DESC');
+        $this->db->bind('id_product', $_SESSION['login']['id_pro']);
         return $this->db->resultSet();
     }
 
     public function getProductOk()
     {
-        $this->db->query('SELECT * FROM tb_report JOIN tb_batch USING (nm_batch) JOIN tb_vismen USING (id_product) JOIN tb_shift USING (id_shift) WHERE tb_report.status_pro = "OK" ORDER BY id_batch DESC');
+        $this->db->query('SELECT * FROM tb_report JOIN tb_batch USING (nm_batch) JOIN tb_vismen USING (id_product) JOIN tb_shift USING (id_shift) WHERE tb_batch.id_product = :id_product AND tb_report.status_pro = :status_pro ORDER BY id_batch DESC');
+        $this->db->bind('id_product', $_SESSION['login']['id_pro']);
+        $this->db->bind('status_pro', "OK");
         return $this->db->resultSet();
     }
 
     public function getProductNc()
     {
-        $this->db->query('SELECT * FROM tb_report JOIN tb_batch USING (nm_batch) JOIN tb_vismen USING (id_product) JOIN tb_shift USING (id_shift) WHERE tb_report.status_pro = "NC" ORDER BY id_batch DESC');
+        $this->db->query('SELECT * FROM tb_report JOIN tb_batch USING (nm_batch) JOIN tb_vismen USING (id_product) JOIN tb_shift USING (id_shift) WHERE tb_batch.id_product = :id_product AND tb_report.status_pro = :status_pro ORDER BY id_batch DESC');
+        $this->db->bind('id_product', $_SESSION['login']['id_pro']);
+        $this->db->bind('status_pro', "NC");
         return $this->db->resultSet();
     }
 
     public function getProductReject()
     {
-        $this->db->query('SELECT * FROM tb_report JOIN tb_batch USING (nm_batch) JOIN tb_vismen USING (id_product) JOIN tb_shift USING (id_shift) WHERE tb_report.status_pro = "Reject" ORDER BY id_batch DESC');
+        $this->db->query('SELECT * FROM tb_report JOIN tb_batch USING (nm_batch) JOIN tb_vismen USING (id_product) JOIN tb_shift USING (id_shift) WHERE tb_batch.id_product = :id_product AND tb_report.status_pro = :status_pro ORDER BY id_batch DESC');
+        $this->db->bind('id_product', $_SESSION['login']['id_pro']);
+        $this->db->bind('status_pro', "Reject");
         return $this->db->resultSet();
     }
 

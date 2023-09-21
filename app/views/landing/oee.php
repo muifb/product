@@ -71,9 +71,12 @@
                     <label for="id_product" class="col-sm-3 col-form-label fw-bolder">PRO</label>
                     <div class="col-sm-4">
                         <select class="form-select" id="id_product" name="id_product" required>
-                            <option value="" selected>Pilih Pro...</option>
                             <?php foreach ($data['product'] as $pro) : ?>
-                                <option value="<?= $pro['id_product']; ?>"><?= $pro['id_product']; ?></option>
+                                <?php if ($_SESSION['login']['id_pro'] == $pro['id_product']) : ?>
+                                    <option value="<?= $pro['id_product']; ?>" selected><?= $pro['id_product']; ?></option>
+                                <?php else : ?>
+                                    <option value="<?= $pro['id_product']; ?>"><?= $pro['id_product']; ?></option>
+                                <?php endif; ?>
                             <?php endforeach; ?>
                         </select>
                     </div>

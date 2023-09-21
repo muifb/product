@@ -39,8 +39,8 @@ showTime();
 $(function () {
   $("#dataProduct").DataTable({
     lengthMenu: [
-      [6, 12, 24, -1],
-      [6, 12, 24, "All"],
+      [10, 14, 24, -1],
+      [10, 14, 24, "All"],
     ],
     pagingType: "full_numbers",
     ordering: false,
@@ -244,8 +244,8 @@ $(function () {
 
   $("#editReceipt").DataTable({
     lengthMenu: [
-      [6, 12, 24, -1],
-      [6, 12, 24, "All"],
+      [10, 14, 28, -1],
+      [10, 14, 28, "All"],
     ],
     pagingType: "full_numbers",
     ordering: false,

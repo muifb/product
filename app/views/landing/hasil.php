@@ -297,7 +297,7 @@
                             <hr>
                             <?php
                             // $allShift = (round($oee1) + round($oee2) + round($oee3)) / 3;
-                            $avai = [round($availability1), round($availability1), round($availability1)];
+                            $avai = [round($availability1), round($availability2), round($availability3)];
                             $sumAvai = array_sum($avai);
                             $performa = [round($performance1), round($performance2), round($performance3)];
                             $sumPerforma = array_sum($performa);

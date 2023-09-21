@@ -7,18 +7,18 @@ use PDOException;
 
 class Database
 {
-    private $host = DB_HOST;
-    private $user = DB_USER;
-    private $pass = DB_PASS;
-    private $db_name = DB_NAME;
-
     private $dbh;
     private $stmt;
 
     public function __construct()
     {
+        $user = $_ENV['DB_USERNAME'];
+        $host = $_ENV['DB_HOST'];
+        $pass = $_ENV['DB_PASSWORD'];
+        $db_name = $_ENV['DB_DATABASE'];
+
         //data source name
-        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->db_name;
+        $dsn = 'mysql:host=' . $host . ';dbname=' . $db_name;
 
         $option = [
             PDO::ATTR_PERSISTENT => true,
@@ -26,7 +26,7 @@ class Database
         ];
 
         try {
-            $this->dbh = new PDO($dsn, $this->user, $this->pass, $option);
+            $this->dbh = new PDO($dsn, $user, $pass, $option);
         } catch (PDOException $e) {
             die($e->getMessage());
         }

@@ -1,49 +1,49 @@
 <div class="card rounded-3 p-2 ms-4">
     <div class="row mt-3 mx-auto">
-        <h3 class="judul m-0">Data Output Product</h3>
+        <h3 class="judul m-0">Data Output Product <?= $_SESSION['login']['id_pro']; ?></h3>
     </div>
     <hr>
     <?php
-    $product = $data['product'];
-    $jumlah = count($product) / 6;
+    $product = count($data['product']);
+    $jumlah = $product / $data['output'];
     ?>
     <div class="card-body">
         <table class="table table-striped table-hover" id="dataProduct">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Pro Number</th>
-                    <th scope="col">Batch</th>
-                    <th scope="col">Start Up</th>
-                    <th scope="col">Turn Up</th>
-                    <th scope="col">Group</th>
-                    <th scope="col">Personal Numb</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">ket Defect</th>
+                    <th>#</th>
+                    <th>Date</th>
+                    <th>Batch</th>
+                    <th>Start Up</th>
+                    <th>Turn Up</th>
+                    <th>Group</th>
+                    <th>Personal Numb</th>
+                    <th>Status</th>
+                    <th>ket Defect</th>
                 </tr>
             </thead>
             <tbody>
                 <?php $nomor = 1;
                 foreach ($data['product'] as $pro) : ?>
                     <tr>
-                        <th scope="row"><?= $nomor++; ?></th>
+                        <td><?= $nomor++; ?></td>
                         <td><?= $pro['tgl_cetak']; ?></td>
-                        <td><?= $pro['id_product']; ?></td>
                         <td><?= $pro['nm_batch']; ?></td>
                         <td><?= $pro['mulai_pro']; ?></td>
                         <td><?= $pro['selesai_pro']; ?></td>
-                        <td class="text-center"><?= $pro['kel_shift']; ?></td>
-                        <td class="text-center"><?= $pro['nik']; ?></td>
-                        <td class="text-center"><?= $pro['status_pro']; ?></td>
+                        <td><?= $pro['kel_shift']; ?></td>
+                        <td><?= $pro['nik']; ?></td>
+                        <td><?= $pro['status_pro']; ?></td>
                         <td><?= $pro['kat_defect']; ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
-            <tr>
-                <th class="text-end" colspan="9">#Total Semua</th>
-                <th scope="col"><?= round($jumlah); ?> Output</th>
-            </tr>
+            <tfoot>
+                <tr>
+                    <th class="text-end" colspan="8">#Total Semua</th>
+                    <th scope="col"><?= round($jumlah); ?> Output</th>
+                </tr>
+            </tfoot>
         </table>
     </div>
 </div>
