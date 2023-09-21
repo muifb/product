@@ -11,6 +11,7 @@
     <link href='<?= BASEURL; ?>/assets/img/global/logo.svg' rel='shortcut icon'>
     <!-- Core theme CSS (includes Bootstrap)-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link href="<?= BASEURL; ?>/assets/css/index.css" rel="stylesheet" />
     <link href="<?= BASEURL; ?>/assets/css/flatpickr.min.css" rel="stylesheet" />
     <style>
@@ -28,6 +29,10 @@
         .ms-7 {
             margin-left: 5rem !important;
         }
+
+        .text-small {
+            font-size: 85%;
+        }
     </style>
     <!-- Jquery JS -->
     <script src="<?= BASEURL; ?>/assets/js/jquery.min.js"></script>
@@ -36,9 +41,9 @@
 <body>
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
-        <div class="container-fluid ms-7">
+        <div class="container-fluid ms-5">
             <a class="navbar-brand" href="/vismen/list">Laporan Produksi</a>
-            <button class="navbar-toggler" type="button">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -50,16 +55,36 @@
                                             }
                                             ?>" href="<?= APPURL; ?>/vismen/list">Vismen</a>
                     </li>
-                    <!--  -->
                 </ul>
                 <div class="d-flex">
                     <?php
                     if (isset($_SESSION['login-admin'])) {
                     ?>
-                        <a class="me-3 btn btn-outline-light btn-sm" href="/auth/logout" id="logout">
-                            Logout
-                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                        </a>
+                        <div class="dropdown navbar-text">
+                            <a href="#" class="text-decoration-none dropdown-toggle mx-4" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="text-white"><strong><?= $_SESSION['login-admin']['nama']; ?></strong></span>
+                            </a>
+                            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                                <li>
+                                    <span class="dropdown-item text-dark">
+                                        <strong>Admin PPIC</strong>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item text-dark">
+                                        <strong><?= $_SESSION['login-admin']['nik']; ?></strong>
+                                    </span>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-dark" href="/auth/logout" id="logout">
+                                        Sign out <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     <?php
                     } else {
                     ?>
@@ -73,5 +98,4 @@
                 </div>
             </div>
         </div>
-
     </nav>
