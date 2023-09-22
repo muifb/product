@@ -15,7 +15,7 @@ body.tour-active-element {
   min-width: 300px;
   width: 500px;
   max-width: 100%;
-  font-size: 20px;
+  font-size: 17px;
   z-index: 1051;
   text-align: justify;
 }

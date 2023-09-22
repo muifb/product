@@ -109,7 +109,7 @@ aside {
   left: 0;
   z-index: 996;
   transition: all 0.3s;
-  padding: 50px 20px;
+  padding: 27px 20px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
@@ -166,16 +166,16 @@ aside #toggle-navbar {
   font-size: 14px;
   line-height: 21px;
   color: #ABB3C4;
-  margin-top: 20px;
+  margin-top: 14px;
   margin-bottom: 12px;
 }
 .sidebar-item {
   text-decoration: none;
   background: transparent;
-  height: 46px;
+  height: 40px;
   border-radius: 16px;
   padding: 0 11px;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -224,7 +224,7 @@ aside #toggle-navbar {
 }
 @media (min-width: 1200px) {
   .nav {
-    padding: 24px 64px 24px 0px;
+    padding: 24px 64px 14px 0px;
   }
 }
 .nav .btn-notif {

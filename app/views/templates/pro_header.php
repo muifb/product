@@ -55,6 +55,10 @@
         .lebar-date {
             width: 14em !important;
         }
+
+        .text-small {
+            font-size: 85%;
+        }
     </style>
 
 </head>
@@ -82,11 +86,26 @@
                 <!--  -->
                 <div class="d-flex">
                     <span class="navbar-text text-white">User : <strong><?= $_SESSION['login']['nik']; ?></strong></span>
-                    <span class="navbar-text text-white mx-3"><strong><?= $_SESSION['login']['nama']; ?></strong></span>
-                    <a class="ms-3 btn btn-outline-light btn-sm" href="/auth/logout" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Keluar" id="logout">
-                        <span>Logout</span>
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    </a>
+                    <div class="dropdown navbar-text">
+                        <a href="#" class="text-decoration-none dropdown-toggle mx-4" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="text-white"><strong><?= $_SESSION['login']['nama']; ?></strong></span>
+                        </a>
+                        <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                            <li>
+                                <a class="dropdown-item text-dark" href="/produksi/profile">
+                                    <i class="fa-regular fa-user"></i> &ensp;Profile
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-dark" href="/auth/logout" id="logout">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>&ensp;Sign out
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

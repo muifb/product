@@ -125,7 +125,7 @@
             </div>
         </nav>
         <section class="content" id="content">
-            <div class="row ms-3">
+            <div class="row ms-2">
                 <div class="col-12">
                     <h2 class="content-title">Input number batch</h2>
                 </div>
@@ -170,11 +170,7 @@
                     </div>
                 </div>
 
-                <!-- <div class="col-12 my-3">
-                    
-                </div> -->
-
-                <div class="col-12 my-3">
+                <div class="col-12 my-2">
                     <h2 class="content-title">Product Description</h2>
                     <div class="document-card bg-cyan">
                         <?php $pro = $data['vismen']; ?>
@@ -187,25 +183,25 @@
                                                 <div _ngcontent-nnp-c200="" class="step-item">
                                                     <a _ngcontent-nnp-c200="" class="step-item-link pointer">
                                                         Step 1.&nbsp;
-                                                        <span class="mt-2 text-dark"> Create Batch</span>
+                                                        <span class="text-dark"> Create Batch</span>
                                                     </a>
                                                 </div>
                                                 <div _ngcontent-nnp-c200="" class="step-item">
                                                     <a _ngcontent-nnp-c200="" class="step-item-link pointer">
                                                         Step 2.&nbsp;
-                                                        <span class="mt-2 text-dark"> Good Receipt</span>
+                                                        <span class="text-dark"> Good Receipt</span>
                                                     </a>
                                                 </div>
                                                 <div _ngcontent-nnp-c200="" class="step-item">
                                                     <a _ngcontent-nnp-c200="" class="step-item-link pointer">
                                                         Step 3.&nbsp;
-                                                        <span class="mt-2 text-dark"> Edit Good Receipt</span>
+                                                        <span class="text-dark"> Edit Good Receipt</span>
                                                     </a>
                                                 </div>
                                                 <div _ngcontent-nnp-c200="" class="step-item">
                                                     <a _ngcontent-nnp-c200="" class="step-item-link pointer">
                                                         Step 4.&nbsp;
-                                                        <span class="mt-2 text-dark"> Input Lost Time</span>
+                                                        <span class="text-dark"> Input Lost Time</span>
                                                     </a>
                                                 </div>
                                             </div>
@@ -214,8 +210,8 @@
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <h2 class="content-title">Process Order</h2>
-                                <div class="content-desc mb-1" style="color: rgb(69, 56, 189);"><?= $pro['mesin']; ?></div>
+                                <h2 class="document-title">Process Order</h2>
+                                <div class="document-desc mb-1" style="color: rgb(69, 56, 189);"><?= $pro['mesin']; ?></div>
 
                                 <div class="document-card">
                                     <div class="document-item">
@@ -275,9 +271,8 @@
                             </div>
 
                             <div class="col-lg-6">
-                                <h2 class="content-title">Size Product</h2>
-                                <!-- <div class="content-desc mb-4" style="color: rgb(69, 56, 189);">Lebar 152 mm | Panjang 2000 M</div> -->
-                                <div class="content-desc mb-1" style="color: rgb(69, 56, 189);">Lebar <?= $pro['qty_palet']; ?> mm | Panjang <?= $pro['panjang_qty']; ?> M</div>
+                                <h2 class="document-title">Size Product</h2>
+                                <div class="document-desc mb-1" style="color: rgb(69, 56, 189);">Lebar <?= $pro['qty_palet']; ?> mm | Panjang <?= $pro['panjang_qty']; ?> M</div>
 
                                 <div class="document-card">
                                     <div class="document-item">
@@ -372,20 +367,20 @@
     <script src="<?= BASEURL; ?>/assets/js/bs5-intro-tour.js"></script>
     <script>
         var steps = [{
-            title: "Hello",
-            content: "<p>Hello message</p>"
+            title: "Selamat Datang, <?= $_SESSION['login']['nama']; ?>",
+            content: "<p>Helpdesk penggunaan, klik <strong>Next</strong> untuk melanjutkan.</p>"
         }, {
             id: "step1",
-            content: "<p>Step 1. <strong>Create Batch</strong></p>"
+            content: "<p>Step 1.&ensp;<strong>Create Batch</strong></p>"
         }, {
             id: "step2",
-            content: "<p>Step 2. <strong>Good Receipt</strong></p>"
+            content: "<p>Step 2.&ensp;<strong>Good Receipt</strong></p>"
         }, {
             id: "step3",
-            content: "<p>Step 3. <strong>Edit Good Receipt</strong></p>"
+            content: "<p>Step 3.&ensp;<strong>Edit Good Receipt</strong></p>"
         }, {
             id: "step4",
-            content: "<p>Step 4. <strong>Input Lostime</strong></p>"
+            content: "<p>Step 4.&ensp;<strong>Input Lostime</strong></p>"
         }];
         var tour = new Tour(steps, {
             /*additional options if needed*/
