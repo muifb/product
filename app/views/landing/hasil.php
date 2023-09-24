@@ -28,21 +28,12 @@
         margin-left: auto;
     }
 
-    .container-cari {
-        width: 100%;
-        max-width: 70em !important;
-        height: 85vh;
-        padding-right: var(--bs-gutter-x, 9.5rem);
-        padding-left: var(--bs-gutter-x, 9.5rem);
-        margin-right: auto;
-        margin-left: auto;
-    }
-
     .print {
-        display: none;
+        visibility: hidden;
     }
 
     @media print {
+
         .no-print {
             display: none;
         }
@@ -52,24 +43,16 @@
         }
 
         .print {
-            display: block;
-        }
-
-        .btn {
-            display: none;
+            visibility: visible;
         }
 
         .halaman {
             break-after: page;
         }
 
-        .card {
-            border: none;
-        }
-
-        .apexcharts-legend-series {
+        /* .apexcharts-legend {
             display: none;
-        }
+        } */
     }
 </style>
 <main class="main py-3">
@@ -115,8 +98,63 @@
     $oee1 = $total_shift1 != 0 ? (($availability1 / 100) * ($performance1 / 100) * ($quality1 / 100)) * 100 : 0;
     $oee2 = $total_shift2 != 0 ? (($availability2 / 100) * ($performance2 / 100) * ($quality2 / 100)) * 100 : 0;
     $oee3 = $total_shift3 != 0 ? (($availability3 / 100) * ($performance3 / 100) * ($quality3 / 100)) * 100 : 0;
+
+    $avai = [round($availability1), round($availability2), round($availability3)];
+    $sumAvai = array_sum($avai);
+    $performa = [round($performance1), round($performance2), round($performance3)];
+    $sumPerforma = array_sum($performa);
+    $quality = [round($quality1), round($quality2), round($quality3)];
+    $sumQuality = array_sum($quality);
+    $chart = [round($oee1), round($oee2), round($oee3)];
+    $chartPie = [round($sumAvai, 1), round($sumPerforma, 1), round($sumQuality, 1)];
+    $all = [];
+    foreach ($chart as $key => $value) {
+        if ($value != 0) {
+            $all[] = $value;
+        }
+    }
+    $jumlahTotal = array_sum($all);
+    $shift = count($all);
+    $allShift = $jumlahTotal != 0 ? $jumlahTotal / $shift : 0;
+    $pieChart = json_encode($chartPie, true);
+
+    $availability = [round($availability1), round($availability2), round($availability3)];
+    $allAvai = [];
+    foreach ($availability as $key => $avai) {
+        if ($avai != 0) {
+            $allAvai[] = $avai;
+        }
+    }
+    $sumAvai = array_sum($allAvai);
+    $countAvai = count($allAvai);
+    $allAvai = $sumAvai != 0 ? $sumAvai / $countAvai : 0;
+    $pieChartAvai = json_encode($availability, true);
+
+    $performance = [round($performance1), round($performance2), round($performance3)];
+    $allPerforma = [];
+    foreach ($performance as $key => $performa) {
+        if ($performa != 0) {
+            $allPerforma[] = $performa;
+        }
+    }
+    $sumPerforma = array_sum($allPerforma);
+    $countPerforma = count($allPerforma);
+    $allPerforma = $sumPerforma != 0 ? $sumPerforma / $countPerforma : 0;
+    $pieChartPerforma = json_encode($performance, true);
+
+    $quality = [round($quality1), round($quality2), round($quality3)];
+    $allQuality = [];
+    foreach ($quality as $key => $qty) {
+        if ($qty != 0) {
+            $allQuality[] = $qty;
+        }
+    }
+    $sumQuality = array_sum($allQuality);
+    $countQuality = count($allQuality);
+    $allQuality = $sumQuality != 0 ? $sumQuality / $countQuality : 0;
+    $pieChartQuality = json_encode($quality, true);
     ?>
-    <div class="container-oee">
+    <div class="container-oee no-print">
         <div class="p-2 p-lg-3 bg-gray rounded-top">
             <div class="row justify-content-start">
                 <div class="col-4">
@@ -126,52 +164,37 @@
                     <h1 class="text-light">OEE</h1>
                 </div>
                 <div class="col-4 text-end">
-                    <button type="button" class="btn btn-warning" id="print">Print <i class="fa-solid fa-print"></i></button>
+                    <form action="/produksi/hasil-cetak" target="_blank" id="formOee" method="post">
+                        <button type="button" class="btn btn-warning" id="print">Print <i class="fa-solid fa-print"></i></button>
+                    </form>
                 </div>
             </div>
         </div>
         <div class="p-lg-3 bg-light-gray rounded-bottom">
-            <div class="list-group list-group-checkable no-print">
+            <div class="list-group list-group-checkable ">
                 <div class="row mb-2">
                     <div class="col">
-                        <label class="list-group-item py-2" for="listGroupCheckableRadios1">
+                        <label class="list-group-item py-2">
                             Date OEE
                             <span class="d-block small opacity-75"><?= $data['search']['start_produksi']; ?> / <?= $data['search']['finish_produksi']; ?></span>
                         </label>
                     </div>
                     <div class="col">
-                        <label class="list-group-item py-2" for="listGroupCheckableRadios1">
+                        <label class="list-group-item py-2">
                             Pro Number
                             <span class="d-block small opacity-75"><?= $data['search']['id_product']; ?></span>
                         </label>
                     </div>
                     <div class="col">
-                        <label class="list-group-item py-2" for="listGroupCheckableRadios1">
+                        <label class="list-group-item py-2">
                             Mesin
                             <span class="d-block small opacity-75"><?= $data['search']['mesin']; ?></span>
                         </label>
                     </div>
                 </div>
             </div>
-            <div class="container print">
-                <div class="row">
-                    <div class="col-3"><strong>Date OEE</strong></div>
-                    <div class="col-1"><strong>:</strong></div>
-                    <div class="col-8"><strong><?= $data['search']['start_produksi']; ?> / <?= $data['search']['finish_produksi']; ?></strong></div>
-                </div>
-                <div class="row">
-                    <div class="col-3"><strong>Pro Number</strong></div>
-                    <div class="col-1"><strong>:</strong></div>
-                    <div class="col-8"><strong><?= $data['search']['id_product']; ?></strong></div>
-                </div>
-                <div class="row">
-                    <div class="col-3"><strong>Mesin</strong></div>
-                    <div class="col-1"><strong>:</strong></div>
-                    <div class="col-8"><strong><?= $data['search']['mesin']; ?></strong></div>
-                </div>
-            </div>
             <div class="row">
-                <div class="col">
+                <div class="col-6">
                     <div class="card">
                         <div class="card-body">
                             <table class="table table-borderless">
@@ -285,7 +308,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-6">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">
@@ -295,28 +318,7 @@
                                 OEE
                             </h4>
                             <hr>
-                            <?php
-                            // $allShift = (round($oee1) + round($oee2) + round($oee3)) / 3;
-                            $avai = [round($availability1), round($availability2), round($availability3)];
-                            $sumAvai = array_sum($avai);
-                            $performa = [round($performance1), round($performance2), round($performance3)];
-                            $sumPerforma = array_sum($performa);
-                            $quality = [round($quality1), round($quality2), round($quality3)];
-                            $sumQuality = array_sum($quality);
-                            $chart = [round($oee1), round($oee2), round($oee3)];
-                            $chartPie = [round($sumAvai, 1), round($sumPerforma, 1), round($sumQuality, 1)];
-                            $all = [];
-                            foreach ($chart as $key => $value) {
-                                if ($value != 0) {
-                                    $all[] = $value;
-                                }
-                            }
-                            $jumlahTotal = array_sum($all);
-                            $shift = count($all);
-                            $allShift = $jumlahTotal != 0 ? $jumlahTotal / $shift : 0;
-                            $pieChart = json_encode($chartPie, true);
-                            ?>
-                            <div class="no-print">
+                            <div class="">
                                 <span class="fs-6 text-muted">Shift 1</span>
                                 <div class="progress mb-1" style="height: 20px;">
                                     <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <?= round($oee1, 1); ?>%" aria-valuenow="<?= round($oee1, 1); ?>" aria-valuemin="0" aria-valuemax="100"><?= round($oee1, 1); ?>%</div>
@@ -334,44 +336,6 @@
                                     <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: <?= round($allShift, 1); ?>%" aria-valuenow="<?= round($allShift, 1); ?>" aria-valuemin="0" aria-valuemax="100"><?= round($allShift, 1); ?>%</div>
                                 </div>
                             </div>
-                            <div class="print">
-                                <div class="row">
-                                    <span class="col-2">Shift 1</span>
-                                    <span class="col-1">:</span>
-                                    <span class="col-4"><?= round($oee1, 1); ?>%</span>
-                                </div>
-                                <div class="row">
-                                    <span class="col-2">Shift 2</span>
-                                    <span class="col-1">:</span>
-                                    <span class="col-4"><?= round($oee2, 1); ?>%</span>
-                                </div>
-                                <div class="row">
-                                    <span class="col-2">Shift 3</span>
-                                    <span class="col-1">:</span>
-                                    <span class="col-4"><?= round($oee3, 1); ?>%</span>
-                                </div>
-                                <div class="row halaman">
-                                    <span class="col-2">All Shift</span>
-                                    <span class="col-1">:</span>
-                                    <span class="col-4"><?= round($allShift, 1); ?>%</span>
-                                </div>
-
-                                <div class="row mt-3">
-                                    <div class="col-3">Availability</div>
-                                    <div class="col-1">:</div>
-                                    <div class="col-2">Biru</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-3">Performance</div>
-                                    <div class="col-1">:</div>
-                                    <div class="col-2">Hijau</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-3">Quality</div>
-                                    <div class="col-1">:</div>
-                                    <div class="col-2">Kuning</div>
-                                </div>
-                            </div>
                             <!-- Pie Chart -->
                             <div id="oee"></div>
 
@@ -380,7 +344,7 @@
                                     new ApexCharts(document.querySelector("#oee"), {
                                         series: <?= $pieChart; ?>,
                                         chart: {
-                                            height: 265,
+                                            height: 250,
                                             type: 'pie',
                                             // toolbar: {
                                             //     show: true
@@ -396,8 +360,8 @@
             </div>
         </div>
     </div>
-    <div class="row mt-3">
-        <div class="col-lg-4 halaman">
+    <div class="row mt-3 no-print">
+        <div class="col-4">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">
@@ -407,21 +371,7 @@
                         AVAILIBILITY
                     </h4>
                     <hr>
-                    <?php
-
-                    $availability = [round($availability1), round($availability2), round($availability3)];
-                    $allAvai = [];
-                    foreach ($availability as $key => $avai) {
-                        if ($avai != 0) {
-                            $allAvai[] = $avai;
-                        }
-                    }
-                    $sumAvai = array_sum($allAvai);
-                    $countAvai = count($allAvai);
-                    $allAvai = $sumAvai != 0 ? $sumAvai / $countAvai : 0;
-                    $pieChartAvai = json_encode($availability, true);
-                    ?>
-                    <div class="no-print">
+                    <div class="">
                         <span class="fs-6 text-muted">Shift 1</span>
                         <div class="progress mb-2" style="height: 20px;">
                             <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <?= round($availability1, 1); ?>%" aria-valuenow="<?= round($availability1, 1); ?>" aria-valuemin="0" aria-valuemax="100"><?= round($availability1, 1); ?>%</div>
@@ -440,23 +390,6 @@
                         </div>
                     </div>
                     <!-- Pie Chart -->
-                    <div class="print">
-                        <div class="row">
-                            <span class="col-2">Shift 1</span>
-                            <span class="col-1">:</span>
-                            <span class="col-4">Biru</span>
-                        </div>
-                        <div class="row">
-                            <span class="col-2">Shift 2</span>
-                            <span class="col-1">:</span>
-                            <span class="col-4">Hijua</span>
-                        </div>
-                        <div class="row">
-                            <span class="col-2">Shift 3</span>
-                            <span class="col-1">:</span>
-                            <span class="col-4">Kuning</span>
-                        </div>
-                    </div>
                     <div id="availibility"></div>
 
                     <script>
@@ -464,7 +397,7 @@
                             new ApexCharts(document.querySelector("#availibility"), {
                                 series: <?= $pieChartAvai; ?>,
                                 chart: {
-                                    height: 280,
+                                    height: 250,
                                     type: 'pie',
                                     // toolbar: {
                                     //     show: true
@@ -478,7 +411,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-4">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">
@@ -488,21 +421,7 @@
                         PERFORMANCE
                     </h4>
                     <hr>
-                    <?php
-
-                    $performance = [round($performance1), round($performance2), round($performance3)];
-                    $allPerforma = [];
-                    foreach ($performance as $key => $performa) {
-                        if ($performa != 0) {
-                            $allPerforma[] = $performa;
-                        }
-                    }
-                    $sumPerforma = array_sum($allPerforma);
-                    $countPerforma = count($allPerforma);
-                    $allPerforma = $sumPerforma != 0 ? $sumPerforma / $countPerforma : 0;
-                    $pieChartPerforma = json_encode($performance, true);
-                    ?>
-                    <div class="no-print">
+                    <div class="">
                         <span class="fs-6 text-muted">Shift 1</span>
                         <div class="progress mb-2" style="height: 20px;">
                             <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <?= round($performance1, 1); ?>%" aria-valuenow="<?= round($performance1, 1); ?>" aria-valuemin="0" aria-valuemax="100"><?= round($performance1, 1); ?>%</div>
@@ -521,23 +440,6 @@
                         </div>
                     </div>
                     <!-- Pie Chart -->
-                    <div class="print">
-                        <div class="row">
-                            <span class="col-2">Shift 1</span>
-                            <span class="col-1">:</span>
-                            <span class="col-4">Biru</span>
-                        </div>
-                        <div class="row">
-                            <span class="col-2">Shift 2</span>
-                            <span class="col-1">:</span>
-                            <span class="col-4">Hijua</span>
-                        </div>
-                        <div class="row">
-                            <span class="col-2">Shift 3</span>
-                            <span class="col-1">:</span>
-                            <span class="col-4">Kuning</span>
-                        </div>
-                    </div>
                     <div id="performance"></div>
 
                     <script>
@@ -545,7 +447,7 @@
                             new ApexCharts(document.querySelector("#performance"), {
                                 series: <?= $pieChartPerforma; ?>,
                                 chart: {
-                                    height: 280,
+                                    height: 250,
                                     type: 'pie',
                                     // toolbar: {
                                     //     show: true
@@ -559,7 +461,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-4">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">
@@ -569,21 +471,7 @@
                         QUALITY
                     </h4>
                     <hr>
-                    <?php
-
-                    $quality = [round($quality1), round($quality2), round($quality3)];
-                    $allQuality = [];
-                    foreach ($quality as $key => $qty) {
-                        if ($qty != 0) {
-                            $allQuality[] = $qty;
-                        }
-                    }
-                    $sumQuality = array_sum($allQuality);
-                    $countQuality = count($allQuality);
-                    $allQuality = $sumQuality != 0 ? $sumQuality / $countQuality : 0;
-                    $pieChartQuality = json_encode($quality, true);
-                    ?>
-                    <div class="no-print">
+                    <div class="">
                         <span class="fs-6 text-muted">Shift 1</span>
                         <div class="progress mb-2" style="height: 20px;">
                             <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <?= round($quality1, 1); ?>%" aria-valuenow="<?= round($quality1, 1); ?>" aria-valuemin="0" aria-valuemax="100"><?= round($quality1, 1); ?>%</div>
@@ -602,23 +490,6 @@
                         </div>
                     </div>
                     <!-- Pie Chart -->
-                    <div class="print">
-                        <div class="row">
-                            <span class="col-2">Shift 1</span>
-                            <span class="col-1">:</span>
-                            <span class="col-4">Biru</span>
-                        </div>
-                        <div class="row">
-                            <span class="col-2">Shift 2</span>
-                            <span class="col-1">:</span>
-                            <span class="col-4">Hijua</span>
-                        </div>
-                        <div class="row">
-                            <span class="col-2">Shift 3</span>
-                            <span class="col-1">:</span>
-                            <span class="col-4">Kuning</span>
-                        </div>
-                    </div>
                     <div id="quality"></div>
 
                     <script>
@@ -626,7 +497,7 @@
                             new ApexCharts(document.querySelector("#quality"), {
                                 series: <?= $pieChartQuality; ?>,
                                 chart: {
-                                    height: 280,
+                                    height: 250,
                                     type: 'pie',
                                     // toolbar: {
                                     //     show: true
@@ -638,6 +509,232 @@
                     </script>
                     <!-- End Pie Chart -->
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="print">
+        <center>
+            <h2>Laporan OEE</h2>
+        </center>
+        <div class="row my-2">
+            <label class="col-3">
+                Date OEE
+            </label>
+            <div class="col-9">
+                <label class="d-block">: <?= Tanggal::tanggal_indo($data['search']['start_produksi']); ?> - <?= Tanggal::tanggal_indo($data['search']['finish_produksi']); ?></label>
+            </div>
+        </div>
+        <div class="row my-2">
+            <label class="col-3">
+                Pro Number
+            </label>
+            <div class="col-9">
+                <label class="d-block">: <?= $data['search']['id_product']; ?></label>
+            </div>
+        </div>
+        <div class="row my-2">
+            <label class="col-3">
+                Mesin
+            </label>
+            <div class="col-9">
+                <label class="d-block">: <?= $data['search']['mesin']; ?></label>
+            </div>
+        </div>
+        <div class="row my-3">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-center">Description</th>
+                        <th scope="col">Shift 1</th>
+                        <th scope="col">Shift 2</th>
+                        <th scope="col">Shift 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Planned Operating Time</th>
+                        <td><?= round($planned1, 1); ?>%</td>
+                        <td><?= round($planned2, 1); ?>%</td>
+                        <td><?= round($planned3, 1); ?>%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Planned Shut Down</th>
+                        <td><?= round($data['search']['lost1'] / 60, 1); ?>Jam</td>
+                        <td><?= round($data['search']['lost2'] / 60, 1); ?>Jam</td>
+                        <td><?= round($data['search']['lost3'] / 60, 1); ?>Jam</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Unplanned Shut Down</th>
+                        <td>0%</td>
+                        <td>0%</td>
+                        <td>0%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Operating Time</th>
+                        <td><?= round($operatingTime1, 1); ?> jam</td>
+                        <td><?= round($operatingTime2, 1); ?> jam</td>
+                        <td><?= round($operatingTime3, 1); ?> jam</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Product Ok</th>
+                        <td><?= $shift1_ok; ?> BOB</td>
+                        <td><?= $shift2_ok; ?> BOB</td>
+                        <td><?= $shift3_ok; ?> BOB</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Product NC</th>
+                        <td><?= $shift1_nc; ?> BOB</td>
+                        <td><?= $shift2_nc; ?> BOB</td>
+                        <td><?= $shift3_nc; ?> BOB</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Product Reject</th>
+                        <td><?= $shift1_reject; ?> BOB</td>
+                        <td><?= $shift2_reject; ?> BOB</td>
+                        <td><?= $shift3_reject; ?> BOB</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Total Product</th>
+                        <td><?= $total_shift1; ?> BOB</td>
+                        <td><?= $total_shift2; ?> BOB</td>
+                        <td><?= $total_shift3; ?> BOB</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Availability</th>
+                        <td>
+                            <span class="badge rounded-pill bg-danger text-dark px-3"><?= round($availability1, 1); ?> %</span>
+                        </td>
+                        <td>
+                            <span class="badge rounded-pill bg-warning text-dark px-3"><?= round($availability2, 1); ?> %</span>
+                        </td>
+                        <td>
+                            <span class="badge rounded-pill bg-success text-dark px-3"><?= round($availability3, 1); ?> %</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Performance</th>
+                        <td>
+                            <span class="badge rounded-pill bg-danger text-dark px-3"><?= round($performance1, 1); ?> %</span>
+                        </td>
+                        <td>
+                            <span class="badge rounded-pill bg-warning text-dark px-3"><?= round($performance2, 1); ?> %</span>
+                        </td>
+                        <td>
+                            <span class="badge rounded-pill bg-success text-dark px-3"><?= round($performance3, 1); ?> %</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Quality</th>
+                        <td>
+                            <span class="badge rounded-pill bg-danger text-dark px-3"><?= round($quality1, 1); ?> %</span>
+                        </td>
+                        <td>
+                            <span class="badge rounded-pill bg-warning text-dark px-3"><?= round($quality2, 1); ?> %</span>
+                        </td>
+                        <td>
+                            <span class="badge rounded-pill bg-success text-dark px-3"><?= round($quality3, 1); ?> %</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">OEE</th>
+                        <td>
+                            <span class="badge rounded-pill bg-danger text-dark px-3"><?= round($oee1, 1); ?> %</span>
+                        </td>
+                        <td>
+                            <span class="badge rounded-pill bg-warning text-dark px-3"><?= round($oee2, 1); ?> %</span>
+                        </td>
+                        <td>
+                            <span class="badge rounded-pill bg-success text-dark px-3"><?= round($oee3, 1); ?> %</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- <div class="row mt-5"> -->
+        <div class="row mt-5 halaman">
+            <div class="col">
+                <h5 class="card-title">Oee</h5>
+            </div>
+            <div class="col">
+                <div id="oeePrint"></div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        new ApexCharts(document.querySelector("#oeePrint"), {
+                            series: <?= $pieChart; ?>,
+                            chart: {
+                                height: 250,
+                                type: 'pie',
+                            },
+                            // legend: false,
+                            labels: ['Availability : Biru', 'Performance : Hijau', 'Quality : Kuning']
+                        }).render();
+                    });
+                </script>
+            </div>
+        </div>
+        <!-- </div> -->
+        <div class="row mt-5">
+            <div class="col">
+                <h5 class="card-title">Availability</h5>
+            </div>
+            <div class="col">
+                <div id="availibilityPrint"></div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        new ApexCharts(document.querySelector("#availibilityPrint"), {
+                            series: <?= $pieChartAvai; ?>,
+                            chart: {
+                                height: 250,
+                                type: 'pie',
+                            },
+                            // legend: false,
+                            labels: ['Shift 1 : Biru', 'Shift 2 : Hijau', 'Shift 3 : Kuning']
+                        }).render();
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                <h5 class="card-title">Performance</h5>
+            </div>
+            <div class="col">
+                <div id="performancePrint"></div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        new ApexCharts(document.querySelector("#performancePrint"), {
+                            series: <?= $pieChartPerforma; ?>,
+                            chart: {
+                                height: 250,
+                                type: 'pie',
+                            },
+                            // legend: false,
+                            labels: ['Shift 1 : Biru', 'Shift 2 : Hijau', 'Shift 3 : Kuning']
+                        }).render();
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                <h5 class="card-title">Quality</h5>
+            </div>
+            <div class="col">
+                <div id="qualityPrint"></div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        new ApexCharts(document.querySelector("#qualityPrint"), {
+                            series: <?= $pieChartQuality; ?>,
+                            chart: {
+                                height: 250,
+                                type: 'pie',
+                            },
+                            // legend: false,
+                            labels: ['Shift 1 : Biru', 'Shift 2 : Hijau', 'Shift 3 : Kuning']
+                        }).render();
+                    });
+                </script>
             </div>
         </div>
     </div>

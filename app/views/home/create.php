@@ -33,17 +33,17 @@ Printer::printIn()
                                 </div>
                                 <div class="card-body col-11 p-2">
                                     <p class="m-0">
-                                        <label class="fw-normal label-pro" for="" style="font-size: .7rem;"><strong><?= $pro['nm_product']; ?> <?= $pro['qty_palet']; ?>MMx<?= $pro['panjang_qty']; ?>M</strong></label>
+                                        <label class="fw-normal label-pro" style="font-size: .7rem;"><strong><?= $pro['nm_product']; ?> <?= $pro['qty_palet']; ?>MMx<?= $pro['panjang_qty']; ?>M</strong></label>
                                     </p>
                                     <input type="hidden" class="card-title form-control-plaintext inputProduct" value="<?= $pro['id_product']; ?>" name="inputProduct[]" id="inputProduct">
                                     <input type="hidden" class="card-title form-control-plaintext" name="inputBatch[]" value="<?= $val = $k++; ?>" id="inputBatch">
                                     <?php
                                     $generator = new Picqer\Barcode\BarcodeGeneratorSVG();
-                                    echo $generator->getBarcode($val, $generator::TYPE_CODE_128_B);
+                                    echo $generator->getBarcode($val, $generator::TYPE_CODE_93);
                                     ?>
 
                                     <p class="m-0">
-                                        <label class="card-title fw-bold" for=""><?= $val; ?></label>
+                                        <label class="card-title fw-bold"><?= $val; ?></label>
                                     </p>
                                     <input type="hidden" class="card-title form-control-plaintext" value="<?= $_SESSION['login']['id_shift']; ?>" name="shift[]" id="inputBatch">
                                     <input type="hidden" class="card-title form-control-plaintext" value="<?= $_SESSION['login']['nik']; ?>" name="nip[]" id="inputBatch">
@@ -67,17 +67,17 @@ Printer::printIn()
                         <div class="card m-1">
                             <div class="card-body p-2">
                                 <p class="m-0">
-                                    <label class="fw-normal label-pro" for="" style="font-size: .7rem;"><strong><?= $pro['nm_product']; ?> <?= $pro['qty_palet']; ?>MMx<?= $pro['panjang_qty']; ?>M</strong></label>
+                                    <label class="fw-normal label-pro" style="font-size: .7rem;"><strong><?= $pro['nm_product']; ?> <?= $pro['qty_palet']; ?>MMx<?= $pro['panjang_qty']; ?>M</strong></label>
                                 </p>
                                 <input type="hidden" class="card-title form-control-plaintext namaProduct" value="<?= $pro['nm_product']; ?> <?= $pro['qty_palet']; ?>MMx<?= $pro['panjang_qty']; ?>M" name="namaProduct[]" id="namaProduct" placeholder="Nama Product">
                                 <input type="hidden" class="card-title form-control-plaintext" name="inputBatch[]" value="<?= $pro['nm_batch']; ?>" id="inputBatch">
                                 <?php
                                 $generator = new Picqer\Barcode\BarcodeGeneratorSVG();
-                                echo $generator->getBarcode($pro['nm_batch'], $generator::TYPE_CODE_128_B);
+                                echo $generator->getBarcode($pro['nm_batch'], $generator::TYPE_CODE_93);
                                 ?>
 
                                 <p class="m-0">
-                                    <label class="card-title fw-bold" for=""><?= $pro['nm_batch']; ?></label>
+                                    <label class="card-title fw-bold"><?= $pro['nm_batch']; ?></label>
                                 </p>
                             </div>
                         </div>

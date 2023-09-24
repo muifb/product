@@ -37,4 +37,14 @@ class Oee extends Controller
         $this->view('landing/hasil', $data);
         $this->view('templates/pro_footer');
     }
+
+    // public function print()
+    // {
+    //     $data = [
+    //         'nav' => 'oee',
+    //         'judul' => 'OEE',
+    //         'search' => $this->model(Vismen_model::class)->cetak(),
+    //     ];
+    //     $this->view('landing/print', $data);
+    // }
 }
