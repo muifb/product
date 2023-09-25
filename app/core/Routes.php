@@ -42,7 +42,6 @@ class Routes
         $router->get('/produksi/reject', [Reject::class, 'index']);
         $router->get('/produksi/oee', [Oee::class, 'index']);
         $router->post('/produksi/hasil-oee', [Oee::class, 'search']);
-        // $router->post('/produksi/hasil-cetak', [Oee::class, 'print']);
         $router->get('/produksi/profile', [User::class, 'index']);
         $router->get('/produksi/create-batch', [Home::class, 'create']);
         $router->post('/produksi/create-batch', [Home::class, 'store']);

@@ -20,22 +20,13 @@
         border-bottom-left-radius: 0.50rem !important;
     }
 
-    .container-oee {
-        width: 100%;
-        padding-right: var(--bs-gutter-x, .25rem);
-        padding-left: var(--bs-gutter-x, .25rem);
-        margin-right: auto;
-        margin-left: auto;
-    }
-
     .print {
         visibility: hidden;
     }
 
     @media print {
-
         .no-print {
-            display: none;
+            display: none
         }
 
         ul.a {
@@ -50,12 +41,12 @@
             break-after: page;
         }
 
-        /* .apexcharts-legend {
+        .apexcharts-legend {
             display: none;
-        } */
+        }
     }
 </style>
-<main class="main py-3">
+<main class="main py-3 no-print">
     <?php
     $total_semua = $data['search']['total_semua'];
     $total_shift1 = $data['search']['total_shift1'];
@@ -154,7 +145,7 @@
     $allQuality = $sumQuality != 0 ? $sumQuality / $countQuality : 0;
     $pieChartQuality = json_encode($quality, true);
     ?>
-    <div class="container-oee no-print">
+    <div class="container-fluid">
         <div class="p-2 p-lg-3 bg-gray rounded-top">
             <div class="row justify-content-start">
                 <div class="col-4">
@@ -196,7 +187,7 @@
             <div class="row">
                 <div class="col-6">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body" id="print-area-table">
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
@@ -360,7 +351,7 @@
             </div>
         </div>
     </div>
-    <div class="row mt-3 no-print">
+    <div class="row mt-3">
         <div class="col-4">
             <div class="card">
                 <div class="card-body">
@@ -513,240 +504,179 @@
         </div>
     </div>
 
-    <div class="print">
-        <center>
-            <h2>Laporan OEE</h2>
-        </center>
-        <div class="row my-2">
-            <label class="col-3">
-                Date OEE
-            </label>
-            <div class="col-9">
-                <label class="d-block">: <?= Tanggal::tanggal_indo($data['search']['start_produksi']); ?> - <?= Tanggal::tanggal_indo($data['search']['finish_produksi']); ?></label>
-            </div>
-        </div>
-        <div class="row my-2">
-            <label class="col-3">
-                Pro Number
-            </label>
-            <div class="col-9">
-                <label class="d-block">: <?= $data['search']['id_product']; ?></label>
-            </div>
-        </div>
-        <div class="row my-2">
-            <label class="col-3">
-                Mesin
-            </label>
-            <div class="col-9">
-                <label class="d-block">: <?= $data['search']['mesin']; ?></label>
-            </div>
-        </div>
-        <div class="row my-3">
-            <table class="table table-borderless">
-                <thead>
-                    <tr>
-                        <th scope="col" class="text-center">Description</th>
-                        <th scope="col">Shift 1</th>
-                        <th scope="col">Shift 2</th>
-                        <th scope="col">Shift 3</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Planned Operating Time</th>
-                        <td><?= round($planned1, 1); ?>%</td>
-                        <td><?= round($planned2, 1); ?>%</td>
-                        <td><?= round($planned3, 1); ?>%</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Planned Shut Down</th>
-                        <td><?= round($data['search']['lost1'] / 60, 1); ?>Jam</td>
-                        <td><?= round($data['search']['lost2'] / 60, 1); ?>Jam</td>
-                        <td><?= round($data['search']['lost3'] / 60, 1); ?>Jam</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Unplanned Shut Down</th>
-                        <td>0%</td>
-                        <td>0%</td>
-                        <td>0%</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Operating Time</th>
-                        <td><?= round($operatingTime1, 1); ?> jam</td>
-                        <td><?= round($operatingTime2, 1); ?> jam</td>
-                        <td><?= round($operatingTime3, 1); ?> jam</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Product Ok</th>
-                        <td><?= $shift1_ok; ?> BOB</td>
-                        <td><?= $shift2_ok; ?> BOB</td>
-                        <td><?= $shift3_ok; ?> BOB</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Product NC</th>
-                        <td><?= $shift1_nc; ?> BOB</td>
-                        <td><?= $shift2_nc; ?> BOB</td>
-                        <td><?= $shift3_nc; ?> BOB</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Product Reject</th>
-                        <td><?= $shift1_reject; ?> BOB</td>
-                        <td><?= $shift2_reject; ?> BOB</td>
-                        <td><?= $shift3_reject; ?> BOB</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Total Product</th>
-                        <td><?= $total_shift1; ?> BOB</td>
-                        <td><?= $total_shift2; ?> BOB</td>
-                        <td><?= $total_shift3; ?> BOB</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Availability</th>
-                        <td>
-                            <span class="badge rounded-pill bg-danger text-dark px-3"><?= round($availability1, 1); ?> %</span>
-                        </td>
-                        <td>
-                            <span class="badge rounded-pill bg-warning text-dark px-3"><?= round($availability2, 1); ?> %</span>
-                        </td>
-                        <td>
-                            <span class="badge rounded-pill bg-success text-dark px-3"><?= round($availability3, 1); ?> %</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Performance</th>
-                        <td>
-                            <span class="badge rounded-pill bg-danger text-dark px-3"><?= round($performance1, 1); ?> %</span>
-                        </td>
-                        <td>
-                            <span class="badge rounded-pill bg-warning text-dark px-3"><?= round($performance2, 1); ?> %</span>
-                        </td>
-                        <td>
-                            <span class="badge rounded-pill bg-success text-dark px-3"><?= round($performance3, 1); ?> %</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Quality</th>
-                        <td>
-                            <span class="badge rounded-pill bg-danger text-dark px-3"><?= round($quality1, 1); ?> %</span>
-                        </td>
-                        <td>
-                            <span class="badge rounded-pill bg-warning text-dark px-3"><?= round($quality2, 1); ?> %</span>
-                        </td>
-                        <td>
-                            <span class="badge rounded-pill bg-success text-dark px-3"><?= round($quality3, 1); ?> %</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">OEE</th>
-                        <td>
-                            <span class="badge rounded-pill bg-danger text-dark px-3"><?= round($oee1, 1); ?> %</span>
-                        </td>
-                        <td>
-                            <span class="badge rounded-pill bg-warning text-dark px-3"><?= round($oee2, 1); ?> %</span>
-                        </td>
-                        <td>
-                            <span class="badge rounded-pill bg-success text-dark px-3"><?= round($oee3, 1); ?> %</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <!-- <div class="row mt-5"> -->
-        <div class="row mt-5 halaman">
-            <div class="col">
-                <h5 class="card-title">Oee</h5>
-            </div>
-            <div class="col">
-                <div id="oeePrint"></div>
-                <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                        new ApexCharts(document.querySelector("#oeePrint"), {
-                            series: <?= $pieChart; ?>,
-                            chart: {
-                                height: 250,
-                                type: 'pie',
-                            },
-                            // legend: false,
-                            labels: ['Availability : Biru', 'Performance : Hijau', 'Quality : Kuning']
-                        }).render();
-                    });
-                </script>
-            </div>
-        </div>
-        <!-- </div> -->
-        <div class="row mt-5">
-            <div class="col">
-                <h5 class="card-title">Availability</h5>
-            </div>
-            <div class="col">
-                <div id="availibilityPrint"></div>
-                <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                        new ApexCharts(document.querySelector("#availibilityPrint"), {
-                            series: <?= $pieChartAvai; ?>,
-                            chart: {
-                                height: 250,
-                                type: 'pie',
-                            },
-                            // legend: false,
-                            labels: ['Shift 1 : Biru', 'Shift 2 : Hijau', 'Shift 3 : Kuning']
-                        }).render();
-                    });
-                </script>
-            </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col">
-                <h5 class="card-title">Performance</h5>
-            </div>
-            <div class="col">
-                <div id="performancePrint"></div>
-                <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                        new ApexCharts(document.querySelector("#performancePrint"), {
-                            series: <?= $pieChartPerforma; ?>,
-                            chart: {
-                                height: 250,
-                                type: 'pie',
-                            },
-                            // legend: false,
-                            labels: ['Shift 1 : Biru', 'Shift 2 : Hijau', 'Shift 3 : Kuning']
-                        }).render();
-                    });
-                </script>
-            </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col">
-                <h5 class="card-title">Quality</h5>
-            </div>
-            <div class="col">
-                <div id="qualityPrint"></div>
-                <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                        new ApexCharts(document.querySelector("#qualityPrint"), {
-                            series: <?= $pieChartQuality; ?>,
-                            chart: {
-                                height: 250,
-                                type: 'pie',
-                            },
-                            // legend: false,
-                            labels: ['Shift 1 : Biru', 'Shift 2 : Hijau', 'Shift 3 : Kuning']
-                        }).render();
-                    });
-                </script>
-            </div>
-        </div>
-    </div>
+    <!--  -->
 </main>
+<textarea id="printing-css" style="display:none;">
+    @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css");
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
+
+    line{
+        display: none;
+    }
+
+    .halaman {
+        break-after: page;
+    }
+
+    .apexcharts-legend {
+        display: none;
+    }
+
+    no-print{
+        display: none;
+    }
+</textarea>
+<iframe id="printing-frame" name="print_frame" src="about:blank" style="display:none;"></iframe>
 <script>
     const print = document.querySelector('#print');
 
     print.addEventListener('click', function() {
-        const nav = document.querySelector("nav");
-        nav.classList.add("d-none");
-        window.print();
-        nav.classList.remove("d-none");
+        const leg = document.querySelectorAll(".apexcharts-legend");
+        for (var i = 0; i < leg.length; i++) {
+            leg[i].classList.add("d-none");
+        }
+        var a = document.getElementById('printing-css').value;
+        var b = document.querySelector('#oee').innerHTML;
+        var c = document.querySelector('#availibility').innerHTML;
+        var d = document.querySelector('#performance').innerHTML;
+        var e = document.querySelector('#quality').innerHTML;
+        var f = document.querySelector('#print-area-table').innerHTML;
+        window.frames["print_frame"].document.title = document.title;
+        window.frames["print_frame"].document.body.innerHTML = `
+        <style>` + a + `</style>
+        <div class="container-fluid">
+            <center>
+                <h2>Laporan OEE</h2>
+            </center>
+            <div class="row my-2">
+                <label class="col-3">
+                    Date OEE
+                </label>
+                <div class="col-9">
+                    <label class="d-block">: <?= Tanggal::tanggal_indo($data['search']['start_produksi']); ?> - <?= Tanggal::tanggal_indo($data['search']['finish_produksi']); ?></label>
+                </div>
+            </div>
+            <div class="row my-2">
+                <label class="col-3">
+                    Pro Number
+                </label>
+                <div class="col-9">
+                    <label class="d-block">: <?= $data['search']['id_product']; ?></label>
+                </div>
+            </div>
+            <div class="row my-2">
+                <label class="col-3">
+                    Mesin
+                </label>
+                <div class="col-9">
+                    <label class="d-block">: <?= $data['search']['mesin']; ?></label>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="border">
+                    ` + f + `
+                </div>
+            </div>
+            <div class="row mt-5 halaman">
+                <h4 class="card-title">Oee</h4>
+                <div class="col">
+                ` + b + `
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col-12">
+                        Availability : Biru
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-12">
+                        Performance : Hijau
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-12">
+                        Quality : Kuning
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 border p-3">
+                <h4 class="card-title">Availability</h4>
+                <div class="col">
+                ` + c + `
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                        Shift 1 : Biru
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col">
+                        Shift 2 : Hijau
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col">
+                        Shift 3 : Kuning
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 border p-3">
+                <h4 class="card-title">Performance</h4>
+                <div class="col">
+                ` + d + `
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                        Shift 1 : Biru
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col">
+                        Shift 2 : Hijau
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col">
+                        Shift 3 : Kuning
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 border p-3">
+                <h4 class="card-title">Quality</h4>
+                <div class="col">
+                ` + e + `
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                        Shift 1 : Biru
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col">
+                        Shift 2 : Hijau
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col">
+                        Shift 3 : Kuning
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+        window.frames["print_frame"].window.focus();
+        window.frames["print_frame"].window.print();
+        for (var icp = 0; icp < leg.length; icp++) {
+            leg[icp].classList.remove("d-none");
+        }
 
     })
 </script>
