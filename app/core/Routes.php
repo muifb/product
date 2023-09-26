@@ -31,6 +31,7 @@ class Routes
         $router->get('/vismen/list', [Landing::class, 'vismen']);
         $router->get('/vismen/tambah', [Landing::class, 'create']);
         $router->post('/vismen/tambah', [Landing::class, 'store']);
+        $router->get('/admin-ppic', [Landing::class, 'profile']);
         $router->get('/produksi/home', [Home::class, 'index']);
         $router->get('/produksi/product', [Product::class, 'index']);
         $router->get('/produksi/output', [Output::class, 'index']);

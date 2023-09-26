@@ -66,14 +66,14 @@
                             </a>
                             <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
                                 <li>
-                                    <span class="dropdown-item text-dark">
+                                    <a class="dropdown-item text-dark" href="/admin-ppic">
                                         <strong>Admin PPIC</strong>
-                                    </span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <span class="dropdown-item text-dark">
+                                    <a class="dropdown-item text-dark" href="/admin-ppic">
                                         <strong><?= $_SESSION['login-admin']['nik']; ?></strong>
-                                    </span>
+                                    </a>
                                 </li>
                                 <li>
                                     <hr class="dropdown-divider">

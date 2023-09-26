@@ -185,7 +185,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-6">
+                <div class="col-7">
                     <div class="card">
                         <div class="card-body" id="print-area-table">
                             <table class="table table-borderless">
@@ -299,7 +299,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-5">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">
@@ -335,11 +335,9 @@
                                     new ApexCharts(document.querySelector("#oee"), {
                                         series: <?= $pieChart; ?>,
                                         chart: {
-                                            height: 250,
+                                            // height: 216,
+                                            width: 375,
                                             type: 'pie',
-                                            // toolbar: {
-                                            //     show: true
-                                            // }
                                         },
                                         labels: ['Availability', 'Performance', 'Quality']
                                     }).render();
@@ -388,11 +386,9 @@
                             new ApexCharts(document.querySelector("#availibility"), {
                                 series: <?= $pieChartAvai; ?>,
                                 chart: {
-                                    height: 250,
+                                    // height: 250,
+                                    width: 340,
                                     type: 'pie',
-                                    // toolbar: {
-                                    //     show: true
-                                    // }
                                 },
                                 labels: ['Shift 1', 'Shift 2', 'Shift 3']
                             }).render();
@@ -438,11 +434,9 @@
                             new ApexCharts(document.querySelector("#performance"), {
                                 series: <?= $pieChartPerforma; ?>,
                                 chart: {
-                                    height: 250,
+                                    // height: 250,
+                                    width: 340,
                                     type: 'pie',
-                                    // toolbar: {
-                                    //     show: true
-                                    // }
                                 },
                                 labels: ['Shift 1', 'Shift 2', 'Shift 3']
                             }).render();
@@ -488,11 +482,9 @@
                             new ApexCharts(document.querySelector("#quality"), {
                                 series: <?= $pieChartQuality; ?>,
                                 chart: {
-                                    height: 250,
+                                    // height: 250,
+                                    width: 340,
                                     type: 'pie',
-                                    // toolbar: {
-                                    //     show: true
-                                    // }
                                 },
                                 labels: ['Shift 1', 'Shift 2', 'Shift 3']
                             }).render();
@@ -578,12 +570,18 @@
                     ` + f + `
                 </div>
             </div>
-            <div class="row mt-5 halaman">
-                <h4 class="card-title">Oee</h4>
+            <div class="row mt-5 border p-3 halaman">
+                <h4 class="card-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
+                        <path d="M18 2H6c-1.103 0-2 .897-2 2v18l8-4.572L20 22V4c0-1.103-.897-2-2-2zm0 16.553-6-3.428-6 3.428V4h12v14.553z"></path>
+                    </svg>
+                    Oee
+                </h4>
+                <hr>
                 <div class="col">
                 ` + b + `
                 </div>
-                <div class="col">
+                <div class="col mt-3">
                     <div class="row">
                         <div class="col-12">
                         Availability : Biru
@@ -602,11 +600,17 @@
                 </div>
             </div>
             <div class="row mt-5 border p-3">
-                <h4 class="card-title">Availability</h4>
+                <h4 class="card-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
+                        <path d="M18 2H6c-1.103 0-2 .897-2 2v18l8-4.572L20 22V4c0-1.103-.897-2-2-2zm0 16.553-6-3.428-6 3.428V4h12v14.553z"></path>
+                    </svg>
+                    Availability
+                </h4>
+                <hr>
                 <div class="col">
                 ` + c + `
                 </div>
-                <div class="col">
+                <div class="col mt-3">
                     <div class="row">
                         <div class="col">
                         Shift 1 : Biru
@@ -625,8 +629,14 @@
                 </div>
             </div>
             <div class="row mt-4 border p-3">
-                <h4 class="card-title">Performance</h4>
-                <div class="col">
+                <h4 class="card-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
+                        <path d="M18 2H6c-1.103 0-2 .897-2 2v18l8-4.572L20 22V4c0-1.103-.897-2-2-2zm0 16.553-6-3.428-6 3.428V4h12v14.553z"></path>
+                    </svg>
+                    Performance
+                </h4>
+                <hr>
+                <div class="col mt-3">
                 ` + d + `
                 </div>
                 <div class="col">
@@ -648,11 +658,17 @@
                 </div>
             </div>
             <div class="row mt-4 border p-3">
-                <h4 class="card-title">Quality</h4>
+                <h4 class="card-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
+                        <path d="M18 2H6c-1.103 0-2 .897-2 2v18l8-4.572L20 22V4c0-1.103-.897-2-2-2zm0 16.553-6-3.428-6 3.428V4h12v14.553z"></path>
+                    </svg>
+                    Quality
+                </h4>
+                <hr>
                 <div class="col">
                 ` + e + `
                 </div>
-                <div class="col">
+                <div class="col mt-3">
                     <div class="row">
                         <div class="col">
                         Shift 1 : Biru

@@ -1,3 +1,10 @@
+<style>
+    @media print {
+        .halaman {
+            break-after: page;
+        }
+    }
+</style>
 <?php
 Printer::print();
 Printer::printIn()
@@ -62,7 +69,7 @@ Printer::printIn()
     ?>
         <form action="/produksi/update-batch" method="POST">
             <div class="row" style="padding-left: 0; padding-right: 0;">
-                <?php foreach ($data['kode'] as $pro) : ?>
+                <?php foreach ($data['kode'] as $key => $pro) : ?>
                     <div class="col-sm-4 p-0">
                         <div class="card m-1">
                             <div class="card-body p-2">

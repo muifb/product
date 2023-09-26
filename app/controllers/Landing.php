@@ -94,4 +94,16 @@ class Landing extends Controller
     {
         echo json_encode($this->model(Product_model::class)->getProductById($_POST['id']));
     }
+
+    public function profile()
+    {
+        Signin::isLoginAdmin();
+        $data = [
+            'nav' => 'profile',
+            'judul' => 'Profile'
+        ];
+        $this->view('templates/landing_header', $data);
+        $this->view('landing/profile', $data);
+        $this->view('templates/landing_footer');
+    }
 }

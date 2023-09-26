@@ -64,7 +64,6 @@ class Printer
 
             $dataBatch = $_SESSION['printIn'];
             $dataPro = $_SESSION['printIn']['product'];
-            $no = 0;
             $generator = new Picqer\Barcode\BarcodeGeneratorSVG();
             echo '
             <div class="py-4 px-2 print-cetak">
@@ -72,12 +71,12 @@ class Printer
                     <span class="fs-3"><strong>Cetak Batch Luar</strong></span>
                 </center>
                 <div class="row">';
-            foreach ($dataBatch['batch'] as $batch) {
+            foreach ($dataBatch['batch'] as $key => $batch) {
                 echo '
                         <div class="col-6 my-1">
                             <div class="p-1">
                                 <p class="m-0">
-                                    <label class="fw-normal label-pro" for="" style="font-size: .7rem;"><strong>' . $dataPro[$no] . '</strong></label>
+                                    <label class="fw-normal label-pro" for="" style="font-size: .7rem;"><strong>' . $dataPro[$key] . '</strong></label>
                                 </p>
                                 ' . $generator->getBarcode($batch, $generator::TYPE_CODE_93) . '
                                 <p class="m-0">
@@ -85,7 +84,6 @@ class Printer
                                 </p>
                             </div>
                         </div>';
-                $no++;
             }
             echo '
                 </div>
