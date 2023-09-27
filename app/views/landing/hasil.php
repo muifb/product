@@ -331,9 +331,10 @@
                             <div id="oee"></div>
 
                             <script>
+                                const oeeData = <?= $pieChart; ?>;
                                 document.addEventListener("DOMContentLoaded", () => {
                                     new ApexCharts(document.querySelector("#oee"), {
-                                        series: <?= $pieChart; ?>,
+                                        series: oeeData,
                                         chart: {
                                             // height: 216,
                                             width: 375,
@@ -382,9 +383,10 @@
                     <div id="availibility"></div>
 
                     <script>
+                        const availabilityData = <?= $pieChartAvai; ?>;
                         document.addEventListener("DOMContentLoaded", () => {
                             new ApexCharts(document.querySelector("#availibility"), {
-                                series: <?= $pieChartAvai; ?>,
+                                series: availabilityData,
                                 chart: {
                                     // height: 250,
                                     width: 340,
@@ -430,9 +432,10 @@
                     <div id="performance"></div>
 
                     <script>
+                        const performData = <?= $pieChartPerforma; ?>;
                         document.addEventListener("DOMContentLoaded", () => {
                             new ApexCharts(document.querySelector("#performance"), {
-                                series: <?= $pieChartPerforma; ?>,
+                                series: performData,
                                 chart: {
                                     // height: 250,
                                     width: 340,
@@ -478,9 +481,10 @@
                     <div id="quality"></div>
 
                     <script>
+                        const qualityData = <?= $pieChartQuality; ?>;
                         document.addEventListener("DOMContentLoaded", () => {
                             new ApexCharts(document.querySelector("#quality"), {
-                                series: <?= $pieChartQuality; ?>,
+                                series: qualityData,
                                 chart: {
                                     // height: 250,
                                     width: 340,

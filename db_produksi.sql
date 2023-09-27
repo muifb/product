@@ -142,10 +142,10 @@ CREATE TABLE `tb_user` (
 --
 
 INSERT INTO `tb_user` (`nik`, `nama`, `alamat`) VALUES
-(202211222, 'Octavia Hurley', '710-1247 Diam. Av.'),
-(202211223, 'Hashim Nash', 'Ap #803-3522 Lorem St.'),
-(202211224, 'Alexander Stein', '745-2151 Aliquam Av.'),
-(202211225, 'Moses Faulkner', 'P.O. Box 958, 6840 Lacus. Street');
+(202211222, 'Cakrajiya Nainggolan', 'Psr. Abdullah No. 569, Magelang 77460, Jabar'),
+(202211223, 'Balidin Yusuf Saragih', 'Gg. W.R. Supratman No. 534, Bogor 49631, NTT'),
+(202211224, 'Nugraha Simanjuntak', 'Ki. Otista No. 123, Bima 23611, Kalbar'),
+(202211225, 'Liman Catur Hakim', 'Dk. Agus Salim No. 665, Kotamobagu 63891, Sultra');
 
 -- --------------------------------------------------------
 

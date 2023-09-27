@@ -1,5 +1,5 @@
 <div class="main py-4">
-    <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+    <div class="bg-purple me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
         <div class="my-3 py-3">
             <svg width="70" height="70" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="#F5F5F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
