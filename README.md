@@ -22,15 +22,33 @@ Fitur yang tersedia :
 
 Untuk penggunaan atau pemasangan silahkan buka file Dokumentasi.txt
 
-<p align="center"><img src="public/img/IMG-halaman-login-produksi.png" width="700"></p> <br><br>
-<p align="center"><img src="public/img/IMG-halaman-vismen-list.png" width="700"></p> <br><br>
-<p align="center"><img src="public/img/IMG-halaman-login-ppic.png" width="700"></p> <br><br>
-<p align="center"><img src="public/img/IMG-halaman-tambah-vismen.png" width="700"></p> <br><br>
-<p align="center"><img src="public/img/IMG-halaman-profile-ppic.png" width="700"></p> <br><br>
-<p align="center"><img src="public/img/IMG-halaman-produksi-intro.png" width="700"></p> <br><br>
-<p align="center"><img src="public/img/IMG-halaman-produksi.png" width="700"></p> <br><br>
-<p align="center"><img src="public/img/IMG-halaman-produksi-CreateBatch.png" width="700"></p> <br><br>
-<p align="center"><img src="public/img/IMG-halaman-produksi-Oee.png" width="700"></p> <br><br>
-<p align="center"><img src="public/img/IMG-halaman-produksi-Oee-1.png" width="700"></p> <br><br>
-<p align="center"><img src="public/img/IMG-halaman-produksi-Oee-2.png" width="700"></p> <br><br>
-<p align="center"><img src="public/img/IMG-halaman-produksi-Profile.png" width="700"></p> <br><br>
+<p align="center">
+    <img src="public/img/IMG-halaman-login-produksi.png" width="500">
+    <img src="public/img/IMG-halaman-vismen-list.png" width="500">
+</p>
+<br><br>
+<p align="center">
+    <img src="public/img/IMG-halaman-login-ppic.png" width="500">
+    <img src="public/img/IMG-halaman-tambah-vismen.png" width="500">
+</p>
+<br><br>
+<p align="center">
+<img src="public/img/IMG-halaman-profile-ppic.png" width="500">
+<img src="public/img/IMG-halaman-produksi-intro.png" width="500">
+</p>
+<br><br>
+<p align="center">
+    <img src="public/img/IMG-halaman-produksi.png" width="500">
+    <img src="public/img/IMG-halaman-produksi-CreateBatch.png" width="500">
+</p>
+<br><br>
+<p align="center">
+    <img src="public/img/IMG-halaman-produksi-Oee.png" width="500">
+    <img src="public/img/IMG-halaman-produksi-Oee-1.png" width="500">
+</p>
+<br><br>
+<p align="center">
+    <img src="public/img/IMG-halaman-produksi-Oee-2.png" width="500">
+    <img src="public/img/IMG-halaman-produksi-Profile.png" width="500">
+</p>
+<br><br>
