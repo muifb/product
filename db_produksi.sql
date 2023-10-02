@@ -161,6 +161,7 @@ CREATE TABLE `tb_vismen` (
   `mesin` varchar(30) NOT NULL,
   `material_numb` varchar(191) DEFAULT NULL,
   `customer` varchar(191) DEFAULT NULL,
+  `kode` varchar(5) NOT NULL DEFAULT 'A',
   `start_produksi` datetime NOT NULL,
   `finish_produksi` datetime NOT NULL,
   `est_pengiriman` date NOT NULL
