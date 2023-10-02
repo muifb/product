@@ -87,6 +87,20 @@
                         </div>
                     </div>
                     <div class="row mb-2">
+                        <label for="kode" class="col-sm-3 col-form-label text-end">Code Customer</label>
+                        <div class="col-sm-2">
+                            <input type="text" name="kode" id="kode" class="form-control" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">&nbsp;</div>
+                            <div class="col-sm-auto">
+                                <span id="kodeHelp" class="form-text">
+                                    &ensp;* Kode untuk awal batch contoh K0000001 kodenya K.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
                         <label class="col-sm-3 col-form-label text-end">Mulai</label>
                         <div class="col-sm-5">
                             <input type="datetime-local" class="flatpickr-input" name="start_produksi" id="startProduksi" placeholder="Select Date Start..." required>

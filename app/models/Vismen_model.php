@@ -39,6 +39,7 @@ class Vismen_model
         $msn = $data['mesin'];
         $mtr = $data['material_numb'];
         $cst = $data['customer'];
+        $kd = $data['kode'];
         $start = $data['start_produksi'];
         $finish = $data['finish_produksi'];
         $deliv = $data['est_pengiriman'];
@@ -50,7 +51,7 @@ class Vismen_model
             header('Location:/vismen/tambah');
             exit;
         }
-        $this->db->query('INSERT INTO ' . $this->table . ' VALUES (:id_product, :nm_product, :panjang_qty, :qty_palet, :mesin, :material_numb, :customer, :start_produksi, :finish_produksi, :est_pengiriman)');
+        $this->db->query('INSERT INTO ' . $this->table . ' VALUES (:id_product, :nm_product, :panjang_qty, :qty_palet, :mesin, :material_numb, :customer, :kode, :start_produksi, :finish_produksi, :est_pengiriman)');
         $this->db->bind('id_product', $pro);
         $this->db->bind('nm_product', $nm);
         $this->db->bind('panjang_qty', $pjg);
@@ -58,6 +59,7 @@ class Vismen_model
         $this->db->bind('mesin', $msn);
         $this->db->bind('material_numb', $mtr);
         $this->db->bind('customer', $cst);
+        $this->db->bind('kode', $kd);
         $this->db->bind('start_produksi', $start);
         $this->db->bind('finish_produksi', $finish);
         $this->db->bind('est_pengiriman', $deliv);
@@ -253,14 +255,13 @@ class Vismen_model
 
     public function getNopro()
     {
-        $query  = "SELECT RIGHT (id_product, 6) as nomor FROM tb_vismen ORDER BY RIGHT (id_product, 6) DESC LIMIT 1";
+        $query  = "SELECT id_product as nomor FROM tb_vismen ORDER BY id_product DESC LIMIT 1";
         $this->db->query($query);
         $cek = $this->db->single();
         if ($this->db->rowCount() > 0) {
-            $awal = 2001;
-            $no = $cek['nomor'];
-            $no++;
-            $kode = $awal . sprintf("%06d", $no);
+            $nomor = $cek['nomor'];
+            $nomor++;
+            $kode = $nomor;
 
             return $kode;
         } else {

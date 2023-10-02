@@ -46,31 +46,39 @@ class Batch_model
     }
     public function getKode()
     {
-
+        $this->db->query('SELECT kode FROM `tb_vismen` WHERE id_product = :id_product');
+        $this->db->bind('id_product', $_SESSION['login']['id_pro']);
+        $kode = $this->db->single();
+        $this->db->query('SELECT LEFT (nm_batch, 1) as kd FROM tb_batch GROUP BY LEFT (nm_batch, 1) DESC');
+        $value = $this->db->resultSet();
         $this->db->query('SELECT * FROM `tb_batch` JOIN `tb_vismen` USING (id_product) WHERE is_post = 1');
         $hasil = $this->db->resultSet();
         if ($this->db->rowCount() > 0) {
             return $hasil;
-        } else {
-            $query  = "SELECT RIGHT (nm_batch, 7) as nomor FROM tb_batch ORDER BY RIGHT (nm_batch, 7) DESC LIMIT 1";
-            $this->db->query($query);
-            $cek = $this->db->single();
-            if ($this->db->rowCount() > 0) {
-                $kd = "K";
-                $no = $cek['nomor'];
-                $no++;
-                $kode = $kd . sprintf("%08d", $no);
+        }
 
-                return $kode;
-            } else {
-                $kd = "K";
-                $no = 0;
-                $no++;
-                $kode = $kd . sprintf("%08d", $no);
+        foreach ($value as $val) {
+            if ($val['kd'] == $kode['kode']) {
+                $this->db->query('SELECT RIGHT (nm_batch, 7) as nomor FROM tb_batch WHERE nm_batch LIKE :kode ORDER BY RIGHT (nm_batch, 7) DESC LIMIT 1');
+                $this->db->bind('kode', $kode['kode'] . '%');
+                $cek = $this->db->single();
+                if ($this->db->rowCount() > 0) {
+                    $kd = $kode['kode'];
+                    $no = $cek['nomor'];
+                    $no++;
+                    $kode = $kd . sprintf("%08d", $no);
 
-                return $kode;
+                    return $kode;
+                }
             }
         }
+
+        $kd = $kode['kode'];
+        $no = 0;
+        $no++;
+        $kode = $kd . sprintf("%08d", $no);
+
+        return $kode;
     }
 
     public function insertBatch($data)

@@ -541,7 +541,7 @@
         window.frames["print_frame"].document.title = document.title;
         window.frames["print_frame"].document.body.innerHTML = `
         <style>` + a + `</style>
-        <div class="container-fluid">
+        <div class="container-fluid px-3">
             <center>
                 <h2>Laporan OEE</h2>
             </center>
