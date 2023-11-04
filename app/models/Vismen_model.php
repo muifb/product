@@ -59,7 +59,7 @@ class Vismen_model
         $this->db->bind('mesin', $msn);
         $this->db->bind('material_numb', $mtr);
         $this->db->bind('customer', $cst);
-        $this->db->bind('kode', $kd);
+        $this->db->bind('kode', strtoupper($kd));
         $this->db->bind('start_produksi', $start);
         $this->db->bind('finish_produksi', $finish);
         $this->db->bind('est_pengiriman', $deliv);

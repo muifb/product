@@ -224,9 +224,6 @@
                                                 <span class="document-desc"><?= $pro['id_product']; ?></span>
                                             </div>
                                         </div>
-
-
-
                                     </div>
 
                                     <div class="document-item">
@@ -238,8 +235,6 @@
                                                 <span class="document-desc"><?= $pro['material_numb'] != null ? $pro['material_numb'] : ''; ?></span>
                                             </div>
                                         </div>
-
-
                                     </div>
 
                                     <div class="document-item">

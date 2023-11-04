@@ -95,7 +95,7 @@
                             <div class="col-sm-3">&nbsp;</div>
                             <div class="col-sm-auto">
                                 <span id="kodeHelp" class="form-text">
-                                    &ensp;* Kode untuk awal batch contoh K0000001 kodenya K.
+                                    &ensp;* Kode untuk awal batch contoh K0000123 kodenya K.
                                 </span>
                             </div>
                         </div>
