@@ -1,40 +1,54 @@
 <style>
-    .tooltip {
+    .copy-text {
         position: relative;
-        display: inline-block;
+        display: flex;
     }
 
-    .tooltip .tooltiptext {
-        visibility: hidden;
-        width: 140px;
-        background-color: #555;
-        color: #fff;
-        text-align: center;
-        border-radius: 6px;
-        padding: 5px;
+    .copy-text div.text {
+        font-size: 17px;
+        width: 7.5rem;
+    }
+
+    .copy-text .button {
+        position: relative;
+        color: #5784f5;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .copy-text .button:active {
+        color: #809ce2;
+    }
+
+    .copy-text .button::before {
+        content: "Copied!";
         position: absolute;
-        z-index: 1;
-        bottom: 150%;
-        left: 50%;
-        margin-left: -75px;
-        opacity: 0;
-        transition: opacity 0.3s;
+        top: -35px;
+        right: -25px;
+        background: #5c81dc;
+        color: #fff;
+        padding: 8px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        display: none;
     }
 
-    .tooltip .tooltiptext::after {
+    .copy-text .button::after {
         content: "";
         position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -5px;
-        border-width: 5px;
-        border-style: solid;
-        border-color: #555 transparent transparent transparent;
+        height: 10px;
+        width: 10px;
+        background: #5c81dc;
+        top: -14px;
+        right: 3px;
+        transform: rotate(45deg);
+        display: none;
     }
 
-    .tooltip:hover .tooltiptext {
-        visibility: visible;
-        opacity: 1;
+    .copy-text.active .button::before,
+    .copy-text.active .button::after {
+        display: block;
     }
 </style>
 <div class="main py-4">
@@ -85,8 +99,11 @@
                                 <td><?= $nomor++; ?></td>
                                 <td><?= $vs['nm_product']; ?></td>
                                 <td>
-                                    <div id="myTooltip" onclick="copyToClipboard(<?php echo $vs['id_product']; ?>)" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy to Clipboard">
-                                        <?= $vs['id_product']; ?>
+                                    <div class="copy-text" onclick="copyToClipboard(this)">
+                                        <div class="text"><?= $vs['id_product']; ?></div>
+                                        <small class="button">
+                                            <i class="fa-solid fa-copy"></i>
+                                        </small>
                                     </div>
                                 </td>
                                 <td><?= $vs['panjang_qty']; ?></td>
@@ -104,7 +121,15 @@
 </div>
 
 <script>
-    function copyToClipboard(e) {
-        navigator.clipboard.writeText(e);
+    function copyToClipboard(obj) {
+        let input = obj.querySelector("div[class='text']");
+        // input.select();
+        // input.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(input.innerHTML);
+        obj.classList.add("active");
+        window.getSelection().removeAllRanges();
+        setTimeout(function() {
+            obj.classList.remove("active");
+        }, 900);
     }
 </script>

@@ -30,6 +30,7 @@ Untuk penggunaan atau pemasangan silahkan buka file Dokumentasi.txt
 <p align="center"><img src="public/img/IMG-halaman-produksi-intro.png" width="700"></p> <br><br>
 <p align="center"><img src="public/img/IMG-halaman-produksi.png" width="700"></p> <br><br>
 <p align="center"><img src="public/img/IMG-halaman-produksi-CreateBatch.png" width="700"></p> <br><br>
+<p align="center"><img src="public/img/IMG-halaman-produksi-DetailBatch.png" width="700"></p> <br><br>
 <p align="center"><img src="public/img/IMG-halaman-produksi-Oee.png" width="700"></p> <br><br>
 <p align="center"><img src="public/img/IMG-halaman-produksi-Oee-1.png" width="700"></p> <br><br>
 <p align="center"><img src="public/img/IMG-halaman-produksi-Oee-2.png" width="700"></p> <br><br>
