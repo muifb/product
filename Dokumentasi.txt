@@ -16,12 +16,6 @@ MANUAL PEMASANGAN
         >> file example.json
         >> file index.php, dan
         >> file README.md
-      untuk menghindari error dan kegagalan fungsi. SEKALI LAGI FOLDER PRODUCT LANGSUNG BERISI YANG DISEBUTKAN
-      TIDAK ADA FOLDER LAIN DAN BARU BERISI YANG DISEBUTKAN DIATAS. KALAU MAU BERUBAH NAMANYA RENAME SAJA PRODUCT MENJADI YANG ANDA MAU,
-      DENGAN SYARAT TIDAK ADA SEPASINYA JANGAN MEMBUAT FOLDER BARU KEMUDIAN MENARUH FOLER PRODUCK DIDALAM FOLER TERSEBUT.
-      JUGA TIDAK DIPERKENANKAN MEMBUAT FOLDER BARU DIDALAM PRODUCT KEMUDIAN ISINYA YANG DISEBUTKAN DIATAS.
-      BOLEH SEPERTI ITU ASALKAN YANG ANDA BUKA DI CODE EDITOR DAN TERMINAL ADALAH FOLDER YANG ISINYA LANGSUNG DISEBUTKAN DIATAS
-      TANPA FOLDER LAIN BARU BERISI YANG DISEBUTKAN.
     # kemudian konfigurasi Database pada file .env
     # Edit configurasi database nya, 
         DB_HOST=
@@ -29,7 +23,7 @@ MANUAL PEMASANGAN
         DB_USERNAME=
         DB_PASSWORD=
       sesuaikan dengan punya kalian. Isikan DB_PASSWORD sesuai dengan punya anda jika tidak ada password-nya biarkan kosong
-    # Buka terminal yang ada dieditor, KALAU BUKA TERMINAL KOMPUTER PASTIKAN YANG DIBUKA SESUAI YANG DIJELASKAN DIATAS.
+    # Buka terminal yang ada dieditor.
     # Kemudian ketikkan php -S 127.0.0.1:8000 kemudian enter
 
 Buka Browser favorit anda, dan ketik di urlnya http://127.0.0.1:8000 -> enter
@@ -54,9 +48,5 @@ NIK PPIC :
 202211335
 202211336
 202211337
-
-
-No. Rekening BRI :
-6034-01-007835-53-0 a/n Abdul Muif Bahtiar
 
       
